@@ -1,68 +1,24 @@
 package easyticket;
 
 import javax.swing.*;
-
-import javax.swing.*;
-
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class TicketManager {
     private Theater theater;
     private Statistics statistics;
 
     public TicketManager() {
-        this.theater = Theater.getInstance(); // Obtém a instância única
+        this.theater = Theater.getInstance();
         this.statistics = new Statistics();
     }
-    public void comprarIngresso() {
-        try {
-            String cpf = JOptionPane.showInputDialog("Informe o CPF (apenas números):");
-            if (cpf == null || cpf.isEmpty() || !isCpfValido(cpf)) {
-                JOptionPane.showMessageDialog(null, "CPF inválido!");
-                return;
-            }
 
-            String espetaculo = JOptionPane.showInputDialog(null, "Escolha o espetáculo:\n1) As tranças da vovó careca\n2) A volta dos que chegaram a partir\n3) Poeira em alto mar");
-            if (espetaculo == null || !espetaculo.matches("[1-3]")) {
-                JOptionPane.showMessageDialog(null, "Espetáculo inválido!");
-                return;
-            }
-
-            String sessao = JOptionPane.showInputDialog("Escolha a sessão:\n1) Manhã\n2) Tarde\n3) Noite");
-            if (sessao == null || !sessao.matches("[1-3]")) {
-                JOptionPane.showMessageDialog(null, "Sessão inválida!");
-                return;
-            }
-
-            String area = JOptionPane.showInputDialog("Escolha a área:\n1) Plateia A - R$40,00\n2) Plateia B - R$60,00\n3) Frisa - R$80,00\n4) Camarote - R$120,00\n5) Balcão Nobre - R$250,00");
-            if (area == null || !area.matches("[1-5]")) {
-                JOptionPane.showMessageDialog(null, "Área inválida!");
-                return;
-            }
-
-            Ticket ticket = new Ticket(cpf, espetaculo, sessao, area);
-
-            int poltronaEscolhida = escolherPoltrona(ticket);
-            if (poltronaEscolhida == -1) {
-                // Usuário cancelou a operação de escolher poltrona
-                JOptionPane.showMessageDialog(null, "Compra de ingresso cancelada.");
-                return;
-            }
-
-            ticket.setPoltrona(poltronaEscolhida);
-            theater.reservarPoltrona(ticket);
-
-            statistics.addSale(ticket);
-            JOptionPane.showMessageDialog(null, "Ingresso comprado com sucesso!");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao comprar ingresso: " + e.getMessage());
-        }
+    public boolean isCpfValido(String cpf) {
+        return cpf.matches("\\d{11}");
     }
 
-    private int escolherPoltrona(Ticket ticket) {
+    public int escolherPoltrona(Ticket ticket) {
         int areaIndex = Integer.parseInt(ticket.getArea()) - 1;
         int espetaculoIndex = Integer.parseInt(ticket.getEspetaculo()) - 1;
         int sessaoIndex = Integer.parseInt(ticket.getSessao()) - 1;
@@ -128,27 +84,21 @@ public class TicketManager {
         }
     }
 
-    public void imprimirIngresso() {
-        String cpf = JOptionPane.showInputDialog("Informe o CPF para imprimir os ingressos:");
-        if (cpf == null || cpf.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "CPF não pode ser vazio!");
-            return;
-        }
+    public void finalizarCompra(Ticket ticket) {
+        theater.reservarPoltrona(ticket);
+        statistics.addSale(ticket);
+    }
 
+    public String imprimirIngressos(String cpf) {
         StringBuilder mensagem = new StringBuilder("Ingressos do CPF " + cpf + ":\n");
         boolean encontrou = statistics.printTicketsForClient(cpf, mensagem);
         if (!encontrou) {
             mensagem.append("Nenhum ingresso encontrado para o CPF informado.");
         }
-        JOptionPane.showMessageDialog(null, mensagem.toString());
+        return mensagem.toString();
     }
 
-    public void gerarEstatisticas() {
-        StringBuilder estatisticas = statistics.generateStatistics();
-        JOptionPane.showMessageDialog(null, estatisticas.toString());
-    }
-
-    private boolean isCpfValido(String cpf) {
-        return cpf.matches("\\d{11}");
+    public String gerarEstatisticas() {
+        return statistics.generateStatistics().toString();
     }
 }
