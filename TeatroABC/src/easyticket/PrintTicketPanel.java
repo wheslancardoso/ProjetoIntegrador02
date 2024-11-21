@@ -14,6 +14,7 @@ public class PrintTicketPanel extends JPanel {
         this.ticketManager = ticketManager;
         this.mainFrame = mainFrame;
         initComponents();
+
     }
 
     private void initComponents() {
@@ -34,8 +35,25 @@ public class PrintTicketPanel extends JPanel {
         inputPanel.add(printButton);
         inputPanel.add(backButton);
 
-        add(inputPanel, BorderLayout.NORTH);
-        add(new JScrollPane(ticketsArea), BorderLayout.CENTER);
+        // Adicionar a borda vazia ao inputPanel
+        inputPanel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+
+        // Criar um painel intermediário para conter o inputPanel e a ticketsArea
+        JPanel contentPanel = new JPanel(new BorderLayout());
+
+        // Adicionar a borda vazia ao contentPanel
+        contentPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        // Adicionar o inputPanel ao norte do contentPanel
+        contentPanel.add(inputPanel, BorderLayout.NORTH);
+
+        // Adicionar o ticketsArea (dentro de um JScrollPane) ao centro do contentPanel
+        contentPanel.add(new JScrollPane(ticketsArea), BorderLayout.CENTER);
+
+        // Adicionar o contentPanel ao painel principal
+        add(contentPanel, BorderLayout.CENTER);
+
+        ticketsArea.setMargin(new Insets(10, 10, 10, 10));
 
         // Ação do botão imprimir
         printButton.addActionListener(e -> {

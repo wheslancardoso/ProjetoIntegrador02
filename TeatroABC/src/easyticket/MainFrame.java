@@ -99,8 +99,12 @@ public class MainFrame extends JFrame {
         buttonPanel.add(buyTicketButton);
         buttonPanel.add(printTicketButton);
         buttonPanel.add(statisticsButton);
-        buttonPanel.add(clearDataButton); // Adiciona o botão "Limpar Dados"
+        buttonPanel.add(clearDataButton);
         buttonPanel.add(exitButton);
+
+        // Adiciona uma margem lateral ao buttonPanel
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
 
         // Adicionando ao painel do menu
         menuPanel.add(buttonPanel, BorderLayout.CENTER);

@@ -12,6 +12,9 @@ public class BuyTicketPanel extends JPanel {
         this.ticketManager = ticketManager;
         this.mainFrame = mainFrame;
         initComponents();
+
+        // Adicionar uma margem lateral ao painel
+        setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
     }
 
     private void initComponents() {
@@ -21,15 +24,15 @@ public class BuyTicketPanel extends JPanel {
         JTextField cpfField = new JTextField();
 
         JLabel espetaculoLabel = new JLabel("Espetáculo:");
-        String[] espetaculos = {"As tranças da vovó careca", "A volta dos que chegaram a partir", "Poeira em alto mar"};
+        String[] espetaculos = {" As tranças da vovó careca", " A volta dos que chegaram a partir", " Poeira em alto mar"};
         JComboBox<String> espetaculoBox = new JComboBox<>(espetaculos);
 
         JLabel sessaoLabel = new JLabel("Sessão:");
-        String[] sessoes = {"Manhã", "Tarde", "Noite"};
+        String[] sessoes = {" Manhã", " Tarde", " Noite"};
         JComboBox<String> sessaoBox = new JComboBox<>(sessoes);
 
         JLabel areaLabel = new JLabel("Área:");
-        String[] areas = {"Plateia A - R$40,00", "Plateia B - R$60,00", "Frisa - R$80,00", "Camarote - R$120,00", "Balcão Nobre - R$250,00"};
+        String[] areas = {" Plateia A - R$40,00", " Plateia B - R$60,00", " Frisa - R$80,00", " Camarote - R$120,00", " Balcão Nobre - R$250,00"};
         JComboBox<String> areaBox = new JComboBox<>(areas);
 
         JButton chooseSeatButton = new JButton("Escolher Poltrona");
