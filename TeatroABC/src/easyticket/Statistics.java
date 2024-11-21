@@ -1,25 +1,29 @@
 package easyticket;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.io.*;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import java.io.*;
 
 public class Statistics {
     private List<Ticket> ticketsVendidos;
+    private static final String FILE_PATH = "tickets.json";
 
     public Statistics() {
         this.ticketsVendidos = new ArrayList<>();
     }
 
+    // Adiciona um ingresso vendido
     public void addSale(Ticket ticket) {
         ticketsVendidos.add(ticket);
-        carregarDados(); // Se houver dados específicos para carregar
+        // Não chame carregarDados() aqui
     }
 
+    // Imprime os ingressos associados a um CPF
     public boolean printTicketsForClient(String cpf, StringBuilder mensagem) {
         boolean encontrou = false;
         for (Ticket ticket : ticketsVendidos) {
@@ -36,6 +40,7 @@ public class Statistics {
         return encontrou;
     }
 
+    // Gera estatísticas de vendas
     public StringBuilder generateStatistics() {
         StringBuilder estatisticas = new StringBuilder("Estatísticas de Vendas:\n");
 
@@ -192,30 +197,35 @@ public class Statistics {
 
     // Métodos para salvar e carregar dados dos ingressos vendidos
     public void salvarDados() {
-        try (Writer writer = new FileWriter("tickets.json")) {
+        try (Writer writer = new FileWriter(FILE_PATH)) {
             Gson gson = new Gson();
             gson.toJson(ticketsVendidos, writer);
             System.out.println("Dados dos ingressos salvos com sucesso.");
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Erro ao salvar os dados dos ingressos.");
         }
     }
 
     public void carregarDados() {
-        try (Reader reader = new FileReader("tickets.json")) {
+        try (Reader reader = new FileReader(FILE_PATH)) {
             Gson gson = new Gson();
-            ticketsVendidos = gson.fromJson(reader, new TypeToken<List<Ticket>>(){}.getType());
-            if (ticketsVendidos == null) {
+            Type listType = new TypeToken<List<Ticket>>(){}.getType();
+            List<Ticket> loadedTickets = gson.fromJson(reader, listType);
+            if (loadedTickets != null) {
+                ticketsVendidos = loadedTickets;
+                System.out.println("Dados dos ingressos carregados com sucesso.");
+            } else {
                 ticketsVendidos = new ArrayList<>();
+                System.out.println("Nenhum ingresso encontrado no arquivo. Lista iniciada vazia.");
             }
-            System.out.println("Dados dos ingressos carregados com sucesso.");
         } catch (FileNotFoundException e) {
             // Arquivo não encontrado, inicia lista vazia
-            System.out.println("Arquivo tickets.json não encontrado. Iniciando lista de ingressos vazia.");
+            System.out.println("Arquivo " + FILE_PATH + " não encontrado. Iniciando lista de ingressos vazia.");
             ticketsVendidos = new ArrayList<>();
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Erro ao carregar os dados dos ingressos. Iniciando lista de ingressos vazia.");
+            System.out.println("Erro ao carregar os dados dos ingressos. Lista iniciada vazia.");
             ticketsVendidos = new ArrayList<>();
         }
     }
@@ -225,16 +235,16 @@ public class Statistics {
         ticketsVendidos.clear();
 
         // Exclui o arquivo de dados
-        File file = new File("tickets.json");
+        File file = new File(FILE_PATH);
         if (file.exists()) {
             if (file.delete()) {
-                System.out.println("Arquivo tickets.json excluído com sucesso.");
+                System.out.println("Arquivo " + FILE_PATH + " excluído com sucesso.");
             } else {
-                System.out.println("Falha ao excluir o arquivo tickets.json.");
+                System.out.println("Falha ao excluir o arquivo " + FILE_PATH + ".");
             }
         } else {
-            System.out.println("Arquivo tickets.json não existe.");
+            System.out.println("Arquivo " + FILE_PATH + " não existe.");
         }
     }
-
 }
+
