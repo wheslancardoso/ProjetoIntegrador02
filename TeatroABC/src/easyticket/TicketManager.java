@@ -1,7 +1,6 @@
 package easyticket;
 
 import javax.swing.*;
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -100,7 +99,7 @@ public class TicketManager {
     }
 
     public String imprimirIngressos(String cpf) {
-        StringBuilder mensagem = new StringBuilder("Ingressos do CPF " + cpf + ":\n");
+        StringBuilder mensagem = new StringBuilder("Ingressos do CPF " + cpf + ":\n\n");
         boolean encontrou = statistics.printTicketsForClient(cpf, mensagem);
         if (!encontrou) {
             mensagem.append("Nenhum ingresso encontrado para o CPF informado.");

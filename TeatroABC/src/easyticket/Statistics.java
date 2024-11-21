@@ -1,5 +1,6 @@
 package easyticket;
 
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.io.*;
@@ -10,6 +11,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class Statistics {
+    private static Statistics instance = null;
     private List<Ticket> ticketsVendidos;
     private static final String FILE_PATH = "tickets.json";
 
@@ -17,24 +19,36 @@ public class Statistics {
         this.ticketsVendidos = new ArrayList<>();
     }
 
+    // Método estático para obter a instância única
+    public static Statistics getInstance() {
+        if (instance == null) {
+            instance = new Statistics();
+            instance.carregarDados();
+        }
+        return instance;
+    }
+
     // Adiciona um ingresso vendido
     public void addSale(Ticket ticket) {
         ticketsVendidos.add(ticket);
-        // Não chame carregarDados() aqui
+        // Não chame carregarDados() aqui para evitar sobrescrita de dados
     }
 
-    // Imprime os ingressos associados a um CPF
+    // Imprime os ingressos associados a um CPF com numeração
     public boolean printTicketsForClient(String cpf, StringBuilder mensagem) {
         boolean encontrou = false;
+        int count = 1; // Contador para numerar os ingressos
+
         for (Ticket ticket : ticketsVendidos) {
             if (ticket.getCpf().equals(cpf)) {
                 encontrou = true;
-                mensagem.append("Espetáculo: ").append(ticket.getEspetaculo())
-                        .append("\nSessão: ").append(ticket.getSessao())
-                        .append("\nÁrea: ").append(ticket.getArea())
-                        .append("\nPoltrona: ").append(ticket.getPoltrona() + 1)
-                        .append("\nPreço: R$").append(ticket.getPreco())
-                        .append("\n\n");
+                mensagem.append("Ingresso ").append(count).append(":\n");
+                mensagem.append("Espetáculo: ").append(getNomeEspetaculo(ticket.getEspetaculo())).append("\n");
+                mensagem.append("Sessão: ").append(getNomeSessao(ticket.getSessao())).append("\n");
+                mensagem.append("Área: ").append(getNomeArea(ticket.getArea())).append("\n");
+                mensagem.append("Poltrona: ").append(ticket.getPoltrona() + 1).append("\n");
+                mensagem.append("Preço: R$ ").append(String.format("%.2f", ticket.getPreco())).append("\n\n");
+                count++;
             }
         }
         return encontrou;
@@ -195,6 +209,23 @@ public class Statistics {
         }
     }
 
+    private String getNomeArea(String area) {
+        switch(area) {
+            case "1":
+                return "Plateia A";
+            case "2":
+                return "Plateia B";
+            case "3":
+                return "Frisa";
+            case "4":
+                return "Camarote";
+            case "5":
+                return "Balcão Nobre";
+            default:
+                return "Desconhecida";
+        }
+    }
+
     // Métodos para salvar e carregar dados dos ingressos vendidos
     public void salvarDados() {
         try (Writer writer = new FileWriter(FILE_PATH)) {
@@ -247,4 +278,3 @@ public class Statistics {
         }
     }
 }
-

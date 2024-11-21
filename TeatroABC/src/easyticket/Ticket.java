@@ -18,11 +18,11 @@ public class Ticket {
 
     private double calculatePrice(String area) {
         switch (area) {
-            case "1": return 40.00;
-            case "2": return 60.00;
-            case "3": return 80.00;
-            case "4": return 120.00;
-            case "5": return 250.00;
+            case "1": return 40.00;     // Plateia A
+            case "2": return 60.00;     // Plateia B
+            case "3": return 80.00;     // Frisa
+            case "4": return 120.00;    // Camarote
+            case "5": return 250.00;    // Balcao Nobre
             default: return 0.00;
         }
     }
