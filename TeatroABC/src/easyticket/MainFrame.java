@@ -65,6 +65,7 @@ public class MainFrame extends JFrame {
         JButton buyTicketButton = new JButton("Comprar Ingresso");
         JButton printTicketButton = new JButton("Imprimir Ingresso");
         JButton statisticsButton = new JButton("Estatísticas de Vendas");
+        JButton clearDataButton = new JButton("Limpar Dados"); // Novo botão
         JButton exitButton = new JButton("Sair");
 
         // Adicionando ações aos botões
@@ -80,13 +81,25 @@ public class MainFrame extends JFrame {
             cardLayout.show(mainPanel, "Estatísticas");
         });
 
+        clearDataButton.addActionListener(e -> {
+            int confirm = JOptionPane.showConfirmDialog(this,
+                    "Tem certeza de que deseja limpar todos os dados? Esta ação não pode ser desfeita.",
+                    "Confirmação",
+                    JOptionPane.YES_NO_OPTION);
+            if (confirm == JOptionPane.YES_OPTION) {
+                ticketManager.limparDados();
+                JOptionPane.showMessageDialog(this, "Todos os dados foram limpos com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+
         exitButton.addActionListener(e -> System.exit(0));
 
         // Painel de botões
-        JPanel buttonPanel = new JPanel(new GridLayout(4, 1, 10, 10));
+        JPanel buttonPanel = new JPanel(new GridLayout(5, 1, 10, 10));
         buttonPanel.add(buyTicketButton);
         buttonPanel.add(printTicketButton);
         buttonPanel.add(statisticsButton);
+        buttonPanel.add(clearDataButton); // Adiciona o botão "Limpar Dados"
         buttonPanel.add(exitButton);
 
         // Adicionando ao painel do menu
@@ -99,5 +112,6 @@ public class MainFrame extends JFrame {
     public void showMenu() {
         cardLayout.show(mainPanel, "Menu");
     }
+
 }
 

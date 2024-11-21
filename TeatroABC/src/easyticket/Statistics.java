@@ -220,4 +220,21 @@ public class Statistics {
         }
     }
 
+    public void limparDados() {
+        // Limpa a lista de ingressos vendidos
+        ticketsVendidos.clear();
+
+        // Exclui o arquivo de dados
+        File file = new File("tickets.json");
+        if (file.exists()) {
+            if (file.delete()) {
+                System.out.println("Arquivo tickets.json excluído com sucesso.");
+            } else {
+                System.out.println("Falha ao excluir o arquivo tickets.json.");
+            }
+        } else {
+            System.out.println("Arquivo tickets.json não existe.");
+        }
+    }
+
 }

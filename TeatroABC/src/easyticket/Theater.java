@@ -83,6 +83,23 @@ public class Theater {
         }
     }
 
+    public void limparDados() {
+        // Reinicializa as poltronas
+        inicializarPoltronas();
+
+        // Exclui o arquivo de dados
+        File file = new File("poltronas.json");
+        if (file.exists()) {
+            if (file.delete()) {
+                System.out.println("Arquivo poltronas.json excluído com sucesso.");
+            } else {
+                System.out.println("Falha ao excluir o arquivo poltronas.json.");
+            }
+        } else {
+            System.out.println("Arquivo poltronas.json não existe.");
+        }
+    }
+
 }
 
 
