@@ -5,16 +5,18 @@ import javax.swing.*;
 import javax.swing.*;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class TicketManager {
     private Theater theater;
     private Statistics statistics;
 
     public TicketManager() {
-        this.theater = new Theater();
+        this.theater = Theater.getInstance(); // Obtém a instância única
         this.statistics = new Statistics();
     }
-
     public void comprarIngresso() {
         try {
             String cpf = JOptionPane.showInputDialog("Informe o CPF (apenas números):");
@@ -45,7 +47,8 @@ public class TicketManager {
 
             int poltronaEscolhida = escolherPoltrona(ticket);
             if (poltronaEscolhida == -1) {
-                JOptionPane.showMessageDialog(null, "Nenhuma poltrona disponível ou escolha inválida!");
+                // Usuário cancelou a operação de escolher poltrona
+                JOptionPane.showMessageDialog(null, "Compra de ingresso cancelada.");
                 return;
             }
 
@@ -65,33 +68,59 @@ public class TicketManager {
         int sessaoIndex = Integer.parseInt(ticket.getSessao()) - 1;
 
         boolean[] poltronasDisponiveis = theater.getPoltronasDisponiveis(areaIndex, espetaculoIndex, sessaoIndex);
-        while (true) {
-            StringBuilder mensagem = new StringBuilder("Poltronas disponíveis na área selecionada:\n");
+        List<Integer> poltronasLivres = new ArrayList<>();
 
-            for (int i = 0; i < poltronasDisponiveis.length; i++) {
-                if (!poltronasDisponiveis[i]) {
-                    mensagem.append("Poltrona ").append(i + 1).append(" - Disponível\n");
-                } else {
-                    mensagem.append("Poltrona ").append(i + 1).append(" - Ocupada\n");
-                }
+        // Coletar as poltronas disponíveis
+        for (int i = 0; i < poltronasDisponiveis.length; i++) {
+            if (!poltronasDisponiveis[i]) {
+                poltronasLivres.add(i + 1); // +1 para ajustar o índice
             }
+        }
 
-            String escolha = JOptionPane.showInputDialog(mensagem.toString() + "\nEscolha a poltrona (número) ou 'C' para cancelar:");
+        if (poltronasLivres.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Não há poltronas disponíveis nesta área.");
+            return -1;
+        }
+
+        // Gerar string de intervalos
+        StringBuilder intervalos = new StringBuilder();
+        int inicio = poltronasLivres.get(0);
+        int fim = inicio;
+
+        for (int i = 1; i < poltronasLivres.size(); i++) {
+            if (poltronasLivres.get(i) == fim + 1) {
+                fim = poltronasLivres.get(i);
+            } else {
+                if (inicio == fim) {
+                    intervalos.append(inicio).append(", ");
+                } else {
+                    intervalos.append(inicio).append("-").append(fim).append(", ");
+                }
+                inicio = fim = poltronasLivres.get(i);
+            }
+        }
+        // Adicionar o último intervalo
+        if (inicio == fim) {
+            intervalos.append(inicio);
+        } else {
+            intervalos.append(inicio).append("-").append(fim);
+        }
+
+        String mensagem = "Poltronas disponíveis: " + intervalos.toString() + "\nEscolha a poltrona (número) ou 'C' para cancelar:";
+
+        while (true) {
+            String escolha = JOptionPane.showInputDialog(mensagem);
             if (escolha == null || escolha.equalsIgnoreCase("C")) {
                 // Usuário cancelou a operação
                 return -1;
             }
 
             try {
-                int poltronaEscolhida = Integer.parseInt(escolha) - 1;
-                if (poltronaEscolhida >= 0 && poltronaEscolhida < poltronasDisponiveis.length) {
-                    if (!poltronasDisponiveis[poltronaEscolhida]) {
-                        return poltronaEscolhida;
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Poltrona já está ocupada! Por favor, escolha outra poltrona.");
-                    }
+                int poltronaEscolhida = Integer.parseInt(escolha);
+                if (poltronasLivres.contains(poltronaEscolhida)) {
+                    return poltronaEscolhida - 1; // -1 para ajustar o índice
                 } else {
-                    JOptionPane.showMessageDialog(null, "Número de poltrona inválido! Por favor, escolha um número válido.");
+                    JOptionPane.showMessageDialog(null, "Poltrona inválida ou já ocupada! Por favor, escolha uma poltrona disponível.");
                 }
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Entrada inválida! Por favor, insira um número de poltrona ou 'C' para cancelar.");

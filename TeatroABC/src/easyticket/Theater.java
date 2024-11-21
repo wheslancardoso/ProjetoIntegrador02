@@ -1,14 +1,18 @@
 package easyticket;
 
 public class Theater {
+    // Instância única da classe Theater
+    private static Theater instanciaUnica = null;
+
     // Estrutura: [Área][Espetáculo][Sessão][Poltrona]
     private boolean[][][][] poltronasDisponiveis;
 
     // Quantidade de poltronas por área
     private int[] poltronasPorArea = {25, 100, 15, 30, 50};
 
-    public Theater() {
-        // 5 áreas, 3 espetáculos, 3 sessões, número variável de poltronas
+    // Construtor privado para evitar múltiplas instâncias
+    private Theater() {
+        // Inicializando as poltronas
         poltronasDisponiveis = new boolean[5][3][3][];
         for (int area = 0; area < 5; area++) {
             for (int espetaculo = 0; espetaculo < 3; espetaculo++) {
@@ -19,6 +23,15 @@ public class Theater {
         }
     }
 
+    // Método estático para obter a instância única
+    public static Theater getInstance() {
+        if (instanciaUnica == null) {
+            instanciaUnica = new Theater();
+        }
+        return instanciaUnica;
+    }
+
+    // Métodos existentes permanecem os mesmos
     public boolean[] getPoltronasDisponiveis(int area, int espetaculo, int sessao) {
         return poltronasDisponiveis[area][espetaculo][sessao];
     }
