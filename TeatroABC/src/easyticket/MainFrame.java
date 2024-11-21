@@ -5,6 +5,8 @@ import java.awt.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class MainFrame extends JFrame {
     private TicketManager ticketManager;
@@ -20,6 +22,14 @@ public class MainFrame extends JFrame {
         setLocationRelativeTo(null);
 
         initComponents();
+
+        // Adicionar listener para salvar dados ao fechar
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                ticketManager.salvarDados();
+            }
+        });
     }
 
     private void initComponents() {

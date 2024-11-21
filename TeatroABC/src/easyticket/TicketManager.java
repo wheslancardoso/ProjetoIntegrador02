@@ -12,6 +12,8 @@ public class TicketManager {
     public TicketManager() {
         this.theater = Theater.getInstance();
         this.statistics = new Statistics();
+        // Carregar dados
+        statistics.carregarDados();
     }
 
     public boolean isCpfValido(String cpf) {
@@ -23,7 +25,7 @@ public class TicketManager {
         int espetaculoIndex = Integer.parseInt(ticket.getEspetaculo()) - 1;
         int sessaoIndex = Integer.parseInt(ticket.getSessao()) - 1;
 
-        boolean[] poltronasDisponiveis = theater.getPoltronasDisponiveis(areaIndex, espetaculoIndex, sessaoIndex);
+        Boolean[] poltronasDisponiveis = theater.getPoltronasDisponiveis(areaIndex, espetaculoIndex, sessaoIndex);
         List<Integer> poltronasLivres = new ArrayList<>();
 
         // Coletar as poltronas disponíveis
@@ -84,9 +86,17 @@ public class TicketManager {
         }
     }
 
+    public void salvarDados() {
+        theater.salvarDados();
+        statistics.salvarDados();
+    }
+
     public void finalizarCompra(Ticket ticket) {
         theater.reservarPoltrona(ticket);
         statistics.addSale(ticket);
+        // Salvar dados após a compra
+        theater.salvarDados();
+        statistics.salvarDados();
     }
 
     public String imprimirIngressos(String cpf) {

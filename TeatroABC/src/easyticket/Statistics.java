@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.io.*;
 
 public class Statistics {
     private List<Ticket> ticketsVendidos;
@@ -14,6 +17,7 @@ public class Statistics {
 
     public void addSale(Ticket ticket) {
         ticketsVendidos.add(ticket);
+        carregarDados(); // Se houver dados específicos para carregar
     }
 
     public boolean printTicketsForClient(String cpf, StringBuilder mensagem) {
@@ -185,4 +189,35 @@ public class Statistics {
                 return "Desconhecida";
         }
     }
+
+    // Métodos para salvar e carregar dados dos ingressos vendidos
+    public void salvarDados() {
+        try (Writer writer = new FileWriter("tickets.json")) {
+            Gson gson = new Gson();
+            gson.toJson(ticketsVendidos, writer);
+            System.out.println("Dados dos ingressos salvos com sucesso.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void carregarDados() {
+        try (Reader reader = new FileReader("tickets.json")) {
+            Gson gson = new Gson();
+            ticketsVendidos = gson.fromJson(reader, new TypeToken<List<Ticket>>(){}.getType());
+            if (ticketsVendidos == null) {
+                ticketsVendidos = new ArrayList<>();
+            }
+            System.out.println("Dados dos ingressos carregados com sucesso.");
+        } catch (FileNotFoundException e) {
+            // Arquivo não encontrado, inicia lista vazia
+            System.out.println("Arquivo tickets.json não encontrado. Iniciando lista de ingressos vazia.");
+            ticketsVendidos = new ArrayList<>();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Erro ao carregar os dados dos ingressos. Iniciando lista de ingressos vazia.");
+            ticketsVendidos = new ArrayList<>();
+        }
+    }
+
 }
