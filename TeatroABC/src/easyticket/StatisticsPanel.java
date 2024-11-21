@@ -3,9 +3,6 @@ package easyticket;
 import javax.swing.*;
 import java.awt.*;
 
-import javax.swing.*;
-import java.awt.*;
-
 public class StatisticsPanel extends JPanel {
     private TicketManager ticketManager;
     private MainFrame mainFrame;
