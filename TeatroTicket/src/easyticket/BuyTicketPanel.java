@@ -3,25 +3,20 @@ package easyticket;
 import javax.swing.*;
 import java.awt.*;
 
-
 public class BuyTicketPanel extends JPanel {
     private TicketManager ticketManager;
     private MainFrame mainFrame;
+    private UserManager userManager;
 
-    public BuyTicketPanel(TicketManager ticketManager, MainFrame mainFrame) {
+    public BuyTicketPanel(TicketManager ticketManager, MainFrame mainFrame, UserManager userManager) {
         this.ticketManager = ticketManager;
         this.mainFrame = mainFrame;
+        this.userManager = userManager;
         initComponents();
-
-        // Adicionar uma margem lateral ao painel
-        setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
     }
 
     private void initComponents() {
         setLayout(new GridLayout(6, 2, 10, 10));
-
-        JLabel cpfLabel = new JLabel("CPF:");
-        JTextField cpfField = new JTextField();
 
         JLabel espetaculoLabel = new JLabel("Espetáculo:");
         String[] espetaculos = {" As tranças da vovó careca", " A volta dos que chegaram a partir", " Poeira em alto mar"};
@@ -40,15 +35,16 @@ public class BuyTicketPanel extends JPanel {
 
         // Ação do botão escolher poltrona
         chooseSeatButton.addActionListener(e -> {
-            String cpf = cpfField.getText();
+            User user = userManager.getLoggedInUser();  // Obtém o usuário logado
+            if (user == null) {
+                JOptionPane.showMessageDialog(this, "Você precisa estar logado para comprar ingressos.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            String cpf = user.getCpf();  // Usa o CPF do usuário logado
             int espetaculo = espetaculoBox.getSelectedIndex() + 1;
             int sessao = sessaoBox.getSelectedIndex() + 1;
             int area = areaBox.getSelectedIndex() + 1;
-
-            if (cpf.isEmpty() || !ticketManager.isCpfValido(cpf)) {
-                JOptionPane.showMessageDialog(this, "CPF inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
 
             Ticket ticket = new Ticket(cpf, String.valueOf(espetaculo), String.valueOf(sessao), String.valueOf(area));
             int poltronaEscolhida = ticketManager.escolherPoltrona(ticket);
@@ -68,8 +64,6 @@ public class BuyTicketPanel extends JPanel {
             mainFrame.showMenu();
         });
 
-        add(cpfLabel);
-        add(cpfField);
         add(espetaculoLabel);
         add(espetaculoBox);
         add(sessaoLabel);

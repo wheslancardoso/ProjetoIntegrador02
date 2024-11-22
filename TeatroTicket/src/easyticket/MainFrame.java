@@ -44,8 +44,8 @@ public class MainFrame extends JFrame {
         JPanel menuPanel = createMenuPanel();
 
         // Painéis das funcionalidades
-        BuyTicketPanel buyPanel = new BuyTicketPanel(ticketManager, this);
-        PrintTicketPanel printPanel = new PrintTicketPanel(ticketManager, this);
+        BuyTicketPanel buyPanel = new BuyTicketPanel(ticketManager, this, userManager);
+        PrintTicketPanel printPanel = new PrintTicketPanel(ticketManager, this, userManager);
         StatisticsPanel statsPanel = new StatisticsPanel(ticketManager, this);
 
         // Adiciona os painéis ao CardLayout com identificadores
