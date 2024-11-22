@@ -178,6 +178,12 @@ public class CadastroPanel extends JPanel {
             return;
         }
 
+        // Validar CPF
+        if (!ValidadorCPF.validaCPF(cpf)) {
+            JOptionPane.showMessageDialog(this, "CPF inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date data = sdf.parse(dataNascimento);
@@ -197,4 +203,5 @@ public class CadastroPanel extends JPanel {
             JOptionPane.showMessageDialog(this, "Data de nascimento inválida. Use o formato dd/MM/yyyy.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+
 }

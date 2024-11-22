@@ -98,6 +98,12 @@ public class LoginPanel extends JPanel {
             return;
         }
 
+        // Validar CPF
+        if (!ValidadorCPF.validaCPF(cpf)) {
+            JOptionPane.showMessageDialog(this, "CPF inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         User user = userManager.login(cpf, senha);
         if (user != null) {
             JOptionPane.showMessageDialog(this, "Login bem-sucedido!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
@@ -106,4 +112,5 @@ public class LoginPanel extends JPanel {
             JOptionPane.showMessageDialog(this, "CPF ou senha inválidos.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+
 }
