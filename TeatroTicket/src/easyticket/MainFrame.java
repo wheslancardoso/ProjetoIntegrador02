@@ -2,19 +2,18 @@ package easyticket;
 
 import javax.swing.*;
 import java.awt.*;
-
-import javax.swing.*;
-import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class MainFrame extends JFrame {
     private TicketManager ticketManager;
+    private UserManager userManager;
     private CardLayout cardLayout;
     private JPanel mainPanel;
 
     public MainFrame() {
         ticketManager = new TicketManager();
+        userManager = new UserManager(); // Instancia o UserManager para gerenciar os usuários
 
         setTitle("Sistema EasyTicket");
         setSize(600, 400);
@@ -37,6 +36,10 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
 
+        // Painel do login e cadastro
+        LoginPanel loginPanel = new LoginPanel(userManager, this);
+        CadastroPanel cadastroPanel = new CadastroPanel(userManager, this);  // Passando o MainFrame para CadastroPanel
+
         // Painel do menu principal
         JPanel menuPanel = createMenuPanel();
 
@@ -46,13 +49,15 @@ public class MainFrame extends JFrame {
         StatisticsPanel statsPanel = new StatisticsPanel(ticketManager, this);
 
         // Adiciona os painéis ao CardLayout com identificadores
+        mainPanel.add(loginPanel, "Login");
+        mainPanel.add(cadastroPanel, "Cadastro");
         mainPanel.add(menuPanel, "Menu");
         mainPanel.add(buyPanel, "Comprar");
         mainPanel.add(printPanel, "Imprimir");
         mainPanel.add(statsPanel, "Estatísticas");
 
         // Define o painel inicial
-        cardLayout.show(mainPanel, "Menu");
+        cardLayout.show(mainPanel, "Login");
 
         setContentPane(mainPanel);
     }
@@ -65,7 +70,7 @@ public class MainFrame extends JFrame {
         JButton buyTicketButton = new JButton("Comprar Ingresso");
         JButton printTicketButton = new JButton("Imprimir Ingresso");
         JButton statisticsButton = new JButton("Estatísticas de Vendas");
-        JButton clearDataButton = new JButton("Limpar Dados"); // Novo botão
+        JButton clearDataButton = new JButton("Limpar Dados");
         JButton exitButton = new JButton("Sair");
 
         // Adicionando ações aos botões
@@ -105,7 +110,6 @@ public class MainFrame extends JFrame {
         // Adiciona uma margem lateral ao buttonPanel
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-
         // Adicionando ao painel do menu
         menuPanel.add(buttonPanel, BorderLayout.CENTER);
 
@@ -117,5 +121,19 @@ public class MainFrame extends JFrame {
         cardLayout.show(mainPanel, "Menu");
     }
 
-}
+    // Método para ir ao painel de Cadastro
+    public void showCadastro() {
+        cardLayout.show(mainPanel, "Cadastro");
+    }
 
+    // Método para ir ao painel de Login
+    public void showLogin() {
+        cardLayout.show(mainPanel, "Login");
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            new MainFrame().setVisible(true);
+        });
+    }
+}
