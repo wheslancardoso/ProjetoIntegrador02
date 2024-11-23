@@ -1,17 +1,17 @@
 package easyticket;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import javax.swing.*;
 import java.io.*;
-import java.lang.reflect.Type;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class UserManager {
     private Map<String, User> usuarios;
     private User loggedInUser;
-    private static final String USERS_FILE = "usuarios.json";  // Arquivo para armazenar os dados
+    private static final String USERS_FILE = "usuarios.txt";  // Arquivo para armazenar os dados
 
     public UserManager() {
         usuarios = new HashMap<>();
@@ -21,9 +21,14 @@ public class UserManager {
 
     // Método para salvar os dados dos usuários no arquivo
     public void salvarDados() {
-        try (Writer writer = new FileWriter(USERS_FILE)) {
-            Gson gson = new Gson();
-            gson.toJson(usuarios.values(), writer);  // Salva todos os usuários
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(USERS_FILE))) {
+            for (User user : usuarios.values()) {
+                // Salvar os dados do usuário no formato texto
+                String dataNascimento = new SimpleDateFormat("dd/MM/yyyy").format(user.getDataNascimento());
+                writer.write(user.getNome() + "," + user.getCpf() + "," + user.getTelefone() + ","
+                        + user.getEndereco() + "," + dataNascimento + "," + user.getSenha());
+                writer.newLine(); // Nova linha para o próximo usuário
+            }
             System.out.println("Dados dos usuários salvos com sucesso.");
         } catch (IOException e) {
             e.printStackTrace();
@@ -33,19 +38,28 @@ public class UserManager {
 
     // Método para carregar os dados dos usuários a partir do arquivo
     public void carregarDados() {
-        try (Reader reader = new FileReader(USERS_FILE)) {
-            Gson gson = new Gson();
-            Type type = new TypeToken<Map<String, User>>(){}.getType();
-            Map<String, User> loadedUsers = gson.fromJson(reader, type);
-            if (loadedUsers != null) {
-                usuarios = loadedUsers;
-                System.out.println("Dados dos usuários carregados com sucesso.");
-            } else {
-                System.out.println("Nenhum usuário encontrado. Iniciando lista vazia.");
+        try (BufferedReader reader = new BufferedReader(new FileReader(USERS_FILE))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 6) {
+                    String nome = parts[0];
+                    String cpf = parts[1];
+                    String telefone = parts[2];
+                    String endereco = parts[3];
+
+                    // Ajuste para a data no formato padrão que o Java entende
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                    Date dataNascimento = sdf.parse(parts[4]);
+                    String senha = parts[5];
+
+                    // Criar o usuário e adicioná-lo ao mapa
+                    User user = new User(nome, cpf, telefone, endereco, dataNascimento, senha);
+                    usuarios.put(cpf, user);
+                }
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("Arquivo de usuários não encontrado. Iniciando lista vazia.");
-        } catch (IOException e) {
+            System.out.println("Dados dos usuários carregados com sucesso.");
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Erro ao carregar os dados dos usuários.");
         }
@@ -93,3 +107,4 @@ public class UserManager {
         loggedInUser = null;  // Limpa o usuário logado
     }
 }
+

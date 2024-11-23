@@ -1,6 +1,5 @@
 package easyticket;
 
-import com.google.gson.Gson;
 import java.io.*;
 import java.util.Arrays;
 
@@ -11,7 +10,8 @@ public class Theater {
 
     // Construtor privado
     private Theater() {
-        carregarDados(); // Carrega os dados ao instanciar
+        inicializarPoltronas();  // Garante que as poltronas sejam inicializadas sempre
+        carregarDados();  // Carrega os dados ao instanciar
     }
 
     // Método estático para obter a instância única (Singleton)
@@ -24,15 +24,49 @@ public class Theater {
 
     // Método para inicializar as poltronas
     private void inicializarPoltronas() {
-        poltronasDisponiveis = new Boolean[5][3][3][];
-        for (int area = 0; area < 5; area++) {
-            for (int espetaculo = 0; espetaculo < 3; espetaculo++) {
-                for (int sessao = 0; sessao < 3; sessao++) {
+        poltronasDisponiveis = new Boolean[5][3][3][]; // Inicializa o array de poltronas (ajuste conforme seu modelo)
+        for (int area = 0; area < poltronasDisponiveis.length; area++) {
+            for (int espetaculo = 0; espetaculo < poltronasDisponiveis[area].length; espetaculo++) {
+                for (int sessao = 0; sessao < poltronasDisponiveis[area][espetaculo].length; sessao++) {
                     poltronasDisponiveis[area][espetaculo][sessao] = new Boolean[poltronasPorArea[area]];
-                    // Inicializa todas as poltronas como disponíveis (false)
-                    Arrays.fill(poltronasDisponiveis[area][espetaculo][sessao], Boolean.FALSE);
+                    Arrays.fill(poltronasDisponiveis[area][espetaculo][sessao], Boolean.FALSE);  // Inicializa todas as poltronas como disponíveis
                 }
             }
+        }
+    }
+
+    // Método para carregar os dados das poltronas a partir do arquivo "poltronas.txt"
+    public void carregarDados() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("poltronas.txt"))) {
+            String line;
+            int areaIndex = 0, espetaculoIndex = 0, sessaoIndex = 0, poltronaIndex = 0;
+
+            while ((line = reader.readLine()) != null) {
+                for (char estado : line.toCharArray()) {
+                    if (poltronasDisponiveis == null) {
+                        inicializarPoltronas();  // Garante que as poltronas estão inicializadas
+                    }
+                    poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex][poltronaIndex] = (estado == '1');
+                    poltronaIndex++;
+                    if (poltronaIndex == poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex].length) {
+                        poltronaIndex = 0;
+                        sessaoIndex++;
+                        if (sessaoIndex == poltronasDisponiveis[areaIndex][espetaculoIndex].length) {
+                            sessaoIndex = 0;
+                            espetaculoIndex++;
+                            if (espetaculoIndex == poltronasDisponiveis[areaIndex].length) {
+                                espetaculoIndex = 0;
+                                areaIndex++;
+                            }
+                        }
+                    }
+                }
+            }
+            System.out.println("Dados das poltronas carregados com sucesso.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Erro ao carregar os dados das poltronas.");
+            inicializarPoltronas();  // Se houver erro, inicializa as poltronas
         }
     }
 
@@ -51,55 +85,41 @@ public class Theater {
         poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex][poltrona] = true;
     }
 
-    // Método para salvar os dados das poltronas
+    // Método para salvar os dados das poltronas em um arquivo
     public void salvarDados() {
-        try (Writer writer = new FileWriter("poltronas.json")) {
-            Gson gson = new Gson();
-            gson.toJson(poltronasDisponiveis, writer);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("poltronas.txt"))) {
+            for (int areaIndex = 0; areaIndex < poltronasDisponiveis.length; areaIndex++) {
+                for (int espetaculoIndex = 0; espetaculoIndex < poltronasDisponiveis[areaIndex].length; espetaculoIndex++) {
+                    for (int sessaoIndex = 0; sessaoIndex < poltronasDisponiveis[areaIndex][espetaculoIndex].length; sessaoIndex++) {
+                        StringBuilder line = new StringBuilder();
+                        for (boolean poltrona : poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex]) {
+                            line.append(poltrona ? "1" : "0");
+                        }
+                        writer.write(line.toString());
+                        writer.newLine();
+                    }
+                }
+            }
             System.out.println("Dados das poltronas salvos com sucesso.");
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Erro ao salvar os dados das poltronas.");
         }
     }
 
-    public void carregarDados() {
-        try (Reader reader = new FileReader("poltronas.json")) {
-            Gson gson = new Gson();
-            poltronasDisponiveis = gson.fromJson(reader, Boolean[][][][].class);
-            if (poltronasDisponiveis == null) {
-                System.out.println("Dados das poltronas estão vazios. Inicializando poltronas.");
-                inicializarPoltronas();
-            } else {
-                System.out.println("Dados das poltronas carregados com sucesso.");
-            }
-        } catch (FileNotFoundException e) {
-            // Arquivo não encontrado, inicializa poltronas
-            System.out.println("Arquivo poltronas.json não encontrado. Inicializando poltronas.");
-            inicializarPoltronas();
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Erro ao carregar os dados das poltronas. Inicializando poltronas.");
-            inicializarPoltronas();
-        }
-    }
-
+    // Método para limpar os dados das poltronas
     public void limparDados() {
-        // Reinicializa as poltronas
-        inicializarPoltronas();
-
-        // Exclui o arquivo de dados
-        File file = new File("poltronas.json");
+        inicializarPoltronas();  // Reinicializa as poltronas
+        File file = new File("poltronas.txt");
         if (file.exists()) {
             if (file.delete()) {
-                System.out.println("Arquivo poltronas.json excluído com sucesso.");
+                System.out.println("Arquivo poltronas.txt excluído com sucesso.");
             } else {
-                System.out.println("Falha ao excluir o arquivo poltronas.json.");
+                System.out.println("Falha ao excluir o arquivo poltronas.txt.");
             }
         } else {
-            System.out.println("Arquivo poltronas.json não existe.");
+            System.out.println("Arquivo poltronas.txt não existe.");
         }
     }
-
 }
-
 
