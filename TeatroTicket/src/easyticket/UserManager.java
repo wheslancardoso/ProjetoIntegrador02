@@ -17,27 +17,25 @@ public class UserManager {
     public boolean validarSenha(String senha) {
         // Expressão regular para verificar os requisitos da senha
         String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$";
-
-        // Retorna verdadeiro se a senha atender aos requisitos
-        return senha.matches(regex);
+        return senha.matches(regex);  // Retorna verdadeiro se a senha atender aos requisitos
     }
 
     // Método para cadastrar o usuário
     public boolean cadastrarUsuario(User user, String senha) {
-        // Primeiramente, valida a senha
+        // Verificar se o CPF já está cadastrado antes de validar a senha
+        if (usuarios.containsKey(user.getCpf())) {
+            JOptionPane.showMessageDialog(null, "CPF já cadastrado.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return false; // Não faz o cadastro se o CPF já existe
+        }
+
+        // Validar a senha só depois de garantir que o CPF não está cadastrado
         if (!validarSenha(senha)) {
             JOptionPane.showMessageDialog(null, "A senha deve ter pelo menos 8 caracteres, " +
                     "uma letra maiúscula, uma minúscula, um número e um caractere especial.");
             return false;
         }
 
-        // Verifica se o CPF já está cadastrado
-        if (usuarios.containsKey(user.getCpf())) {
-            JOptionPane.showMessageDialog(null, "CPF já cadastrado.", "Erro", JOptionPane.ERROR_MESSAGE);
-            return false; // CPF já cadastrado
-        }
-
-        // Se a senha for válida e o CPF não estiver cadastrado, adiciona o usuário
+        // Se o CPF não estiver cadastrado e a senha for válida, cadastra o usuário
         usuarios.put(user.getCpf(), user);
         return true;
     }
