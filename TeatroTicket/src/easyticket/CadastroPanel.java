@@ -7,13 +7,6 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class CadastroPanel extends JPanel {
     private UserManager userManager;
     private JTextField nomeField;
@@ -197,10 +190,13 @@ public class CadastroPanel extends JPanel {
             if (sucesso) {
                 JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                 mainFrame.showLogin(); // Após cadastro, retorna ao login
+            } else {
+                JOptionPane.showMessageDialog(this, "CPF já cadastrado.", "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Data de nascimento inválida. Use o formato dd/MM/yyyy.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
+
 
