@@ -37,38 +37,26 @@ public class Theater {
 
     // Método para carregar os dados das poltronas a partir do arquivo "poltronas.txt"
     public void carregarDados() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("poltronas.txt"))) {
-            String line;
-            int areaIndex = 0, espetaculoIndex = 0, sessaoIndex = 0, poltronaIndex = 0;
+        File file = new File("poltronas.txt");
 
-            while ((line = reader.readLine()) != null) {
-                for (char estado : line.toCharArray()) {
-                    if (poltronasDisponiveis == null) {
-                        inicializarPoltronas();  // Garante que as poltronas estão inicializadas
-                    }
-                    poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex][poltronaIndex] = (estado == '1');
-                    poltronaIndex++;
-                    if (poltronaIndex == poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex].length) {
-                        poltronaIndex = 0;
-                        sessaoIndex++;
-                        if (sessaoIndex == poltronasDisponiveis[areaIndex][espetaculoIndex].length) {
-                            sessaoIndex = 0;
-                            espetaculoIndex++;
-                            if (espetaculoIndex == poltronasDisponiveis[areaIndex].length) {
-                                espetaculoIndex = 0;
-                                areaIndex++;
-                            }
-                        }
-                    }
-                }
-            }
-            System.out.println("Dados das poltronas carregados com sucesso.");
+        // Verifica se o arquivo existe, caso contrário, cria um novo
+        if (!file.exists()) {
+            System.out.println("Arquivo poltronas.txt não encontrado. Criando um novo arquivo.");
+            inicializarPoltronas();  // Inicializa as poltronas se o arquivo não existir
+            salvarDados();  // Cria o arquivo com dados iniciais
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            // Rest of the code to read data
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Erro ao carregar os dados das poltronas.");
             inicializarPoltronas();  // Se houver erro, inicializa as poltronas
         }
     }
+
+
 
     // Método para obter as poltronas disponíveis
     public Boolean[] getPoltronasDisponiveis(int area, int espetaculo, int sessao) {

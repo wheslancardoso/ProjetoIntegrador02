@@ -1,10 +1,7 @@
 package easyticket;
 
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import java.io.*;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +10,7 @@ import java.util.HashMap;
 public class Statistics {
     private static Statistics instance = null;
     private List<Ticket> ticketsVendidos;
-    private static final String FILE_PATH = "tickets.json";
+    private static final String FILE_PATH = "tickets.txt";  // Alterado para .txt
 
     public Statistics() {
         this.ticketsVendidos = new ArrayList<>();
@@ -31,7 +28,6 @@ public class Statistics {
     // Adiciona um ingresso vendido
     public void addSale(Ticket ticket) {
         ticketsVendidos.add(ticket);
-        // Não chame carregarDados() aqui para evitar sobrescrita de dados
     }
 
     // Imprime os ingressos associados a um CPF com numeração
@@ -228,9 +224,12 @@ public class Statistics {
 
     // Métodos para salvar e carregar dados dos ingressos vendidos
     public void salvarDados() {
-        try (Writer writer = new FileWriter(FILE_PATH)) {
-            Gson gson = new Gson();
-            gson.toJson(ticketsVendidos, writer);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            for (Ticket ticket : ticketsVendidos) {
+                writer.write(ticket.getCpf() + "," + ticket.getEspetaculo() + "," + ticket.getSessao() + "," +
+                        ticket.getArea() + "," + ticket.getPoltrona() + "," + ticket.getPreco());
+                writer.newLine();
+            }
             System.out.println("Dados dos ingressos salvos com sucesso.");
         } catch (IOException e) {
             e.printStackTrace();
@@ -239,33 +238,45 @@ public class Statistics {
     }
 
     public void carregarDados() {
-        try (Reader reader = new FileReader(FILE_PATH)) {
-            Gson gson = new Gson();
-            Type listType = new TypeToken<List<Ticket>>(){}.getType();
-            List<Ticket> loadedTickets = gson.fromJson(reader, listType);
-            if (loadedTickets != null) {
-                ticketsVendidos = loadedTickets;
-                System.out.println("Dados dos ingressos carregados com sucesso.");
-            } else {
-                ticketsVendidos = new ArrayList<>();
-                System.out.println("Nenhum ingresso encontrado no arquivo. Lista iniciada vazia.");
+        File file = new File(FILE_PATH);
+        if (!file.exists()) {
+            System.out.println("Arquivo " + FILE_PATH + " não encontrado. Nenhum dado foi carregado.");
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 6) {
+                    String cpf = parts[0];
+                    String espetaculo = parts[1];
+                    String sessao = parts[2];
+                    String area = parts[3];
+
+                    // Tenta converter o valor de poltrona para inteiro e preco para double
+                    int poltrona = Integer.parseInt(parts[4].trim());
+                    double preco = Double.parseDouble(parts[5].trim());
+
+                    // Criar o ticket e adicionar à lista
+                    Ticket ticket = new Ticket(cpf, espetaculo, sessao, area, poltrona, preco);
+                    ticketsVendidos.add(ticket);
+                }
             }
-        } catch (FileNotFoundException e) {
-            // Arquivo não encontrado, inicia lista vazia
-            System.out.println("Arquivo " + FILE_PATH + " não encontrado. Iniciando lista de ingressos vazia.");
-            ticketsVendidos = new ArrayList<>();
+            System.out.println("Dados dos ingressos carregados com sucesso.");
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Erro ao carregar os dados dos ingressos. Lista iniciada vazia.");
-            ticketsVendidos = new ArrayList<>();
+            System.out.println("Erro ao carregar os dados dos ingressos.");
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            System.out.println("Erro de formato nos dados dos ingressos.");
         }
     }
 
-    public void limparDados() {
-        // Limpa a lista de ingressos vendidos
-        ticketsVendidos.clear();
 
-        // Exclui o arquivo de dados
+
+    public void limparDados() {
+        ticketsVendidos.clear();
         File file = new File(FILE_PATH);
         if (file.exists()) {
             if (file.delete()) {

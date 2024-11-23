@@ -8,6 +8,17 @@ public class Ticket {
     private double preco;
     private int poltrona;
 
+    // Constructor with all fields
+    public Ticket(String cpf, String espetaculo, String sessao, String area, int poltrona, double preco) {
+        this.cpf = cpf;
+        this.espetaculo = espetaculo;
+        this.sessao = sessao;
+        this.area = area;
+        this.poltrona = poltrona;
+        this.preco = preco;
+    }
+
+    // Constructor without poltrona and preco
     public Ticket(String cpf, String espetaculo, String sessao, String area) {
         this.cpf = cpf;
         this.espetaculo = espetaculo;

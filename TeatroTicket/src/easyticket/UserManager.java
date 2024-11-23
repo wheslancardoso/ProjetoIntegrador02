@@ -38,6 +38,12 @@ public class UserManager {
 
     // Método para carregar os dados dos usuários a partir do arquivo
     public void carregarDados() {
+        File file = new File(USERS_FILE);
+        if (!file.exists()) {
+            System.out.println("Arquivo " + USERS_FILE + " não encontrado. Nenhum dado foi carregado.");
+            return;
+        }
+
         try (BufferedReader reader = new BufferedReader(new FileReader(USERS_FILE))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -64,6 +70,7 @@ public class UserManager {
             JOptionPane.showMessageDialog(null, "Erro ao carregar os dados dos usuários.");
         }
     }
+
 
     // Método para cadastrar o usuário
     public boolean cadastrarUsuario(User user, String senha) {
