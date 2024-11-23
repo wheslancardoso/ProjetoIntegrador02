@@ -7,6 +7,13 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class CadastroPanel extends JPanel {
     private UserManager userManager;
     private JTextField nomeField;
@@ -178,12 +185,6 @@ public class CadastroPanel extends JPanel {
             return;
         }
 
-        // Validar CPF
-        if (!ValidadorCPF.validaCPF(cpf)) {
-            JOptionPane.showMessageDialog(this, "CPF inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date data = sdf.parse(dataNascimento);
@@ -192,16 +193,14 @@ public class CadastroPanel extends JPanel {
             User user = new User(nome, cpf, telefone, endereco, data, senha);
 
             // Cadastrar o usuário
-            boolean sucesso = userManager.cadastrarUsuario(user);
+            boolean sucesso = userManager.cadastrarUsuario(user, senha);
             if (sucesso) {
                 JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                 mainFrame.showLogin(); // Após cadastro, retorna ao login
-            } else {
-                JOptionPane.showMessageDialog(this, "CPF já cadastrado.", "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Data de nascimento inválida. Use o formato dd/MM/yyyy.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
-
 }
+
