@@ -2,83 +2,82 @@ package easyticket;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class CancelTicketPanel extends JPanel {
     private TicketManager ticketManager;
-    private UserManager userManager;  // Para acessar o usuário logado
+    private UserManager userManager;
+    private MainFrame mainFrame;  // Referência para o MainFrame
 
-    // Componentes da interface
-    private JTextField espetaculoField;
-    private JTextField sessaoField;
-    private JTextField areaField;
-    private JTextField poltronaField;
-    private JButton cancelarButton;
-
-    public CancelTicketPanel(TicketManager ticketManager, UserManager userManager) {
+    public CancelTicketPanel(TicketManager ticketManager, UserManager userManager, MainFrame mainFrame) {
         this.ticketManager = ticketManager;
-        this.userManager = userManager;  // Recebe o UserManager para obter o usuário logado
+        this.userManager = userManager;
+        this.mainFrame = mainFrame;  // Certifique-se de que a referência é atribuída corretamente
+        initComponents();
+    }
 
-        // Configurações do painel
-        setLayout(new GridLayout(5, 2, 5, 5));
+    private void initComponents() {
+        setLayout(new GridLayout(6, 2, 10, 10));
 
-        // Labels e campos de texto
-        add(new JLabel("Espetáculo:"));
-        espetaculoField = new JTextField();
-        add(espetaculoField);
+        JLabel espetaculoLabel = new JLabel("Espetáculo:");
+        String[] espetaculos = {" As tranças da vovó careca", " A volta dos que chegaram a partir", " Poeira em alto mar"};
+        JComboBox<String> espetaculoBox = new JComboBox<>(espetaculos);
 
-        add(new JLabel("Sessão:"));
-        sessaoField = new JTextField();
-        add(sessaoField);
+        JLabel sessaoLabel = new JLabel("Sessão:");
+        String[] sessoes = {" Manhã", " Tarde", " Noite"};
+        JComboBox<String> sessaoBox = new JComboBox<>(sessoes);
 
-        add(new JLabel("Área:"));
-        areaField = new JTextField();
-        add(areaField);
+        JLabel areaLabel = new JLabel("Área:");
+        String[] areas = {" Plateia A - R$40,00", " Plateia B - R$60,00", " Frisa - R$80,00", " Camarote - R$120,00", " Balcão Nobre - R$250,00"};
+        JComboBox<String> areaBox = new JComboBox<>(areas);
 
-        add(new JLabel("Poltrona:"));
-        poltronaField = new JTextField();
-        add(poltronaField);
+        JLabel poltronaLabel = new JLabel("Poltrona:");
+        JTextField poltronaField = new JTextField();
 
-        // Botão de Cancelar
-        cancelarButton = new JButton("Cancelar Ingresso");
-        cancelarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cancelarIngresso();
+        JButton cancelButton = new JButton("Cancelar Ingresso");
+        JButton backButton = new JButton("Voltar");
+
+        // Ação do botão cancelar ingresso
+        cancelButton.addActionListener(e -> {
+            User user = userManager.getLoggedInUser();  // Obtém o usuário logado
+            if (user == null) {
+                JOptionPane.showMessageDialog(this, "Você precisa estar logado para cancelar ingressos.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
             }
+
+            String cpf = user.getCpf();  // Usa o CPF do usuário logado
+            int espetaculo = espetaculoBox.getSelectedIndex() + 1;
+            int sessao = sessaoBox.getSelectedIndex() + 1;
+            int area = areaBox.getSelectedIndex() + 1;
+            int poltrona;
+
+            try {
+                poltrona = Integer.parseInt(poltronaField.getText());
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Número da poltrona inválido.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            ticketManager.cancelarIngresso(cpf, poltrona - 1, String.valueOf(espetaculo), String.valueOf(sessao), String.valueOf(area));
+            JOptionPane.showMessageDialog(this, "Ingresso cancelado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
         });
-        add(cancelarButton);
+
+        // Ação do botão voltar
+        backButton.addActionListener(e -> {
+            // Voltar ao menu principal usando a referência de mainFrame
+            ((CardLayout) mainFrame.getContentPane().getLayout()).show(mainFrame.getContentPane(), "Menu");
+        });
+
+        add(espetaculoLabel);
+        add(espetaculoBox);
+        add(sessaoLabel);
+        add(sessaoBox);
+        add(areaLabel);
+        add(areaBox);
+        add(poltronaLabel);
+        add(poltronaField);
+        add(cancelButton);
+        add(backButton);
     }
-
-    // Função para realizar o cancelamento do ingresso
-    private void cancelarIngresso() {
-        // Obtendo o CPF do usuário logado
-        String cpf = userManager.getLoggedInUser().getCpf();
-        String espetaculo = espetaculoField.getText();
-        String sessao = sessaoField.getText();
-        String area = areaField.getText();
-        String poltronaText = poltronaField.getText();
-
-        if (espetaculo.isEmpty() || sessao.isEmpty() || area.isEmpty() || poltronaText.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.");
-            return;
-        }
-
-        try {
-            int poltrona = Integer.parseInt(poltronaText);
-
-            // Debug para verificar se o método de cancelamento está sendo chamado
-            System.out.println("Chamando cancelarIngresso com: CPF=" + cpf + ", Poltrona=" + poltrona +
-                    ", Espetáculo=" + espetaculo + ", Sessão=" + sessao + ", Área=" + area);
-
-            // Chama o método de cancelamento no TicketManager, usando o CPF do usuário logado
-            ticketManager.cancelarIngresso(cpf, poltrona, espetaculo, sessao, area);
-
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Poltrona deve ser um número válido.");
-        }
-    }
-
 }
+
 

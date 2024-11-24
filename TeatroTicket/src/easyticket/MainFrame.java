@@ -46,6 +46,7 @@ public class MainFrame extends JFrame {
         // Painéis das funcionalidades
         BuyTicketPanel buyPanel = new BuyTicketPanel(ticketManager, this, userManager);
         PrintTicketPanel printPanel = new PrintTicketPanel(ticketManager, this, userManager);
+        CancelTicketPanel cancelPanel = new CancelTicketPanel(ticketManager, userManager, this); // Passando mainFrame
         StatisticsPanel statsPanel = new StatisticsPanel(ticketManager, this);
 
         // Adiciona os painéis ao CardLayout com identificadores
@@ -54,6 +55,7 @@ public class MainFrame extends JFrame {
         mainPanel.add(menuPanel, "Menu");
         mainPanel.add(buyPanel, "Comprar");
         mainPanel.add(printPanel, "Imprimir");
+        mainPanel.add(cancelPanel, "Cancelar"); // Adiciona o painel de cancelamento
         mainPanel.add(statsPanel, "Estatísticas");
 
         // Define o painel inicial
@@ -87,16 +89,7 @@ public class MainFrame extends JFrame {
         });
 
         cancelTicketButton.addActionListener(e -> {
-            // Exibe a tela de cancelamento de ingresso
-            SwingUtilities.invokeLater(() -> {
-                CancelTicketPanel cancelPanel = new CancelTicketPanel(ticketManager, userManager);
-                JFrame frame = new JFrame("Cancelar Ingresso");
-                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                frame.setSize(400, 300); // Ajuste o tamanho da janela
-                frame.add(cancelPanel);  // Adiciona o painel ao frame
-                frame.setLocationRelativeTo(null);  // Centraliza a janela
-                frame.setVisible(true);  // Exibe a janela
-            });
+            cardLayout.show(mainPanel, "Cancelar"); // Exibe o painel de cancelamento
         });
 
 
