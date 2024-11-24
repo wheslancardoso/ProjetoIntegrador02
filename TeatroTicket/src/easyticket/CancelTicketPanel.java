@@ -2,82 +2,133 @@ package easyticket;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
 public class CancelTicketPanel extends JPanel {
     private TicketManager ticketManager;
     private UserManager userManager;
-    private MainFrame mainFrame;  // Referência para o MainFrame
+    private MainFrame mainFrame;
+
+    // Componente para exibir os ingressos comprados
+    private JList<String> ticketList;
+    private DefaultListModel<String> ticketListModel;
 
     public CancelTicketPanel(TicketManager ticketManager, UserManager userManager, MainFrame mainFrame) {
         this.ticketManager = ticketManager;
         this.userManager = userManager;
-        this.mainFrame = mainFrame;  // Certifique-se de que a referência é atribuída corretamente
+        this.mainFrame = mainFrame;
         initComponents();
     }
 
     private void initComponents() {
-        setLayout(new GridLayout(6, 2, 10, 10));
+        setLayout(new BorderLayout());
 
-        JLabel espetaculoLabel = new JLabel("Espetáculo:");
-        String[] espetaculos = {" As tranças da vovó careca", " A volta dos que chegaram a partir", " Poeira em alto mar"};
-        JComboBox<String> espetaculoBox = new JComboBox<>(espetaculos);
+        // Painel superior com instruções
+        JPanel topPanel = new JPanel();
+        topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
+        topPanel.add(new JLabel("Selecione o ingresso que deseja cancelar:"));
 
-        JLabel sessaoLabel = new JLabel("Sessão:");
-        String[] sessoes = {" Manhã", " Tarde", " Noite"};
-        JComboBox<String> sessaoBox = new JComboBox<>(sessoes);
+        // Carregar os ingressos comprados pelo usuário
+        loadUserTickets();
 
-        JLabel areaLabel = new JLabel("Área:");
-        String[] areas = {" Plateia A - R$40,00", " Plateia B - R$60,00", " Frisa - R$80,00", " Camarote - R$120,00", " Balcão Nobre - R$250,00"};
-        JComboBox<String> areaBox = new JComboBox<>(areas);
+        // JList para exibir os ingressos comprados
+        ticketListModel = new DefaultListModel<>();
+        ticketList = new JList<>(ticketListModel);
+        JScrollPane ticketScrollPane = new JScrollPane(ticketList);
 
-        JLabel poltronaLabel = new JLabel("Poltrona:");
-        JTextField poltronaField = new JTextField();
+        topPanel.add(ticketScrollPane);
+        add(topPanel, BorderLayout.NORTH);
 
+        // Painel inferior com botões
+        JPanel bottomPanel = new JPanel();
         JButton cancelButton = new JButton("Cancelar Ingresso");
         JButton backButton = new JButton("Voltar");
 
-        // Ação do botão cancelar ingresso
-        cancelButton.addActionListener(e -> {
-            User user = userManager.getLoggedInUser();  // Obtém o usuário logado
-            if (user == null) {
-                JOptionPane.showMessageDialog(this, "Você precisa estar logado para cancelar ingressos.", "Erro", JOptionPane.ERROR_MESSAGE);
-                return;
+        cancelButton.addActionListener(e -> cancelSelectedTicket());
+        backButton.addActionListener(e -> goBackToMenu());
+
+        bottomPanel.setLayout(new GridLayout(1, 2, 10, 10));
+        bottomPanel.add(cancelButton);
+        bottomPanel.add(backButton);
+
+        add(bottomPanel, BorderLayout.SOUTH);
+    }
+
+    // Carregar os ingressos comprados pelo usuário logado
+    private void loadUserTickets() {
+        User user = userManager.getLoggedInUser();
+        if (user != null) {
+            String cpf = user.getCpf();
+            List<Ticket> tickets = ticketManager.getTicketsByUser(cpf);  // Método que retorna os ingressos do usuário
+
+            for (Ticket ticket : tickets) {
+                // Adiciona os ingressos no modelo para exibição
+                String ticketDetails = "Espetáculo: " + ticket.getEspetaculo() + ", Sessão: " + ticket.getSessao() +
+                        ", Área: " + ticket.getArea() + ", Poltrona: " + (ticket.getPoltrona() + 1) +
+                        ", Preço: R$ " + ticket.getPreco();
+                ticketListModel.addElement(ticketDetails);
             }
+        }
+    }
 
-            String cpf = user.getCpf();  // Usa o CPF do usuário logado
-            int espetaculo = espetaculoBox.getSelectedIndex() + 1;
-            int sessao = sessaoBox.getSelectedIndex() + 1;
-            int area = areaBox.getSelectedIndex() + 1;
-            int poltrona;
+    // Ação do botão "Cancelar Ingresso"
+    private void cancelSelectedTicket() {
+        int selectedIndex = ticketList.getSelectedIndex();
+        if (selectedIndex != -1) {
+            // Seleciona o ingresso
+            String selectedTicketDetails = ticketList.getSelectedValue();
+            String[] details = selectedTicketDetails.split(", ");
+            String espetaculo = details[0].split(": ")[1];
+            String sessao = details[1].split(": ")[1];
+            String area = details[2].split(": ")[1];
+            String poltrona = details[3].split(": ")[1];
+            String cpf = userManager.getLoggedInUser().getCpf();
 
-            try {
-                poltrona = Integer.parseInt(poltronaField.getText());
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "Número da poltrona inválido.", "Erro", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
+            // Obter o preço (supondo que o preço seja extraído de algum lugar do Ticket)
+            double preco = getPrecoFromTicket(selectedTicketDetails);  // Implemente este método conforme necessário
 
-            ticketManager.cancelarIngresso(cpf, poltrona - 1, String.valueOf(espetaculo), String.valueOf(sessao), String.valueOf(area));
+            // Criar o ticket
+            Ticket ticket = new Ticket(cpf, espetaculo, sessao, area, Integer.parseInt(poltrona) - 1, preco);
+
+            // Cancelar o ingresso
+            ticketManager.cancelarIngresso(cpf, ticket.getPoltrona(), espetaculo, sessao, area);
+
+            // Remover da lista
+            ticketListModel.remove(selectedIndex);
+
+            // Recarregar ingressos
+            reloadUserTickets();
+
             JOptionPane.showMessageDialog(this, "Ingresso cancelado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-        });
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione um ingresso para cancelar.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 
-        // Ação do botão voltar
-        backButton.addActionListener(e -> {
-            // Voltar ao menu principal usando a referência de mainFrame
-            ((CardLayout) mainFrame.getContentPane().getLayout()).show(mainFrame.getContentPane(), "Menu");
-        });
+    // Ação do botão "Voltar"
+    private void goBackToMenu() {
+        ((CardLayout) mainFrame.getContentPane().getLayout()).show(mainFrame.getContentPane(), "Menu");
+    }
 
-        add(espetaculoLabel);
-        add(espetaculoBox);
-        add(sessaoLabel);
-        add(sessaoBox);
-        add(areaLabel);
-        add(areaBox);
-        add(poltronaLabel);
-        add(poltronaField);
-        add(cancelButton);
-        add(backButton);
+    // Recarregar ingressos ao acessar o painel
+    public void reloadUserTickets() {
+        // Limpar a lista atual
+        ticketListModel.clear();
+
+        // Recarregar os ingressos do usuário logado
+        loadUserTickets();
+    }
+
+    // Método para extrair o preço do ingresso da string de detalhes
+    private double getPrecoFromTicket(String ticketDetails) {
+        // Procura a substring "Preço: R$ " na string ticketDetails
+        String precoString = ticketDetails.split("Preço: R$ ")[1].trim();
+
+        // Remove qualquer coisa após o símbolo da moeda, como espaços ou vírgulas, e converte para double
+        precoString = precoString.replace(",", ".");  // Caso o preço venha com vírgula no lugar do ponto
+        return Double.parseDouble(precoString);
     }
 }
+
 
 

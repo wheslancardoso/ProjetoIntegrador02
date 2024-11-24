@@ -10,6 +10,8 @@ public class MainFrame extends JFrame {
     private UserManager userManager;
     private CardLayout cardLayout;
     private JPanel mainPanel;
+    // Defina cancelPanel como um campo da classe
+    private CancelTicketPanel cancelPanel;
 
     public MainFrame() {
         ticketManager = new TicketManager();
@@ -46,7 +48,8 @@ public class MainFrame extends JFrame {
         // Painéis das funcionalidades
         BuyTicketPanel buyPanel = new BuyTicketPanel(ticketManager, this, userManager);
         PrintTicketPanel printPanel = new PrintTicketPanel(ticketManager, this, userManager);
-        CancelTicketPanel cancelPanel = new CancelTicketPanel(ticketManager, userManager, this); // Passando mainFrame
+        // CancelTicketPanel cancelPanel = new CancelTicketPanel(ticketManager, userManager, this); // Passando mainFrame
+        cancelPanel = new CancelTicketPanel(ticketManager, userManager, this); // Passando mainFrame
         StatisticsPanel statsPanel = new StatisticsPanel(ticketManager, this);
 
         // Adiciona os painéis ao CardLayout com identificadores
@@ -90,6 +93,7 @@ public class MainFrame extends JFrame {
 
         cancelTicketButton.addActionListener(e -> {
             cardLayout.show(mainPanel, "Cancelar"); // Exibe o painel de cancelamento
+            cancelPanel.reloadUserTickets();  // Recarregar ingressos ao acessar a tela de cancelamento
         });
 
 

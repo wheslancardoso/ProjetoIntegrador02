@@ -59,13 +59,32 @@ public class Theater {
         }
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            // Rest of the code to read data
+            int areaIndex = 0;
+            int espetaculoIndex = 0;
+            int sessaoIndex = 0;
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                for (int i = 0; i < line.length(); i++) {
+                    poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex][i] = line.charAt(i) == '1';
+                }
+                sessaoIndex++;
+                if (sessaoIndex >= poltronasDisponiveis[areaIndex][espetaculoIndex].length) {
+                    sessaoIndex = 0;
+                    espetaculoIndex++;
+                    if (espetaculoIndex >= poltronasDisponiveis[areaIndex].length) {
+                        espetaculoIndex = 0;
+                        areaIndex++;
+                    }
+                }
+            }
+            System.out.println("Dados das poltronas carregados com sucesso.");
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Erro ao carregar os dados das poltronas.");
-            inicializarPoltronas();  // Se houver erro, inicializa as poltronas
         }
     }
+
 
 
 
@@ -92,7 +111,7 @@ public class Theater {
                     for (int sessaoIndex = 0; sessaoIndex < poltronasDisponiveis[areaIndex][espetaculoIndex].length; sessaoIndex++) {
                         StringBuilder line = new StringBuilder();
                         for (boolean poltrona : poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex]) {
-                            line.append(poltrona ? "1" : "0");
+                            line.append(poltrona ? "1" : "0");  // Salva '1' para poltrona ocupada, '0' para disponível
                         }
                         writer.write(line.toString());
                         writer.newLine();
@@ -105,6 +124,7 @@ public class Theater {
             System.out.println("Erro ao salvar os dados das poltronas.");
         }
     }
+
 
     // Método para limpar os dados das poltronas
     public void limparDados() {

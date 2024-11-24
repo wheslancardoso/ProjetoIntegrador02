@@ -92,11 +92,10 @@ public class TicketManager {
 
     public void finalizarCompra(Ticket ticket) {
         theater.reservarPoltrona(ticket);
-        statistics.addSale(ticket);
-        // Salvar dados após a compra
-        theater.salvarDados();
-        statistics.salvarDados();
+        statistics.addSale(ticket);  // Adiciona o ingresso à lista de vendas
+        salvarDados();  // Salva os dados após a compra
     }
+
 
     public String imprimirIngressos(String cpf) {
         StringBuilder mensagem = new StringBuilder("Ingressos do CPF " + cpf + ":\n\n");
@@ -139,6 +138,17 @@ public class TicketManager {
         statistics.salvarDados();
     }
 
+    // Método para obter os ingressos comprados por um usuário
+    public List<Ticket> getTicketsByUser(String cpf) {
+        List<Ticket> userTickets = new ArrayList<>();
+        for (Ticket ticket : statistics.getTickets()) {
+            if (ticket.getCpf().equals(cpf)) {
+                userTickets.add(ticket);
+            }
+        }
+        return userTickets;
+
+    }
 
     public void limparDados() {
         theater.limparDados();
