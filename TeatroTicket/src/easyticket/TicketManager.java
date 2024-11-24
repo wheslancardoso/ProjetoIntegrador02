@@ -107,6 +107,39 @@ public class TicketManager {
         return mensagem.toString();
     }
 
+    // Método para cancelar um ingresso
+    public void cancelarIngresso(String cpf, int poltrona, String espetaculo, String sessao, String area) {
+        boolean ingressoCancelado = false;
+
+        // Verifica os ingressos vendidos para encontrar o ingresso a ser cancelado
+        for (Ticket ticket : statistics.getTickets()) {
+            if (ticket.getCpf().equals(cpf) &&
+                    ticket.getEspetaculo().equals(espetaculo) &&
+                    ticket.getSessao().equals(sessao) &&
+                    ticket.getArea().equals(area) &&
+                    ticket.getPoltrona() == poltrona) {
+
+                // Cancela o ingresso removendo da lista de vendas e liberando a poltrona
+                statistics.removeSale(ticket);
+                theater.liberarPoltrona(ticket); // Liberar a poltrona no teatro
+                ingressoCancelado = true;
+                break;
+            }
+        }
+
+        // Mensagem para o usuário dependendo se o ingresso foi cancelado com sucesso
+        if (ingressoCancelado) {
+            JOptionPane.showMessageDialog(null, "Ingresso cancelado com sucesso.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Ingresso não encontrado ou erro ao cancelar.");
+        }
+
+        // Salvar dados após o cancelamento
+        theater.salvarDados();
+        statistics.salvarDados();
+    }
+
+
     public void limparDados() {
         theater.limparDados();
         statistics.limparDados();

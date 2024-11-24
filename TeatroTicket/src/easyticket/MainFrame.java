@@ -70,7 +70,7 @@ public class MainFrame extends JFrame {
         JButton buyTicketButton = new JButton("Comprar Ingresso");
         JButton printTicketButton = new JButton("Imprimir Ingresso");
         JButton statisticsButton = new JButton("Estatísticas de Vendas");
-        JButton clearDataButton = new JButton("Limpar Dados");
+        JButton cancelTicketButton = new JButton("Cancelar Ingresso");
         JButton exitButton = new JButton("Sair");
 
         // Adicionando ações aos botões
@@ -86,16 +86,20 @@ public class MainFrame extends JFrame {
             cardLayout.show(mainPanel, "Estatísticas");
         });
 
-        clearDataButton.addActionListener(e -> {
-            int confirm = JOptionPane.showConfirmDialog(this,
-                    "Tem certeza de que deseja limpar todos os dados? Esta ação não pode ser desfeita.",
-                    "Confirmação",
-                    JOptionPane.YES_NO_OPTION);
-            if (confirm == JOptionPane.YES_OPTION) {
-                ticketManager.limparDados();
-                JOptionPane.showMessageDialog(this, "Todos os dados foram limpos com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-            }
+        cancelTicketButton.addActionListener(e -> {
+            // Exibe a tela de cancelamento de ingresso
+            SwingUtilities.invokeLater(() -> {
+                CancelTicketPanel cancelPanel = new CancelTicketPanel(ticketManager, userManager);
+                JFrame frame = new JFrame("Cancelar Ingresso");
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setSize(400, 300); // Ajuste o tamanho da janela
+                frame.add(cancelPanel);  // Adiciona o painel ao frame
+                frame.setLocationRelativeTo(null);  // Centraliza a janela
+                frame.setVisible(true);  // Exibe a janela
+            });
         });
+
+
 
         exitButton.addActionListener(e -> System.exit(0));
 
@@ -104,7 +108,7 @@ public class MainFrame extends JFrame {
         buttonPanel.add(buyTicketButton);
         buttonPanel.add(printTicketButton);
         buttonPanel.add(statisticsButton);
-        buttonPanel.add(clearDataButton);
+        buttonPanel.add(cancelTicketButton);
         buttonPanel.add(exitButton);
 
         // Adiciona uma margem lateral ao buttonPanel

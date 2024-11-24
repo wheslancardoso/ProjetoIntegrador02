@@ -22,6 +22,17 @@ public class Theater {
         return instanciaUnica;
     }
 
+    // Método para liberar a poltrona
+    public void liberarPoltrona(Ticket ticket) {
+        int areaIndex = Integer.parseInt(ticket.getArea()) - 1;
+        int espetaculoIndex = Integer.parseInt(ticket.getEspetaculo()) - 1;
+        int sessaoIndex = Integer.parseInt(ticket.getSessao()) - 1;
+        int poltronaIndex = ticket.getPoltrona();
+
+        // Libera a poltrona (marcando como disponível)
+        poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex][poltronaIndex] = Boolean.FALSE;
+    }
+
     // Método para inicializar as poltronas
     private void inicializarPoltronas() {
         poltronasDisponiveis = new Boolean[5][3][3][]; // Inicializa o array de poltronas (ajuste conforme seu modelo)

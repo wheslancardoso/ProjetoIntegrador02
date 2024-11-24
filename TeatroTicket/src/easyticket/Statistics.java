@@ -24,6 +24,15 @@ public class Statistics {
         }
         return instance;
     }
+    // Retorna a lista de ingressos vendidos
+    public List<Ticket> getTickets() {
+        return ticketsVendidos;
+    }
+
+    // Remove a venda de um ingresso
+    public void removeSale(Ticket ticket) {
+        ticketsVendidos.remove(ticket);
+    }
 
     // Adiciona um ingresso vendido
     public void addSale(Ticket ticket) {

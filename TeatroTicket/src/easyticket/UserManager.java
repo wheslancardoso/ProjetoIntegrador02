@@ -78,14 +78,15 @@ public class UserManager {
             JOptionPane.showMessageDialog(null, "A senha não atende aos requisitos.");
             return false;
         }
+        // Verifica se o CPF já está cadastrado
         if (usuarios.containsKey(user.getCpf())) {
-            JOptionPane.showMessageDialog(null, "CPF já cadastrado.");
-            return false; // CPF já cadastrado
+            return false; // Retorna false, indicando CPF duplicado
         }
         usuarios.put(user.getCpf(), user);
         salvarDados();  // Salvar dados após cadastro
         return true;
     }
+
 
     // Método para validar a senha
     public boolean validarSenha(String senha) {
