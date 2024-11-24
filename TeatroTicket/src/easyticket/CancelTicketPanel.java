@@ -62,14 +62,14 @@ public class CancelTicketPanel extends JPanel {
             List<Ticket> tickets = ticketManager.getTicketsByUser(cpf);  // Método que retorna os ingressos do usuário
 
             for (Ticket ticket : tickets) {
-                // Adiciona os ingressos no modelo para exibição
-                String ticketDetails = "Espetáculo: " + ticket.getEspetaculo() + ", Sessão: " + ticket.getSessao() +
-                        ", Área: " + ticket.getArea() + ", Poltrona: " + (ticket.getPoltrona() + 1) +
-                        ", Preço: R$ " + ticket.getPreco();
-                ticketListModel.addElement(ticketDetails);
+                // Agora a lista irá exibir os nomes corretamente
+                ticketListModel.addElement(ticket.toString());
             }
         }
     }
+
+
+
 
     // Ação do botão "Cancelar Ingresso"
     private void cancelSelectedTicket() {
@@ -77,7 +77,7 @@ public class CancelTicketPanel extends JPanel {
         if (selectedIndex != -1) {
             // Seleciona o ingresso
             String selectedTicketDetails = ticketList.getSelectedValue();
-            String[] details = selectedTicketDetails.split(", ");
+            String[] details = selectedTicketDetails.split("\n");
             String espetaculo = details[0].split(": ")[1];
             String sessao = details[1].split(": ")[1];
             String area = details[2].split(": ")[1];
@@ -104,6 +104,7 @@ public class CancelTicketPanel extends JPanel {
             JOptionPane.showMessageDialog(this, "Selecione um ingresso para cancelar.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+
 
     // Ação do botão "Voltar"
     private void goBackToMenu() {

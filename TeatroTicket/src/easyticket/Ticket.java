@@ -38,6 +38,45 @@ public class Ticket {
         }
     }
 
+    // Mapeamento para nomes legíveis
+    public String getNomeEspetaculo() {
+        switch (espetaculo) {
+            case "1": return " As tranças da vovó careca ";
+            case "2": return " A volta dos que chegaram a partir ";
+            case "3": return " Poeira em alto mar ";
+            default: return " Desconhecido ";
+        }
+    }
+
+    public String getNomeSessao() {
+        switch (sessao) {
+            case "1": return " Manhã ";
+            case "2": return " Tarde ";
+            case "3": return " Noite ";
+            default: return " Desconhecida ";
+        }
+    }
+
+    public String getNomeArea() {
+        switch (area) {
+            case "1": return " Plateia A ";
+            case "2": return " Plateia B ";
+            case "3": return " Frisa ";
+            case "4": return " Camarote ";
+            case "5": return " Balcão Nobre ";
+            default: return " Desconhecida ";
+        }
+    }
+
+    @Override
+    public String toString() {
+        return " Espetáculo: " + getNomeEspetaculo() +
+                "\n , Sessão: " + getNomeSessao() +
+                "\n , Área: " + getNomeArea() +
+                "\n , Poltrona: " + (poltrona + 1) +
+                "\n , Preço: R$ " + String.format("%.2f", preco).replace(".", ",");
+    }
+
     public String getCpf() { return cpf; }
     public String getEspetaculo() { return espetaculo; }
     public String getSessao() { return sessao; }
