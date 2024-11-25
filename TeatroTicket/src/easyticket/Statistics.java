@@ -206,7 +206,7 @@ public class Statistics {
     }
 
     private String getNomeArea(String area) {
-        switch(area) {
+        switch (area) {
             case "1":
                 return "Plateia A";
             case "2":
@@ -273,19 +273,7 @@ public class Statistics {
         }
     }
 
-
-
-    public void limparDados() {
-        ticketsVendidos.clear();
-        File file = new File(FILE_PATH);
-        if (file.exists()) {
-            if (file.delete()) {
-                System.out.println("Arquivo " + FILE_PATH + " excluído com sucesso.");
-            } else {
-                System.out.println("Falha ao excluir o arquivo " + FILE_PATH + ".");
-            }
-        } else {
-            System.out.println("Arquivo " + FILE_PATH + " não existe.");
-        }
-    }
 }
+
+
+

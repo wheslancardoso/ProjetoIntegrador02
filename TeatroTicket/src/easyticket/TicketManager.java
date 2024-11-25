@@ -107,11 +107,6 @@ public class TicketManager {
         return mensagem.toString();
     }
 
-    public void limparDados() {
-        theater.limparDados();
-        statistics.limparDados();
-        System.out.println("Todos os dados foram limpos.");
-    }
 
     public String gerarEstatisticas() {
         return statistics.generateStatistics().toString();

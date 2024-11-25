@@ -75,8 +75,6 @@ public class Theater {
     }
 
 
-
-
     // Método para obter as poltronas disponíveis
     public Boolean[] getPoltronasDisponiveis(int area, int espetaculo, int sessao) {
         return poltronasDisponiveis[area][espetaculo][sessao];
@@ -113,20 +111,6 @@ public class Theater {
             System.out.println("Erro ao salvar os dados das poltronas.");
         }
     }
-
-    // Método para limpar os dados das poltronas
-    public void limparDados() {
-        inicializarPoltronas();  // Reinicializa as poltronas
-        File file = new File("poltronas.txt");
-        if (file.exists()) {
-            if (file.delete()) {
-                System.out.println("Arquivo poltronas.txt excluído com sucesso.");
-            } else {
-                System.out.println("Falha ao excluir o arquivo poltronas.txt.");
-            }
-        } else {
-            System.out.println("Arquivo poltronas.txt não existe.");
-        }
-    }
 }
+
 
