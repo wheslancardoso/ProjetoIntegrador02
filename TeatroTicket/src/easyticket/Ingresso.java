@@ -1,6 +1,6 @@
 package easyticket;
 
-public class Ticket {
+public class Ingresso {
     private String cpf;
     private String espetaculo;
     private String sessao;
@@ -9,7 +9,7 @@ public class Ticket {
     private int poltrona;
 
     // Constructor with all fields
-    public Ticket(String cpf, String espetaculo, String sessao, String area, int poltrona, double preco) {
+    public Ingresso(String cpf, String espetaculo, String sessao, String area, int poltrona, double preco) {
         this.cpf = cpf;
         this.espetaculo = espetaculo;
         this.sessao = sessao;
@@ -19,7 +19,7 @@ public class Ticket {
     }
 
     // Constructor without poltrona and preco
-    public Ticket(String cpf, String espetaculo, String sessao, String area) {
+    public Ingresso(String cpf, String espetaculo, String sessao, String area) {
         this.cpf = cpf;
         this.espetaculo = espetaculo;
         this.sessao = sessao;

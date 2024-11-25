@@ -2,7 +2,7 @@ package easyticket;
 
 import java.util.Date;
 
-public class User {
+public class Usuario {
     private String nome;
     private String cpf;
     private String telefone;
@@ -10,7 +10,7 @@ public class User {
     private Date dataNascimento;
     private String senha;
 
-    public User(String nome, String cpf, String telefone, String endereco, Date dataNascimento, String senha) {
+    public Usuario(String nome, String cpf, String telefone, String endereco, Date dataNascimento, String senha) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;

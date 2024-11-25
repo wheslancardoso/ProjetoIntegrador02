@@ -7,27 +7,27 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-public class Statistics {
-    private static Statistics instance = null;
-    private List<Ticket> ticketsVendidos;
+public class Estatisticas {
+    private static Estatisticas instance = null;
+    private List<Ingresso> ticketsVendidos;
     private static final String FILE_PATH = "tickets.txt";  // Alterado para .txt
 
-    public Statistics() {
+    public Estatisticas() {
         this.ticketsVendidos = new ArrayList<>();
     }
 
     // Método estático para obter a instância única
-    public static Statistics getInstance() {
+    public static Estatisticas getInstance() {
         if (instance == null) {
-            instance = new Statistics();
+            instance = new Estatisticas();
             instance.carregarDados();
         }
         return instance;
     }
 
     // Adiciona um ingresso vendido
-    public void addSale(Ticket ticket) {
-        ticketsVendidos.add(ticket);
+    public void addSale(Ingresso ingresso) {
+        ticketsVendidos.add(ingresso);
     }
 
     // Imprime os ingressos associados a um CPF com numeração
@@ -35,15 +35,15 @@ public class Statistics {
         boolean encontrou = false;
         int count = 1; // Contador para numerar os ingressos
 
-        for (Ticket ticket : ticketsVendidos) {
-            if (ticket.getCpf().equals(cpf)) {
+        for (Ingresso ingresso : ticketsVendidos) {
+            if (ingresso.getCpf().equals(cpf)) {
                 encontrou = true;
                 mensagem.append("Ingresso ").append(count).append(":\n");
-                mensagem.append("Espetáculo: ").append(getNomeEspetaculo(ticket.getEspetaculo())).append("\n");
-                mensagem.append("Sessão: ").append(getNomeSessao(ticket.getSessao())).append("\n");
-                mensagem.append("Área: ").append(getNomeArea(ticket.getArea())).append("\n");
-                mensagem.append("Poltrona: ").append(ticket.getPoltrona() + 1).append("\n");
-                mensagem.append("Preço: R$ ").append(String.format("%.2f", ticket.getPreco())).append("\n\n");
+                mensagem.append("Espetáculo: ").append(getNomeEspetaculo(ingresso.getEspetaculo())).append("\n");
+                mensagem.append("Sessão: ").append(getNomeSessao(ingresso.getSessao())).append("\n");
+                mensagem.append("Área: ").append(getNomeArea(ingresso.getArea())).append("\n");
+                mensagem.append("Poltrona: ").append(ingresso.getPoltrona() + 1).append("\n");
+                mensagem.append("Preço: R$ ").append(String.format("%.2f", ingresso.getPreco())).append("\n\n");
                 count++;
             }
         }
@@ -75,16 +75,16 @@ public class Statistics {
         }
 
         // Processando os ingressos vendidos
-        for (Ticket ticket : ticketsVendidos) {
+        for (Ingresso ingresso : ticketsVendidos) {
             // Contagem por espetáculo
-            String esp = ticket.getEspetaculo();
+            String esp = ingresso.getEspetaculo();
             ingressosPorEspetaculo.put(esp, ingressosPorEspetaculo.get(esp) + 1);
-            lucroPorEspetaculo.put(esp, lucroPorEspetaculo.get(esp) + ticket.getPreco());
+            lucroPorEspetaculo.put(esp, lucroPorEspetaculo.get(esp) + ingresso.getPreco());
 
             // Contagem por sessão
-            String ses = ticket.getSessao();
+            String ses = ingresso.getSessao();
             ocupacaoPorSessao.put(ses, ocupacaoPorSessao.get(ses) + 1);
-            lucroPorSessao.put(ses, lucroPorSessao.get(ses) + ticket.getPreco());
+            lucroPorSessao.put(ses, lucroPorSessao.get(ses) + ingresso.getPreco());
         }
 
         // Determinando qual peça teve mais e menos ingressos vendidos
@@ -225,9 +225,9 @@ public class Statistics {
     // Métodos para salvar e carregar dados dos ingressos vendidos
     public void salvarDados() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
-            for (Ticket ticket : ticketsVendidos) {
-                writer.write(ticket.getCpf() + "," + ticket.getEspetaculo() + "," + ticket.getSessao() + "," +
-                        ticket.getArea() + "," + ticket.getPoltrona() + "," + ticket.getPreco());
+            for (Ingresso ingresso : ticketsVendidos) {
+                writer.write(ingresso.getCpf() + "," + ingresso.getEspetaculo() + "," + ingresso.getSessao() + "," +
+                        ingresso.getArea() + "," + ingresso.getPoltrona() + "," + ingresso.getPreco());
                 writer.newLine();
             }
             System.out.println("Dados dos ingressos salvos com sucesso.");
@@ -259,8 +259,8 @@ public class Statistics {
                     double preco = Double.parseDouble(parts[5].trim());
 
                     // Criar o ticket e adicionar à lista
-                    Ticket ticket = new Ticket(cpf, espetaculo, sessao, area, poltrona, preco);
-                    ticketsVendidos.add(ticket);
+                    Ingresso ingresso = new Ingresso(cpf, espetaculo, sessao, area, poltrona, preco);
+                    ticketsVendidos.add(ingresso);
                 }
             }
             System.out.println("Dados dos ingressos carregados com sucesso.");

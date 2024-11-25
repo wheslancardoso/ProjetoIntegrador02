@@ -4,27 +4,27 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TicketManager {
-    private Theater theater;
-    private Statistics statistics;
+public class GerenciadorIngressos {
+    private Teatro teatro;
+    private Estatisticas estatisticas;
 
-    public TicketManager() {
-        this.theater = Theater.getInstance();
-        this.statistics = new Statistics();
+    public GerenciadorIngressos() {
+        this.teatro = Teatro.getInstance();
+        this.estatisticas = new Estatisticas();
         // Carregar dados
-        statistics.carregarDados();
+        estatisticas.carregarDados();
     }
 
     public boolean isCpfValido(String cpf) {
         return cpf.matches("\\d{11}");
     }
 
-    public int escolherPoltrona(Ticket ticket) {
-        int areaIndex = Integer.parseInt(ticket.getArea()) - 1;
-        int espetaculoIndex = Integer.parseInt(ticket.getEspetaculo()) - 1;
-        int sessaoIndex = Integer.parseInt(ticket.getSessao()) - 1;
+    public int escolherPoltrona(Ingresso ingresso) {
+        int areaIndice = Integer.parseInt(ingresso.getArea()) - 1;
+        int espetaculoIndice = Integer.parseInt(ingresso.getEspetaculo()) - 1;
+        int sessaoIndice = Integer.parseInt(ingresso.getSessao()) - 1;
 
-        Boolean[] poltronasDisponiveis = theater.getPoltronasDisponiveis(areaIndex, espetaculoIndex, sessaoIndex);
+        Boolean[] poltronasDisponiveis = teatro.getPoltronasDisponiveis(areaIndice, espetaculoIndice, sessaoIndice);
         List<Integer> poltronasLivres = new ArrayList<>();
 
         // Coletar as poltronas disponíveis
@@ -86,21 +86,21 @@ public class TicketManager {
     }
 
     public void salvarDados() {
-        theater.salvarDados();
-        statistics.salvarDados();
+        teatro.salvarDados();
+        estatisticas.salvarDados();
     }
 
-    public void finalizarCompra(Ticket ticket) {
-        theater.reservarPoltrona(ticket);
-        statistics.addSale(ticket);
+    public void finalizarCompra(Ingresso ingresso) {
+        teatro.reservarPoltrona(ingresso);
+        estatisticas.addSale(ingresso);
         // Salvar dados após a compra
-        theater.salvarDados();
-        statistics.salvarDados();
+        teatro.salvarDados();
+        estatisticas.salvarDados();
     }
 
     public String imprimirIngressos(String cpf) {
         StringBuilder mensagem = new StringBuilder("Ingressos do CPF " + cpf + ":\n\n");
-        boolean encontrou = statistics.printTicketsForClient(cpf, mensagem);
+        boolean encontrou = estatisticas.printTicketsForClient(cpf, mensagem);
         if (!encontrou) {
             mensagem.append("Nenhum ingresso encontrado para o CPF informado.");
         }
@@ -109,6 +109,6 @@ public class TicketManager {
 
 
     public String gerarEstatisticas() {
-        return statistics.generateStatistics().toString();
+        return estatisticas.generateStatistics().toString();
     }
 }

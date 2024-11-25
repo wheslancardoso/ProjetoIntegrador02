@@ -8,25 +8,25 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserManager {
-    private Map<String, User> usuarios;
-    private User loggedInUser;
+public class GerenciadorUsuarios {
+    private Map<String, Usuario> usuarios;
+    private Usuario usuarioLogado;
     private static final String USERS_FILE = "usuarios.txt";  // Arquivo para armazenar os dados
 
-    public UserManager() {
+    public GerenciadorUsuarios() {
         usuarios = new HashMap<>();
-        loggedInUser = null;  // Inicialmente, nenhum usuário está logado
+        usuarioLogado = null;  // Inicialmente, nenhum usuário está logado
         carregarDados();  // Carregar os dados ao inicializar
     }
 
     // Método para salvar os dados dos usuários no arquivo
     public void salvarDados() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(USERS_FILE))) {
-            for (User user : usuarios.values()) {
+            for (Usuario usuario : usuarios.values()) {
                 // Salvar os dados do usuário no formato texto
-                String dataNascimento = new SimpleDateFormat("dd/MM/yyyy").format(user.getDataNascimento());
-                writer.write(user.getNome() + "," + user.getCpf() + "," + user.getTelefone() + ","
-                        + user.getEndereco() + "," + dataNascimento + "," + user.getSenha());
+                String dataNascimento = new SimpleDateFormat("dd/MM/yyyy").format(usuario.getDataNascimento());
+                writer.write(usuario.getNome() + "," + usuario.getCpf() + "," + usuario.getTelefone() + ","
+                        + usuario.getEndereco() + "," + dataNascimento + "," + usuario.getSenha());
                 writer.newLine(); // Nova linha para o próximo usuário
             }
             System.out.println("Dados dos usuários salvos com sucesso.");
@@ -60,8 +60,8 @@ public class UserManager {
                     String senha = parts[5];
 
                     // Criar o usuário e adicioná-lo ao mapa
-                    User user = new User(nome, cpf, telefone, endereco, dataNascimento, senha);
-                    usuarios.put(cpf, user);
+                    Usuario usuario = new Usuario(nome, cpf, telefone, endereco, dataNascimento, senha);
+                    usuarios.put(cpf, usuario);
                 }
             }
             System.out.println("Dados dos usuários carregados com sucesso.");
@@ -73,15 +73,15 @@ public class UserManager {
 
 
     // Método para cadastrar o usuário
-    public boolean cadastrarUsuario(User user, String senha) {
+    public boolean cadastrarUsuario(Usuario usuario, String senha) {
         if (!validarSenha(senha)) {
             JOptionPane.showMessageDialog(null, "A senha não atende aos requisitos.");
             return false;
         }
-        if (usuarios.containsKey(user.getCpf())) {
+        if (usuarios.containsKey(usuario.getCpf())) {
             return false; // CPF já cadastrado
         }
-        usuarios.put(user.getCpf(), user);
+        usuarios.put(usuario.getCpf(), usuario);
         salvarDados();  // Salvar dados após cadastro
         return true;
     }
@@ -94,23 +94,23 @@ public class UserManager {
     }
 
     // Método para login
-    public User login(String cpf, String senha) {
-        User user = usuarios.get(cpf);
-        if (user != null && user.getSenha().equals(senha)) {
-            loggedInUser = user;  // Armazena o usuário logado
-            return user;  // Login bem-sucedido
+    public Usuario login(String cpf, String senha) {
+        Usuario usuario = usuarios.get(cpf);
+        if (usuario != null && usuario.getSenha().equals(senha)) {
+            usuarioLogado = usuario;  // Armazena o usuário logado
+            return usuario;  // Login bem-sucedido
         }
         return null;  // CPF ou senha inválidos
     }
 
     // Método para obter o usuário logado
-    public User getLoggedInUser() {
-        return loggedInUser;
+    public Usuario getUsuarioLogado() {
+        return usuarioLogado;
     }
 
     // Método para deslogar o usuário
     public void logout() {
-        loggedInUser = null;  // Limpa o usuário logado
+        usuarioLogado = null;  // Limpa o usuário logado
     }
 }
 

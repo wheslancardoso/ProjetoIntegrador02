@@ -3,21 +3,21 @@ package easyticket;
 import java.io.*;
 import java.util.Arrays;
 
-public class Theater {
-    private static Theater instanciaUnica = null;
+public class Teatro {
+    private static Teatro instanciaUnica = null;
     private Boolean[][][][] poltronasDisponiveis; // Variável de instância
     private int[] poltronasPorArea = {25, 100, 15, 30, 50};
 
     // Construtor privado
-    private Theater() {
+    private Teatro() {
         inicializarPoltronas();  // Garante que as poltronas sejam inicializadas sempre
         carregarDados();  // Carrega os dados ao instanciar
     }
 
     // Método estático para obter a instância única (Singleton)
-    public static Theater getInstance() {
+    public static Teatro getInstance() {
         if (instanciaUnica == null) {
-            instanciaUnica = new Theater();
+            instanciaUnica = new Teatro();
         }
         return instanciaUnica;
     }
@@ -81,11 +81,11 @@ public class Theater {
     }
 
     // Método para reservar uma poltrona
-    public void reservarPoltrona(Ticket ticket) {
-        int areaIndex = Integer.parseInt(ticket.getArea()) - 1;
-        int espetaculoIndex = Integer.parseInt(ticket.getEspetaculo()) - 1;
-        int sessaoIndex = Integer.parseInt(ticket.getSessao()) - 1;
-        int poltrona = ticket.getPoltrona();
+    public void reservarPoltrona(Ingresso ingresso) {
+        int areaIndex = Integer.parseInt(ingresso.getArea()) - 1;
+        int espetaculoIndex = Integer.parseInt(ingresso.getEspetaculo()) - 1;
+        int sessaoIndex = Integer.parseInt(ingresso.getSessao()) - 1;
+        int poltrona = ingresso.getPoltrona();
 
         poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex][poltrona] = true;
     }
