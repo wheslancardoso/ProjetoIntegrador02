@@ -79,7 +79,6 @@ public class UserManager {
             return false;
         }
         if (usuarios.containsKey(user.getCpf())) {
-            JOptionPane.showMessageDialog(null, "CPF já cadastrado.");
             return false; // CPF já cadastrado
         }
         usuarios.put(user.getCpf(), user);
