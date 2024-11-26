@@ -38,7 +38,7 @@ public class JanelaPrincipal extends JFrame {
 
         // Painel do login e cadastro
         PainelLogin painelLogin = new PainelLogin(gerenciadorUsuarios, this);
-        CadastroPanel painelCadastro = new CadastroPanel(gerenciadorUsuarios, this);  // Passando o MainFrame para CadastroPanel
+        PainelCadastro painelCadastro = new PainelCadastro(gerenciadorUsuarios, this);  // Passando o MainFrame para CadastroPanel
 
         // Painel do menu principal
         JPanel painelMenu = createMenuPanel();

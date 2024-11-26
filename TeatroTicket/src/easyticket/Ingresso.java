@@ -24,10 +24,10 @@ public class Ingresso {
         this.espetaculo = espetaculo;
         this.sessao = sessao;
         this.area = area;
-        this.preco = calculatePrice(area);
+        this.preco = calcularPreco(area);
     }
 
-    private double calculatePrice(String area) {
+    private double calcularPreco(String area) {
         switch (area) {
             case "1": return 40.00;     // Plateia A
             case "2": return 60.00;     // Plateia B

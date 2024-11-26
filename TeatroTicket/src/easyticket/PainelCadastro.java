@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CadastroPanel extends JPanel {
+public class PainelCadastro extends JPanel {
     private GerenciadorUsuarios gerenciadorUsuarios;
     private JTextField campoNome;
     private JTextField campoCpf;
@@ -17,7 +17,7 @@ public class CadastroPanel extends JPanel {
     private JPasswordField campoSenha;
     private JTextField campoConfirmaSenha;
 
-    public CadastroPanel(GerenciadorUsuarios gerenciadorUsuarios, JanelaPrincipal janelaPrincipal) {
+    public PainelCadastro(GerenciadorUsuarios gerenciadorUsuarios, JanelaPrincipal janelaPrincipal) {
         this.gerenciadorUsuarios = gerenciadorUsuarios;
         initComponents(janelaPrincipal);
     }

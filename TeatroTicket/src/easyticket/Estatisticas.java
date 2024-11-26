@@ -26,12 +26,12 @@ public class Estatisticas {
     }
 
     // Adiciona um ingresso vendido
-    public void addSale(Ingresso ingresso) {
+    public void adicionarVenda(Ingresso ingresso) {
         ticketsVendidos.add(ingresso);
     }
 
     // Imprime os ingressos associados a um CPF com numeração
-    public boolean printTicketsForClient(String cpf, StringBuilder mensagem) {
+    public boolean imprimirIngressosParaCliente(String cpf, StringBuilder mensagem) {
         boolean encontrou = false;
         int count = 1; // Contador para numerar os ingressos
 

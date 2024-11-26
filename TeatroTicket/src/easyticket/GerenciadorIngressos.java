@@ -92,7 +92,7 @@ public class GerenciadorIngressos {
 
     public void finalizarCompra(Ingresso ingresso) {
         teatro.reservarPoltrona(ingresso);
-        estatisticas.addSale(ingresso);
+        estatisticas.adicionarVenda(ingresso);
         // Salvar dados após a compra
         teatro.salvarDados();
         estatisticas.salvarDados();
@@ -100,7 +100,7 @@ public class GerenciadorIngressos {
 
     public String imprimirIngressos(String cpf) {
         StringBuilder mensagem = new StringBuilder("Ingressos do CPF " + cpf + ":\n\n");
-        boolean encontrou = estatisticas.printTicketsForClient(cpf, mensagem);
+        boolean encontrou = estatisticas.imprimirIngressosParaCliente(cpf, mensagem);
         if (!encontrou) {
             mensagem.append("Nenhum ingresso encontrado para o CPF informado.");
         }
