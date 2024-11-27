@@ -1,22 +1,18 @@
 package easyticket;
 
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
 
 public class Estatisticas {
     private static Estatisticas instance = null;
     private List<Ingresso> ticketsVendidos;
-    private static final String FILE_PATH = "tickets.txt";  // Alterado para .txt
+    private static final String FILE_PATH = "tickets.txt";
 
     public Estatisticas() {
         this.ticketsVendidos = new ArrayList<>();
     }
 
-    // Método estático para obter a instância única
     public static Estatisticas getInstance() {
         if (instance == null) {
             instance = new Estatisticas();
@@ -25,15 +21,13 @@ public class Estatisticas {
         return instance;
     }
 
-    // Adiciona um ingresso vendido
-    public void adicionarVenda(Ingresso ingresso) {
+    public void addSale(Ingresso ingresso) {
         ticketsVendidos.add(ingresso);
     }
 
-    // Imprime os ingressos associados a um CPF com numeração
-    public boolean imprimirIngressosParaCliente(String cpf, StringBuilder mensagem) {
+    public boolean printTicketsForClient(String cpf, StringBuilder mensagem) {
         boolean encontrou = false;
-        int count = 1; // Contador para numerar os ingressos
+        int count = 1;
 
         for (Ingresso ingresso : ticketsVendidos) {
             if (ingresso.getCpf().equals(cpf)) {
@@ -50,130 +44,105 @@ public class Estatisticas {
         return encontrou;
     }
 
-    // Gera estatísticas de vendas
     public StringBuilder generateStatistics() {
         StringBuilder estatisticas = new StringBuilder("Estatísticas de Vendas:\n");
 
-        // Mapas para armazenar dados por espetáculo e sessão
-        Map<String, Integer> ingressosPorEspetaculo = new HashMap<>();
-        Map<String, Double> lucroPorEspetaculo = new HashMap<>();
-
-        Map<String, Integer> ocupacaoPorSessao = new HashMap<>();
-        Map<String, Double> lucroPorSessao = new HashMap<>();
-
-        // Inicializando os mapas com valores zero
         String[] espetaculos = {"1", "2", "3"};
-        for (String espetaculo : espetaculos) {
-            ingressosPorEspetaculo.put(espetaculo, 0);
-            lucroPorEspetaculo.put(espetaculo, 0.0);
-        }
-
         String[] sessoes = {"1", "2", "3"};
-        for (String sessao : sessoes) {
-            ocupacaoPorSessao.put(sessao, 0);
-            lucroPorSessao.put(sessao, 0.0);
-        }
+
+        // Arrays para armazenar dados por espetáculo e sessão
+        int[] ingressosPorEspetaculo = new int[espetaculos.length];
+        double[] lucroPorEspetaculo = new double[espetaculos.length];
+
+        int[] ocupacaoPorSessao = new int[sessoes.length];
+        double[] lucroPorSessao = new double[sessoes.length];
+
+        double lucroTotal = 0.0;
 
         // Processando os ingressos vendidos
         for (Ingresso ingresso : ticketsVendidos) {
-            // Contagem por espetáculo
-            String esp = ingresso.getEspetaculo();
-            ingressosPorEspetaculo.put(esp, ingressosPorEspetaculo.get(esp) + 1);
-            lucroPorEspetaculo.put(esp, lucroPorEspetaculo.get(esp) + ingresso.getPreco());
+            int espIndex = Integer.parseInt(ingresso.getEspetaculo()) - 1;
+            int sesIndex = Integer.parseInt(ingresso.getSessao()) - 1;
 
-            // Contagem por sessão
-            String ses = ingresso.getSessao();
-            ocupacaoPorSessao.put(ses, ocupacaoPorSessao.get(ses) + 1);
-            lucroPorSessao.put(ses, lucroPorSessao.get(ses) + ingresso.getPreco());
+            ingressosPorEspetaculo[espIndex]++;
+            lucroPorEspetaculo[espIndex] += ingresso.getPreco();
+
+            ocupacaoPorSessao[sesIndex]++;
+            lucroPorSessao[sesIndex] += ingresso.getPreco();
+
+            lucroTotal += ingresso.getPreco();
         }
 
-        // Determinando qual peça teve mais e menos ingressos vendidos
-        String espMaisVendida = null;
-        String espMenosVendida = null;
-        int maxIngressos = -1;
-        int minIngressos = Integer.MAX_VALUE;
+        estatisticas.append("Lucro total: R$ ").append(String.format("%.2f", lucroTotal)).append("\n\n");
 
-        for (String esp : espetaculos) {
-            int ingressos = ingressosPorEspetaculo.get(esp);
-            if (ingressos > maxIngressos) {
-                maxIngressos = ingressos;
-                espMaisVendida = esp;
+        // Determinando a peça com mais e menos ingressos vendidos
+        int maxIngressos = -1, minIngressos = Integer.MAX_VALUE;
+        int espMaisVendida = -1, espMenosVendida = -1;
+
+        for (int i = 0; i < espetaculos.length; i++) {
+            if (ingressosPorEspetaculo[i] > maxIngressos) {
+                maxIngressos = ingressosPorEspetaculo[i];
+                espMaisVendida = i;
             }
-            if (ingressos < minIngressos) {
-                minIngressos = ingressos;
-                espMenosVendida = esp;
+            if (ingressosPorEspetaculo[i] < minIngressos) {
+                minIngressos = ingressosPorEspetaculo[i];
+                espMenosVendida = i;
             }
         }
 
-        // Mapeando números para nomes dos espetáculos
-        String espMaisVendidaNome = getNomeEspetaculo(espMaisVendida);
-        String espMenosVendidaNome = getNomeEspetaculo(espMenosVendida);
-
-        estatisticas.append("Peça com mais ingressos vendidos: ").append(espMaisVendidaNome)
+        estatisticas.append("Peça com mais ingressos vendidos: ").append(getNomeEspetaculo(espetaculos[espMaisVendida]))
                 .append(" (").append(maxIngressos).append(" ingressos)\n");
-        estatisticas.append("Peça com menos ingressos vendidos: ").append(espMenosVendidaNome)
+        estatisticas.append("Peça com menos ingressos vendidos: ").append(getNomeEspetaculo(espetaculos[espMenosVendida]))
                 .append(" (").append(minIngressos).append(" ingressos)\n\n");
 
         // Determinando qual sessão teve maior e menor ocupação
-        String sessaoMaiorOcupacao = null;
-        String sessaoMenorOcupacao = null;
-        int maxOcupacao = -1;
-        int minOcupacao = Integer.MAX_VALUE;
+        int maxOcupacao = -1, minOcupacao = Integer.MAX_VALUE;
+        int sessaoMaiorOcupacao = -1, sessaoMenorOcupacao = -1;
 
-        for (String ses : sessoes) {
-            int ocupacao = ocupacaoPorSessao.get(ses);
-            if (ocupacao > maxOcupacao) {
-                maxOcupacao = ocupacao;
-                sessaoMaiorOcupacao = ses;
+        for (int i = 0; i < sessoes.length; i++) {
+            if (ocupacaoPorSessao[i] > maxOcupacao) {
+                maxOcupacao = ocupacaoPorSessao[i];
+                sessaoMaiorOcupacao = i;
             }
-            if (ocupacao < minOcupacao) {
-                minOcupacao = ocupacao;
-                sessaoMenorOcupacao = ses;
+            if (ocupacaoPorSessao[i] < minOcupacao) {
+                minOcupacao = ocupacaoPorSessao[i];
+                sessaoMenorOcupacao = i;
             }
         }
 
-        String sessaoMaiorOcupacaoNome = getNomeSessao(sessaoMaiorOcupacao);
-        String sessaoMenorOcupacaoNome = getNomeSessao(sessaoMenorOcupacao);
-
-        estatisticas.append("Sessão com maior ocupação: ").append(sessaoMaiorOcupacaoNome)
+        estatisticas.append("Sessão com maior ocupação: ").append(getNomeSessao(sessoes[sessaoMaiorOcupacao]))
                 .append(" (").append(maxOcupacao).append(" ingressos)\n");
-        estatisticas.append("Sessão com menor ocupação: ").append(sessaoMenorOcupacaoNome)
+        estatisticas.append("Sessão com menor ocupação: ").append(getNomeSessao(sessoes[sessaoMenorOcupacao]))
                 .append(" (").append(minOcupacao).append(" ingressos)\n\n");
 
-        // Peça/sessão mais e menos lucrativa
-        String espMaisLucrativa = null;
-        String espMenosLucrativa = null;
-        double maxLucroEsp = -1;
-        double minLucroEsp = Double.MAX_VALUE;
+        // Peça mais e menos lucrativa
+        double maxLucroEsp = -1, minLucroEsp = Double.MAX_VALUE;
+        int espMaisLucrativa = -1, espMenosLucrativa = -1;
 
-        for (String esp : espetaculos) {
-            double lucro = lucroPorEspetaculo.get(esp);
-            if (lucro > maxLucroEsp) {
-                maxLucroEsp = lucro;
-                espMaisLucrativa = esp;
+        for (int i = 0; i < espetaculos.length; i++) {
+            if (lucroPorEspetaculo[i] > maxLucroEsp) {
+                maxLucroEsp = lucroPorEspetaculo[i];
+                espMaisLucrativa = i;
             }
-            if (lucro < minLucroEsp) {
-                minLucroEsp = lucro;
-                espMenosLucrativa = esp;
+            if (lucroPorEspetaculo[i] < minLucroEsp) {
+                minLucroEsp = lucroPorEspetaculo[i];
+                espMenosLucrativa = i;
             }
         }
 
-        String espMaisLucrativaNome = getNomeEspetaculo(espMaisLucrativa);
-        String espMenosLucrativaNome = getNomeEspetaculo(espMenosLucrativa);
-
-        estatisticas.append("Peça mais lucrativa: ").append(espMaisLucrativaNome)
+        estatisticas.append("Peça mais lucrativa: ").append(getNomeEspetaculo(espetaculos[espMaisLucrativa]))
                 .append(" (R$ ").append(String.format("%.2f", maxLucroEsp)).append(")\n");
-        estatisticas.append("Peça menos lucrativa: ").append(espMenosLucrativaNome)
+        estatisticas.append("Peça menos lucrativa: ").append(getNomeEspetaculo(espetaculos[espMenosLucrativa]))
                 .append(" (R$ ").append(String.format("%.2f", minLucroEsp)).append(")\n\n");
 
-        // Lucro médio do teatro com todas as áreas por peça
+        // Lucro médio por peça
         estatisticas.append("Lucro médio do teatro com todas as áreas por peça:\n");
-        for (String esp : espetaculos) {
-            int ingressosVendidos = ingressosPorEspetaculo.get(esp);
-            double lucroTotal = lucroPorEspetaculo.get(esp);
-            double lucroMedio = ingressosVendidos > 0 ? lucroTotal / ingressosVendidos : 0;
-            String espNome = getNomeEspetaculo(esp);
-            estatisticas.append(espNome).append(": R$ ").append(String.format("%.2f", lucroMedio)).append("\n");
+        for (int i = 0; i < espetaculos.length; i++) {
+            double lucroMedio = (ingressosPorEspetaculo[i] > 0)
+                    ? lucroPorEspetaculo[i] / ingressosPorEspetaculo[i]
+                    : 0;
+            estatisticas.append(getNomeEspetaculo(espetaculos[i]))
+                    .append(": R$ ").append(String.format("%.2f", lucroMedio)).append("\n");
         }
 
         return estatisticas;
@@ -222,7 +191,6 @@ public class Estatisticas {
         }
     }
 
-    // Métodos para salvar e carregar dados dos ingressos vendidos
     public void salvarDados() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (Ingresso ingresso : ticketsVendidos) {
@@ -254,11 +222,9 @@ public class Estatisticas {
                     String sessao = parts[2];
                     String area = parts[3];
 
-                    // Tenta converter o valor de poltrona para inteiro e preco para double
                     int poltrona = Integer.parseInt(parts[4].trim());
                     double preco = Double.parseDouble(parts[5].trim());
 
-                    // Criar o ticket e adicionar à lista
                     Ingresso ingresso = new Ingresso(cpf, espetaculo, sessao, area, poltrona, preco);
                     ticketsVendidos.add(ingresso);
                 }
@@ -267,13 +233,6 @@ public class Estatisticas {
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Erro ao carregar os dados dos ingressos.");
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-            System.out.println("Erro de formato nos dados dos ingressos.");
         }
     }
-
 }
-
-
-

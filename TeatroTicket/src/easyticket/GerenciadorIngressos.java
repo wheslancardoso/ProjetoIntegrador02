@@ -1,5 +1,4 @@
 package easyticket;
-
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +9,7 @@ public class GerenciadorIngressos {
 
     public GerenciadorIngressos() {
         this.teatro = Teatro.getInstance();
-        this.estatisticas = new Estatisticas();
+        this.estatisticas = Estatisticas.getInstance(); // Usando a instância singleton
         // Carregar dados
         estatisticas.carregarDados();
     }
@@ -92,7 +91,7 @@ public class GerenciadorIngressos {
 
     public void finalizarCompra(Ingresso ingresso) {
         teatro.reservarPoltrona(ingresso);
-        estatisticas.adicionarVenda(ingresso);
+        estatisticas.addSale(ingresso); // Usando o método addSale correto
         // Salvar dados após a compra
         teatro.salvarDados();
         estatisticas.salvarDados();
@@ -100,13 +99,12 @@ public class GerenciadorIngressos {
 
     public String imprimirIngressos(String cpf) {
         StringBuilder mensagem = new StringBuilder("Ingressos do CPF " + cpf + ":\n\n");
-        boolean encontrou = estatisticas.imprimirIngressosParaCliente(cpf, mensagem);
+        boolean encontrou = estatisticas.printTicketsForClient(cpf, mensagem); // Usando o método printTicketsForClient
         if (!encontrou) {
             mensagem.append("Nenhum ingresso encontrado para o CPF informado.");
         }
         return mensagem.toString();
     }
-
 
     public String gerarEstatisticas() {
         return estatisticas.generateStatistics().toString();

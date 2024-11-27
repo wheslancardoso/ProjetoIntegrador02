@@ -4,30 +4,28 @@ import javax.swing.*;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public class GerenciadorUsuarios {
-    private Map<String, Usuario> usuarios;
+    private List<Usuario> usuarios;
     private Usuario usuarioLogado;
-    private static final String USERS_FILE = "usuarios.txt";  // Arquivo para armazenar os dados
+    private static final String USERS_FILE = "usuarios.txt";
 
     public GerenciadorUsuarios() {
-        usuarios = new HashMap<>();
-        usuarioLogado = null;  // Inicialmente, nenhum usuário está logado
-        carregarDados();  // Carregar os dados ao inicializar
+        usuarios = new ArrayList<>();
+        usuarioLogado = null;
+        carregarDados();
     }
 
-    // Método para salvar os dados dos usuários no arquivo
     public void salvarDados() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(USERS_FILE))) {
-            for (Usuario usuario : usuarios.values()) {
-                // Salvar os dados do usuário no formato texto
+            for (Usuario usuario : usuarios) {
                 String dataNascimento = new SimpleDateFormat("dd/MM/yyyy").format(usuario.getDataNascimento());
                 writer.write(usuario.getNome() + "," + usuario.getCpf() + "," + usuario.getTelefone() + ","
                         + usuario.getEndereco() + "," + dataNascimento + "," + usuario.getSenha());
-                writer.newLine(); // Nova linha para o próximo usuário
+                writer.newLine();
             }
             System.out.println("Dados dos usuários salvos com sucesso.");
         } catch (IOException e) {
@@ -36,7 +34,6 @@ public class GerenciadorUsuarios {
         }
     }
 
-    // Método para carregar os dados dos usuários a partir do arquivo
     public void carregarDados() {
         File file = new File(USERS_FILE);
         if (!file.exists()) {
@@ -54,14 +51,11 @@ public class GerenciadorUsuarios {
                     String telefone = parts[2];
                     String endereco = parts[3];
 
-                    // Ajuste para a data no formato padrão que o Java entende
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                     Date dataNascimento = sdf.parse(parts[4]);
                     String senha = parts[5];
 
-                    // Criar o usuário e adicioná-lo ao mapa
-                    Usuario usuario = new Usuario(nome, cpf, telefone, endereco, dataNascimento, senha);
-                    usuarios.put(cpf, usuario);
+                    usuarios.add(new Usuario(nome, cpf, telefone, endereco, dataNascimento, senha));
                 }
             }
             System.out.println("Dados dos usuários carregados com sucesso.");
@@ -71,46 +65,39 @@ public class GerenciadorUsuarios {
         }
     }
 
-
-    // Método para cadastrar o usuário
     public boolean cadastrarUsuario(Usuario usuario, String senha) {
         if (!validarSenha(senha)) {
             JOptionPane.showMessageDialog(null, "A senha não atende aos requisitos.");
             return false;
         }
-        if (usuarios.containsKey(usuario.getCpf())) {
-            return false; // CPF já cadastrado
+        if (usuarios.stream().anyMatch(u -> u.getCpf().equals(usuario.getCpf()))) {
+            return false;
         }
-        usuarios.put(usuario.getCpf(), usuario);
-        salvarDados();  // Salvar dados após cadastro
+        usuarios.add(usuario);
+        salvarDados();
         return true;
     }
 
-    // Método para validar a senha
     public boolean validarSenha(String senha) {
-        // Expressão regular para verificar os requisitos da senha
         String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$";
-        return senha.matches(regex);  // Retorna verdadeiro se a senha atender aos requisitos
+        return senha.matches(regex);
     }
 
-    // Método para login
     public Usuario login(String cpf, String senha) {
-        Usuario usuario = usuarios.get(cpf);
-        if (usuario != null && usuario.getSenha().equals(senha)) {
-            usuarioLogado = usuario;  // Armazena o usuário logado
-            return usuario;  // Login bem-sucedido
+        for (Usuario usuario : usuarios) {
+            if (usuario.getCpf().equals(cpf) && usuario.getSenha().equals(senha)) {
+                usuarioLogado = usuario;
+                return usuario;
+            }
         }
-        return null;  // CPF ou senha inválidos
+        return null;
     }
 
-    // Método para obter o usuário logado
     public Usuario getUsuarioLogado() {
         return usuarioLogado;
     }
 
-    // Método para deslogar o usuário
     public void logout() {
-        usuarioLogado = null;  // Limpa o usuário logado
+        usuarioLogado = null;
     }
 }
-
