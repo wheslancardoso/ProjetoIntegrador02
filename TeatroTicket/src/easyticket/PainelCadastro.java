@@ -1,6 +1,7 @@
 package easyticket;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +16,7 @@ public class PainelCadastro extends JPanel {
     private JTextArea areaEndereco;
     private JTextField campoDataNascimento;
     private JPasswordField campoSenha;
-    private JTextField campoConfirmaSenha;
+    private JPasswordField campoConfirmaSenha;
 
     public PainelCadastro(GerenciadorUsuarios gerenciadorUsuarios, JanelaPrincipal janelaPrincipal) {
         this.gerenciadorUsuarios = gerenciadorUsuarios;
@@ -24,154 +25,173 @@ public class PainelCadastro extends JPanel {
 
     private void initComponents(JanelaPrincipal janelaPrincipal) {
         setLayout(new GridBagLayout());
+        setBackground(new Color(245, 245, 245)); // Light gray background
+        setBorder(BorderFactory.createEmptyBorder(30, 20, 20, 20)); // 20px margin on all sides
+
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5, 10, 5, 10); // Margem entre os componentes
+        gbc.insets = new Insets(10, 10, 10, 10); // Spacing between components
+        gbc.fill = GridBagConstraints.HORIZONTAL; // Make components stretch horizontally
+        gbc.weightx = 1.0; // Allow horizontal resizing
+        gbc.weighty = 0; // Components won't stretch vertically by default
 
-        Font largeFont = new Font("Arial", Font.PLAIN, 16);
+        Font labelFont = new Font("SansSerif", Font.BOLD, 14);
+        Font fieldFont = new Font("SansSerif", Font.PLAIN, 14);
 
-        // Adicionando os labels e os campos de texto
-        JLabel etiquetaNome = new JLabel("Nome:");
-        etiquetaNome.setFont(largeFont);
-        campoNome = new JTextField(20);
-        campoNome.setFont(largeFont);
+        // Helper method to create labeled fields
+        JLabel etiquetaNome = createLabel("Nome:", labelFont);
+        campoNome = createRoundedField(20, fieldFont);
 
-        JLabel etiquetaCpf = new JLabel("CPF:");
-        etiquetaCpf.setFont(largeFont);
-        campoCpf = new JTextField(20);
-        campoCpf.setFont(largeFont);
+        JLabel etiquetaCpf = createLabel("CPF:", labelFont);
+        campoCpf = createRoundedField(20, fieldFont);
 
-        JLabel etiquetaTelefone = new JLabel("Telefone:");
-        etiquetaTelefone.setFont(largeFont);
-        campoTelefone = new JTextField(20);
-        campoTelefone.setFont(largeFont);
+        JLabel etiquetaTelefone = createLabel("Telefone:", labelFont);
+        campoTelefone = createRoundedField(20, fieldFont);
 
-        JLabel etiquetaEndereco = new JLabel("Endereço:");
-        etiquetaEndereco.setFont(largeFont);
-        areaEndereco = new JTextArea(4, 20); // Aumenta a altura do JTextArea para o endereço
-        areaEndereco.setFont(largeFont);
+        JLabel etiquetaEndereco = createLabel("Endereço:", labelFont);
+        areaEndereco = new JTextArea(4, 20);
+        areaEndereco.setFont(fieldFont);
         areaEndereco.setLineWrap(true);
         areaEndereco.setWrapStyleWord(true);
+        areaEndereco.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(new Color(200, 200, 200), 1),
+                BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+        JScrollPane scrollEndereco = new JScrollPane(areaEndereco);
 
-        JLabel etiquetaDataNascimento = new JLabel("Data de Nascimento (dd/MM/yyyy):");
-        etiquetaDataNascimento.setFont(largeFont);
-        campoDataNascimento = new JTextField(20);
-        campoDataNascimento.setFont(largeFont);
+        JLabel etiquetaDataNascimento = createLabel("Data de Nascimento (dd/MM/yyyy):", labelFont);
+        campoDataNascimento = createRoundedField(20, fieldFont);
 
-        JLabel etiquetaSenha = new JLabel("Senha:");
-        etiquetaSenha.setFont(largeFont);
-        campoSenha = new JPasswordField(20);
-        campoSenha.setFont(largeFont);
+        JLabel etiquetaSenha = createLabel("Senha:", labelFont);
+        campoSenha = createPasswordField(20, fieldFont);
 
-        JLabel etiquetaConfirmaSenha = new JLabel("Confirme a Senha:");
-        etiquetaConfirmaSenha.setFont(largeFont);
-        campoConfirmaSenha = new JTextField(20);
-        campoConfirmaSenha.setFont(largeFont);
+        JLabel etiquetaConfirmaSenha = createLabel("Confirme a Senha:", labelFont);
+        campoConfirmaSenha = createPasswordField(20, fieldFont);
 
-        // Botões
-        JButton botaoCadastrar = new JButton("Cadastrar");
-        botaoCadastrar.setFont(largeFont);
-        JButton botaoVoltar = new JButton("Voltar");
-        botaoVoltar.setFont(largeFont);
+        // Buttons
+        JButton botaoCadastrar;
+        JButton botaoVoltar;
 
-        // Definir layout e adicionar os componentes
+        // Add components to layout
+        int row = 0;
 
-        // Linha 1 - Nome
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.WEST;
+        // Row: Nome
+        gbc.gridx = 0; gbc.gridy = row; gbc.weightx = 0.2;
         add(etiquetaNome, gbc);
 
-        gbc.gridx = 1;
+        gbc.gridx = 1; gbc.weightx = 1.0;
         add(campoNome, gbc);
 
-        // Linha 2 - CPF
-        gbc.gridx = 0;
-        gbc.gridy = 1;
+        // Row: CPF
+        gbc.gridy = ++row; gbc.gridx = 0; gbc.weightx = 0.2;
         add(etiquetaCpf, gbc);
 
-        gbc.gridx = 1;
+        gbc.gridx = 1; gbc.weightx = 1.0;
         add(campoCpf, gbc);
 
-        // Linha 3 - Telefone
-        gbc.gridx = 0;
-        gbc.gridy = 2;
+        // Row: Telefone
+        gbc.gridy = ++row; gbc.gridx = 0; gbc.weightx = 0.2;
         add(etiquetaTelefone, gbc);
 
-        gbc.gridx = 1;
+        gbc.gridx = 1; gbc.weightx = 1.0;
         add(campoTelefone, gbc);
 
-        // Linha 4 - Endereço
-        gbc.gridx = 0;
-        gbc.gridy = 3;
+        // Row: Endereço
+        gbc.gridy = ++row; gbc.gridx = 0; gbc.weightx = 0.2;
         add(etiquetaEndereco, gbc);
 
-        gbc.gridx = 1;
-        add(new JScrollPane(areaEndereco), gbc);
+        gbc.gridx = 1; gbc.weightx = 1.0; gbc.fill = GridBagConstraints.BOTH; gbc.weighty = 0.1;
+        add(scrollEndereco, gbc);
+        gbc.fill = GridBagConstraints.HORIZONTAL; gbc.weighty = 0;
 
-        // Linha 5 - Data de Nascimento
-        gbc.gridx = 0;
-        gbc.gridy = 4;
+        // Row: Data de Nascimento
+        gbc.gridy = ++row; gbc.gridx = 0; gbc.weightx = 0.2;
         add(etiquetaDataNascimento, gbc);
 
-        gbc.gridx = 1;
+        gbc.gridx = 1; gbc.weightx = 1.0;
         add(campoDataNascimento, gbc);
 
-        // Linha 6 - Senha
-        gbc.gridx = 0;
-        gbc.gridy = 5;
+        // Row: Senha
+        gbc.gridy = ++row; gbc.gridx = 0; gbc.weightx = 0.2;
         add(etiquetaSenha, gbc);
 
-        gbc.gridx = 1;
+        gbc.gridx = 1; gbc.weightx = 1.0;
         add(campoSenha, gbc);
 
-        // Linha 7 - Confirma Senha
-        gbc.gridx = 0;
-        gbc.gridy = 6;
+        // Row: Confirma Senha
+        gbc.gridy = ++row; gbc.gridx = 0; gbc.weightx = 0.2;
         add(etiquetaConfirmaSenha, gbc);
 
-        gbc.gridx = 1;
+        gbc.gridx = 1; gbc.weightx = 1.0;
         add(campoConfirmaSenha, gbc);
 
-        // Botões
-        JPanel painelBotoes = new JPanel();
-        painelBotoes.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        // Row: Buttons
+        gbc.gridy = ++row; gbc.gridx = 0; gbc.gridwidth = 2; gbc.anchor = GridBagConstraints.CENTER;
+        JPanel painelBotoes = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        painelBotoes.setOpaque(false);
+
+        // Initialize buttons using RoundedButton
+        botaoCadastrar = new RoundedButton("Cadastrar", 20); // Green for success
+        botaoCadastrar.setBackground(new Color(76, 175, 80));
+
+        botaoVoltar = new RoundedButton("Voltar", 20);       // Red for cancel
+        botaoVoltar.setBackground(new Color(244, 67, 54));
 
         painelBotoes.add(botaoCadastrar);
         painelBotoes.add(botaoVoltar);
 
-        // Definir espaçamento do painel de botões
-        gbc.gridx = 0;
-        gbc.gridy = 7;
-        gbc.gridwidth = 2;
         add(painelBotoes, gbc);
 
-        // Ação de cadastro
-        botaoCadastrar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cadastrarUsuario(janelaPrincipal);
-            }
-        });
+        // Button actions
+        botaoCadastrar.addActionListener(e -> cadastrarUsuario(janelaPrincipal));
+        botaoVoltar.addActionListener(e -> janelaPrincipal.mostrarLogin());
+    }
 
-        // Ação de voltar
-        botaoVoltar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                janelaPrincipal.mostrarLogin();
-            }
-        });
+
+    private JLabel createLabel(String text, Font font) {
+        JLabel label = new JLabel(text);
+        label.setFont(font);
+        return label;
+    }
+
+    private JTextField createRoundedField(int columns, Font font) {
+        JTextField field = new JTextField(columns);
+        field.setFont(font);
+        field.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(new Color(200, 200, 200), 1),
+                BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+        return field;
+    }
+
+    private JPasswordField createPasswordField(int columns, Font font) {
+        JPasswordField field = new JPasswordField(columns);
+        field.setFont(font);
+        field.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(new Color(200, 200, 200), 1),
+                BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+        return field;
+    }
+
+    private JButton createModernButton(String text) {
+        JButton button = new JButton(text);
+        button.setFont(new Font("SansSerif", Font.BOLD, 14));
+        button.setBackground(new Color(51, 153, 255));
+        button.setForeground(Color.WHITE);
+        button.setFocusPainted(false);
+        button.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        return button;
     }
 
     private void cadastrarUsuario(JanelaPrincipal janelaPrincipal) {
+        // Existing logic from the original code
+
         String nome = campoNome.getText();
         String cpf = campoCpf.getText();
         String telefone = campoTelefone.getText();
         String endereco = areaEndereco.getText();
         String dataNascimento = campoDataNascimento.getText();
         String senha = new String(campoSenha.getPassword());
-        String confirmaSenha = campoConfirmaSenha.getText();
+        String confirmaSenha = new String(campoConfirmaSenha.getPassword());
 
-        // Validar dados
         if (nome.isEmpty() || cpf.isEmpty() || telefone.isEmpty() || endereco.isEmpty() ||
                 dataNascimento.isEmpty() || senha.isEmpty() || !senha.equals(confirmaSenha)) {
             JOptionPane.showMessageDialog(this, "Todos os campos são obrigatórios e as senhas devem coincidir.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -182,14 +202,10 @@ public class PainelCadastro extends JPanel {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date data = sdf.parse(dataNascimento);
 
-            // Criar um novo usuário
             Usuario usuario = new Usuario(nome, cpf, telefone, endereco, data, senha);
-
-            // Cadastrar o usuário
-            boolean sucesso = gerenciadorUsuarios.cadastrarUsuario(usuario, senha);
-            if (sucesso) {
+            if (gerenciadorUsuarios.cadastrarUsuario(usuario, senha)) {
                 JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-                janelaPrincipal.mostrarLogin(); // Após cadastro, retorna ao login
+                janelaPrincipal.mostrarLogin();
             } else {
                 JOptionPane.showMessageDialog(this, "CPF já cadastrado.", "Erro", JOptionPane.ERROR_MESSAGE);
             }
