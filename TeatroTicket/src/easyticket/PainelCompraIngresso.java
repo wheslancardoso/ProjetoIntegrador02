@@ -27,7 +27,7 @@ public class PainelCompraIngresso extends JPanel {
         JComboBox<String> caixaSessao = new JComboBox<>(sessoes);
 
         JLabel etiquetaArea = new JLabel("Área:");
-        String[] areas = {" Plateia A - R$40,00", " Plateia B - R$60,00", " Frisa - R$80,00", " Camarote - R$120,00", " Balcão Nobre - R$250,00"};
+        String[] areas = {" Plateia A - R$40,00", " Plateia B - R$60,00", " Frisa - R$120,00", " Camarote - R$80,00", " Balcão Nobre - R$250,00"};
         JComboBox<String> caixaArea = new JComboBox<>(areas);
 
         JButton botaoEscolherPoltrona = new JButton("Escolher Poltrona");

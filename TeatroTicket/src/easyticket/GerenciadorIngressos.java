@@ -99,7 +99,7 @@ public class GerenciadorIngressos {
 
     public String imprimirIngressos(String cpf) {
         StringBuilder mensagem = new StringBuilder("Ingressos do CPF " + cpf + ":\n\n");
-        boolean encontrou = estatisticas.printTicketsForClient(cpf, mensagem); // Usando o método printTicketsForClient
+        boolean encontrou = estatisticas.imprimirIngressosParaCliente(cpf, mensagem); // Usando o método printTicketsForClient
         if (!encontrou) {
             mensagem.append("Nenhum ingresso encontrado para o CPF informado.");
         }
@@ -107,6 +107,6 @@ public class GerenciadorIngressos {
     }
 
     public String gerarEstatisticas() {
-        return estatisticas.generateStatistics().toString();
+        return estatisticas.criarEstatisticas().toString();
     }
 }

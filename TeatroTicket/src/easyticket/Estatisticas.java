@@ -25,7 +25,7 @@ public class Estatisticas {
         ticketsVendidos.add(ingresso);
     }
 
-    public boolean printTicketsForClient(String cpf, StringBuilder mensagem) {
+    public boolean imprimirIngressosParaCliente(String cpf, StringBuilder mensagem) {
         boolean encontrou = false;
         int count = 1;
 
@@ -44,7 +44,7 @@ public class Estatisticas {
         return encontrou;
     }
 
-    public StringBuilder generateStatistics() {
+    public StringBuilder criarEstatisticas() {
         StringBuilder estatisticas = new StringBuilder("Estatísticas de Vendas:\n");
 
         String[] espetaculos = {"1", "2", "3"};

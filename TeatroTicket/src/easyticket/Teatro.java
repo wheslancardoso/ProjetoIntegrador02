@@ -6,7 +6,9 @@ import java.util.Arrays;
 public class Teatro {
     private static Teatro instanciaUnica = null;
     private Boolean[][][][] poltronasDisponiveis; // Variável de instância
-    private int[] poltronasPorArea = {25, 100, 15, 30, 50};
+
+    // Definir as quantidades de poltronas por área
+    private int[] poltronasPorArea = {25, 100, 5 * 6, 4 * 10, 50}; // Atualizado para frisa (6 frisas com 5 poltronas cada) e camarote (4 camarotes com 10 poltronas cada)
 
     // Construtor privado
     private Teatro() {
@@ -28,7 +30,7 @@ public class Teatro {
         for (int area = 0; area < poltronasDisponiveis.length; area++) {
             for (int espetaculo = 0; espetaculo < poltronasDisponiveis[area].length; espetaculo++) {
                 for (int sessao = 0; sessao < poltronasDisponiveis[area][espetaculo].length; sessao++) {
-                    poltronasDisponiveis[area][espetaculo][sessao] = new Boolean[poltronasPorArea[area]];
+                    poltronasDisponiveis[area][espetaculo][sessao] = new Boolean[poltronasPorArea[area]]; // Usando a quantidade de poltronas por área
                     Arrays.fill(poltronasDisponiveis[area][espetaculo][sessao], Boolean.FALSE);  // Inicializa todas as poltronas como disponíveis
                 }
             }
@@ -74,7 +76,6 @@ public class Teatro {
         }
     }
 
-
     // Método para obter as poltronas disponíveis
     public Boolean[] getPoltronasDisponiveis(int area, int espetaculo, int sessao) {
         return poltronasDisponiveis[area][espetaculo][sessao];
@@ -112,5 +113,3 @@ public class Teatro {
         }
     }
 }
-
-
