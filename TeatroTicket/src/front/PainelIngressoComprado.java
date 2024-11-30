@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package front;
 
@@ -8,12 +8,12 @@ package front;
  *
  * @author WC
  */
-public class IngressoComprado2 extends javax.swing.JInternalFrame {
+public class PainelIngressoComprado extends javax.swing.JPanel {
 
     /**
-     * Creates new form IngressoComprado
+     * Creates new form PainelIngressoComprado
      */
-    public IngressoComprado2() {
+    public PainelIngressoComprado() {
         initComponents();
     }
 
@@ -58,12 +58,12 @@ public class IngressoComprado2 extends javax.swing.JInternalFrame {
         jLabel11 = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botaoVoltarMenu = new javax.swing.JButton();
+        botaoComprarNovamente = new javax.swing.JButton();
+        botaoMeusIngressos = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(570, 530));
+        jPanel1.setPreferredSize(new java.awt.Dimension(950, 680));
 
         etiquetaTitulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         etiquetaTitulo.setForeground(new java.awt.Color(21, 63, 69));
@@ -404,23 +404,28 @@ public class IngressoComprado2 extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(21, 63, 69));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Voltar ao Menu");
-        jButton1.setPreferredSize(new java.awt.Dimension(150, 40));
+        botaoVoltarMenu.setBackground(new java.awt.Color(21, 63, 69));
+        botaoVoltarMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botaoVoltarMenu.setForeground(new java.awt.Color(255, 255, 255));
+        botaoVoltarMenu.setText("Voltar ao Menu");
+        botaoVoltarMenu.setPreferredSize(new java.awt.Dimension(150, 40));
 
-        jButton2.setBackground(new java.awt.Color(39, 141, 98));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Comprar Novamente");
-        jButton2.setPreferredSize(new java.awt.Dimension(150, 40));
+        botaoComprarNovamente.setBackground(new java.awt.Color(39, 141, 98));
+        botaoComprarNovamente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botaoComprarNovamente.setForeground(new java.awt.Color(255, 255, 255));
+        botaoComprarNovamente.setText("Comprar Novamente");
+        botaoComprarNovamente.setPreferredSize(new java.awt.Dimension(150, 40));
 
-        jButton3.setBackground(new java.awt.Color(21, 63, 69));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Meus Ingressos");
-        jButton3.setPreferredSize(new java.awt.Dimension(150, 40));
+        botaoMeusIngressos.setBackground(new java.awt.Color(21, 63, 69));
+        botaoMeusIngressos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botaoMeusIngressos.setForeground(new java.awt.Color(255, 255, 255));
+        botaoMeusIngressos.setText("Meus Ingressos");
+        botaoMeusIngressos.setPreferredSize(new java.awt.Dimension(150, 40));
+        botaoMeusIngressos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoMeusIngressosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -439,10 +444,10 @@ public class IngressoComprado2 extends javax.swing.JInternalFrame {
                             .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(219, 219, 219)
+                                .addGap(370, 370, 370)
                                 .addComponent(etiquetaTitulo))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(102, 102, 102)
+                                .addGap(292, 292, 292)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -456,18 +461,18 @@ public class IngressoComprado2 extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(215, 215, 215)
+                        .addComponent(botaoVoltarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoComprarNovamente, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addComponent(botaoMeusIngressos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(215, 215, 215))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(99, 99, 99)
                 .addComponent(etiquetaTitulo)
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -491,38 +496,39 @@ public class IngressoComprado2 extends javax.swing.JInternalFrame {
                     .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoVoltarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoComprarNovamente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoMeusIngressos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(431, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botaoMeusIngressosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMeusIngressosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoMeusIngressosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoComprarNovamente;
+    private javax.swing.JButton botaoMeusIngressos;
+    private javax.swing.JButton botaoVoltarMenu;
     private javax.swing.JLabel etiquetaTitulo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;

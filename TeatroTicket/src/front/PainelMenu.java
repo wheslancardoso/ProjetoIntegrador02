@@ -8,12 +8,12 @@ package front;
  *
  * @author WC
  */
-public class painelMenu extends javax.swing.JPanel {
+public class PainelMenu extends javax.swing.JPanel {
 
     /**
-     * Creates new form painelComprarIngressso
+     * Creates new form PainelMenu
      */
-    public painelMenu() {
+    public PainelMenu() {
         initComponents();
     }
 
@@ -32,7 +32,8 @@ public class painelMenu extends javax.swing.JPanel {
         botaoEstatisticasVendas = new javax.swing.JButton();
         botaoSair = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(411, 540));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(950, 680));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("E:\\Pictures\\logoPi01 2.png")); // NOI18N
 
@@ -40,6 +41,7 @@ public class painelMenu extends javax.swing.JPanel {
         botaoComprarIngresso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         botaoComprarIngresso.setForeground(new java.awt.Color(255, 255, 255));
         botaoComprarIngresso.setText("Comprar Ingressos");
+        botaoComprarIngresso.setPreferredSize(new java.awt.Dimension(500, 32));
 
         botaoMeusIngressos.setBackground(new java.awt.Color(39, 141, 98));
         botaoMeusIngressos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -76,23 +78,24 @@ public class painelMenu extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoComprarIngresso, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoMeusIngressos, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoEstatisticasVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel1)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGap(225, 225, 225)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botaoComprarIngresso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoMeusIngressos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoEstatisticasVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(225, 225, 225))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(373, 373, 373))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(100, 100, 100)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botaoComprarIngresso, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(botaoMeusIngressos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -100,7 +103,7 @@ public class painelMenu extends javax.swing.JPanel {
                 .addComponent(botaoEstatisticasVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(botaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
