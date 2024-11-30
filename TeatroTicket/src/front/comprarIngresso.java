@@ -25,6 +25,7 @@ public class comprarIngresso extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         tituloPainel = new javax.swing.JLabel();
@@ -52,17 +53,46 @@ public class comprarIngresso extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         tituloPainel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         tituloPainel.setForeground(new java.awt.Color(21, 63, 69));
         tituloPainel.setText("Obras em Cartaz ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 57, 0, 0);
+        jPanel1.add(tituloPainel, gridBagConstraints);
 
         imagemEspetaculo1.setIcon(new javax.swing.ImageIcon("E:\\Downloads\\iloveimg-resized\\filme1PI.jpg")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 56, 0, 0);
+        jPanel1.add(imagemEspetaculo1, gridBagConstraints);
 
         imagemEspetaculo2.setIcon(new javax.swing.ImageIcon("E:\\Downloads\\iloveimg-resized\\filme2PIsemfundo.png")); // NOI18N
         imagemEspetaculo2.setText("jLabel4");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = -65;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 34, 0, 0);
+        jPanel1.add(imagemEspetaculo2, gridBagConstraints);
 
         imagemEspetaculo3.setIcon(new javax.swing.ImageIcon("E:\\Downloads\\iloveimg-resized\\filme3PI.jpg")); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 55, 0, 0);
+        jPanel1.add(imagemEspetaculo3, gridBagConstraints);
 
         botaoEspetaculo1.setBackground(new java.awt.Color(217, 217, 217));
         botaoEspetaculo1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -73,6 +103,14 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoEspetaculo1ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 54;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 56, 0, 0);
+        jPanel1.add(botaoEspetaculo1, gridBagConstraints);
 
         botaoEspetaculo2.setBackground(new java.awt.Color(217, 217, 217));
         botaoEspetaculo2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -83,6 +121,15 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoEspetaculo2ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 17;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 55, 0, 0);
+        jPanel1.add(botaoEspetaculo2, gridBagConstraints);
 
         botaoEspetaculo3.setBackground(new java.awt.Color(217, 217, 217));
         botaoEspetaculo3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -93,13 +140,34 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoEspetaculo3ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 49;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 55, 0, 0);
+        jPanel1.add(botaoEspetaculo3, gridBagConstraints);
 
         tituloSessao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         tituloSessao.setForeground(new java.awt.Color(21, 63, 69));
         tituloSessao.setText("Sessão");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(62, 102, 0, 0);
+        jPanel1.add(tituloSessao, gridBagConstraints);
 
         tituloArea.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         tituloArea.setText("Área");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(80, 110, 0, 0);
+        jPanel1.add(tituloArea, gridBagConstraints);
 
         botaoSessaoManha.setBackground(new java.awt.Color(217, 217, 217));
         botaoSessaoManha.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -110,6 +178,14 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoSessaoManhaActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 86;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 56, 0, 0);
+        jPanel1.add(botaoSessaoManha, gridBagConstraints);
 
         botaoSessaoTarde.setBackground(new java.awt.Color(217, 217, 217));
         botaoSessaoTarde.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -120,6 +196,15 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoSessaoTardeActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 86;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 55, 0, 0);
+        jPanel1.add(botaoSessaoTarde, gridBagConstraints);
 
         botaoSessaoNoite.setBackground(new java.awt.Color(217, 217, 217));
         botaoSessaoNoite.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -130,6 +215,14 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoSessaoNoiteActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 86;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 55, 0, 0);
+        jPanel1.add(botaoSessaoNoite, gridBagConstraints);
 
         botaoAreaPlateiaA.setBackground(new java.awt.Color(217, 217, 217));
         botaoAreaPlateiaA.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -140,6 +233,14 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoAreaPlateiaAActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.ipadx = 31;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 56, 0, 0);
+        jPanel1.add(botaoAreaPlateiaA, gridBagConstraints);
 
         botaoAreaPlateiaA1.setBackground(new java.awt.Color(217, 217, 217));
         botaoAreaPlateiaA1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -150,6 +251,15 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoAreaPlateiaA1ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 32;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 55, 0, 0);
+        jPanel1.add(botaoAreaPlateiaA1, gridBagConstraints);
 
         botaoAreaPlateiaA2.setBackground(new java.awt.Color(217, 217, 217));
         botaoAreaPlateiaA2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -160,6 +270,14 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoAreaPlateiaA2ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.ipadx = 13;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 55, 0, 0);
+        jPanel1.add(botaoAreaPlateiaA2, gridBagConstraints);
 
         botaoAreaPlateiaA3.setBackground(new java.awt.Color(217, 217, 217));
         botaoAreaPlateiaA3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -170,6 +288,14 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoAreaPlateiaA3ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.ipadx = 13;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 56, 0, 0);
+        jPanel1.add(botaoAreaPlateiaA3, gridBagConstraints);
 
         botaoAreaPlateiaA4.setBackground(new java.awt.Color(217, 217, 217));
         botaoAreaPlateiaA4.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -180,6 +306,15 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoAreaPlateiaA4ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 36;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 55, 0, 0);
+        jPanel1.add(botaoAreaPlateiaA4, gridBagConstraints);
 
         botaoAreaPlateiaA5.setBackground(new java.awt.Color(217, 217, 217));
         botaoAreaPlateiaA5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -190,6 +325,14 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoAreaPlateiaA5ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.ipadx = 36;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 55, 0, 0);
+        jPanel1.add(botaoAreaPlateiaA5, gridBagConstraints);
 
         botaoAreaPlateiaA6.setBackground(new java.awt.Color(217, 217, 217));
         botaoAreaPlateiaA6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -200,11 +343,27 @@ public class comprarIngresso extends javax.swing.JFrame {
                 botaoAreaPlateiaA6ActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.ipadx = 6;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 56, 0, 0);
+        jPanel1.add(botaoAreaPlateiaA6, gridBagConstraints);
 
         jButton1.setBackground(new java.awt.Color(21, 63, 69));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Voltar");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 33, 30, 0);
+        jPanel1.add(jButton1, gridBagConstraints);
 
         jButton2.setBackground(new java.awt.Color(39, 141, 98));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -215,108 +374,13 @@ public class comprarIngresso extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(404, 404, 404)
-                        .addComponent(tituloPainel))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(449, 449, 449)
-                        .addComponent(tituloSessao))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(457, 457, 457)
-                        .addComponent(tituloArea))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(botaoEspetaculo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(imagemEspetaculo1, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                                    .addComponent(botaoAreaPlateiaA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botaoSessaoManha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(botaoSessaoTarde, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(botaoAreaPlateiaA1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(34, 34, 34)
-                                                .addComponent(imagemEspetaculo2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(55, 55, 55)
-                                                .addComponent(botaoEspetaculo2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(55, 55, 55)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(botaoEspetaculo3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(imagemEspetaculo3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(botaoSessaoNoite, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(botaoAreaPlateiaA2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(55, 55, 55)
-                                        .addComponent(botaoAreaPlateiaA4, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(botaoAreaPlateiaA5, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(botaoAreaPlateiaA3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoAreaPlateiaA6, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(175, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(24, 24, 24))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(tituloPainel)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imagemEspetaculo1)
-                    .addComponent(imagemEspetaculo2)
-                    .addComponent(imagemEspetaculo3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoEspetaculo1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoEspetaculo2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoEspetaculo3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
-                .addComponent(tituloSessao)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoSessaoManha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoSessaoTarde, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoSessaoNoite, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80)
-                .addComponent(tituloArea)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoAreaPlateiaA, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoAreaPlateiaA1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoAreaPlateiaA2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoAreaPlateiaA3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoAreaPlateiaA4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoAreaPlateiaA5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(botaoAreaPlateiaA6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 8;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 4, 30, 24);
+        jPanel1.add(jButton2, gridBagConstraints);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
