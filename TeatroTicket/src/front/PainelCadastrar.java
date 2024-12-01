@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package front;
-
+import javax.swing.*;
+import java.awt.*;
+import easyticket.GerenciadorUsuarios;
+import easyticket.Usuario;
+import easyticket.ValidadorCPF;  // Se você está utilizando uma classe para validar o CPF
 /**
  *
  * @author WC

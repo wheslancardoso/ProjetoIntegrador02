@@ -3,12 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/cadastrar.java</file>
-            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/cadastrar2.java</file>
-            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/comprarIngresso.java</file>
-            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/login.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelCadastrar.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelLogin.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelCamarote1to3.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/PainelCadastro.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelComprarIngresso.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/GerenciadorIngressos.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelIngressoComprado.java</file>
             <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/JanelaPrincipal.java</file>
-            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/menu.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/Ingresso.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/Usuario.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelFrisa1to6.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelFrisa1to3.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelCamarote4and5.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/PainelEstatisticas.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelPlateiaB.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/PainelImpressaoIngresso.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelPlateiaA.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/Teatro.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/RoundedButton.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/GerenciadorUsuarios.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/PainelCompraIngresso.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/Estatisticas.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/JanelaPrincipal2.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/ValidadorCPF.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelMenu.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelEstatisticasDeVendas.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/easyticket/PainelLogin.java</file>
+            <file>file:/E:/Documents/ProjetoIntPOO/TeatroTicket/src/front/PainelBalcaoNobre.java</file>
         </group>
     </open-files>
 </project-private>
