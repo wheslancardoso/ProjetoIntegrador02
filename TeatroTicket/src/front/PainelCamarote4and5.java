@@ -31,7 +31,7 @@ public class PainelCamarote4and5 extends javax.swing.JPanel {
         etiquetaCamarote1 = new javax.swing.JLabel();
         painelDisponivel = new javax.swing.JPanel();
         etiquetaDisponivel = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
+        painelPoltronas = new javax.swing.JPanel();
         painelPoltronaCamarote4 = new javax.swing.JPanel();
         poltrona1 = new javax.swing.JToggleButton();
         poltrona2 = new javax.swing.JToggleButton();
@@ -91,7 +91,7 @@ public class PainelCamarote4and5 extends javax.swing.JPanel {
         etiquetaDisponivel.setForeground(new java.awt.Color(21, 63, 69));
         etiquetaDisponivel.setText("Disponível");
 
-        jPanel9.setPreferredSize(new java.awt.Dimension(730, 415));
+        painelPoltronas.setPreferredSize(new java.awt.Dimension(730, 415));
 
         painelPoltronaCamarote4.setBackground(new java.awt.Color(255, 255, 255));
         painelPoltronaCamarote4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -431,22 +431,22 @@ public class PainelCamarote4and5 extends javax.swing.JPanel {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        javax.swing.GroupLayout painelPoltronasLayout = new javax.swing.GroupLayout(painelPoltronas);
+        painelPoltronas.setLayout(painelPoltronasLayout);
+        painelPoltronasLayout.setHorizontalGroup(
+            painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelPoltronasLayout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(painelPoltronaCamarote4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(painelPoltronaCamarote5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        painelPoltronasLayout.setVerticalGroup(
+            painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelPoltronasLayout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(painelPoltronaCamarote5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(painelPoltronaCamarote4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(13, Short.MAX_VALUE))
@@ -512,7 +512,7 @@ public class PainelCamarote4and5 extends javax.swing.JPanel {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelPoltronaLayout.createSequentialGroup()
                             .addGap(112, 112, 112)
                             .addGroup(painelPoltronaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(painelPoltronas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(painelPoltronaLayout.createSequentialGroup()
                                     .addComponent(painelDisponivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -547,7 +547,7 @@ public class PainelCamarote4and5 extends javax.swing.JPanel {
                     .addComponent(etiquetaCamarote1)
                     .addComponent(eitquetaCamarote3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painelPoltronas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(painelPoltronaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar)
@@ -670,12 +670,12 @@ public class PainelCamarote4and5 extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaDisponivel;
     private javax.swing.JLabel etiquetaOcupado;
     private javax.swing.JLabel etiquetaTitulo;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel painelDisponivel;
     private javax.swing.JPanel painelOcupado;
     private javax.swing.JPanel painelPoltrona;
     private javax.swing.JPanel painelPoltronaCamarote4;
     private javax.swing.JPanel painelPoltronaCamarote5;
+    private javax.swing.JPanel painelPoltronas;
     private javax.swing.JToggleButton poltrona1;
     private javax.swing.JToggleButton poltrona10;
     private javax.swing.JToggleButton poltrona11;

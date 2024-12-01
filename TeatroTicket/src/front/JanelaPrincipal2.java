@@ -34,7 +34,7 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
         botaoComprarIngresso = new javax.swing.JButton();
         botaoMeusIngressos = new javax.swing.JButton();
         botaoEstatisticasVendas = new javax.swing.JButton();
@@ -43,7 +43,7 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\Pictures\\logoPi01 2.png")); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon("E:\\Pictures\\logoPi01 2.png")); // NOI18N
 
         botaoComprarIngresso.setBackground(new java.awt.Color(39, 141, 98));
         botaoComprarIngresso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -95,14 +95,14 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
                 .addGap(225, 225, 225))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(logo)
                 .addGap(373, 373, 373))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(jLabel1)
+                .addComponent(logo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botaoComprarIngresso, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
@@ -185,7 +185,7 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
     private javax.swing.JButton botaoEstatisticasVendas;
     private javax.swing.JButton botaoMeusIngressos;
     private javax.swing.JButton botaoSair;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel logo;
     // End of variables declaration//GEN-END:variables
 }

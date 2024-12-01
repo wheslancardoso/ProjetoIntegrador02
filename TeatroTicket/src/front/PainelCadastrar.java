@@ -3,11 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package front;
-import javax.swing.*;
-import java.awt.*;
-import easyticket.GerenciadorUsuarios;
-import easyticket.Usuario;
-import easyticket.ValidadorCPF;  // Se você está utilizando uma classe para validar o CPF
+// Se você está utilizando uma classe para validar o CPF
 /**
  *
  * @author WC
@@ -30,7 +26,7 @@ public class PainelCadastrar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        painelContainerEsq = new javax.swing.JPanel();
         painelNome = new javax.swing.JPanel();
         etiquetaNome = new javax.swing.JLabel();
         painelCPF = new javax.swing.JPanel();
@@ -43,7 +39,7 @@ public class PainelCadastrar extends javax.swing.JPanel {
         etiquetaSenha = new javax.swing.JLabel();
         painelConfirmaSenha = new javax.swing.JPanel();
         etiquetaConfirmaSenha = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        painelContainerDir = new javax.swing.JPanel();
         painelCampoNome = new javax.swing.JPanel();
         areaNome = new javax.swing.JTextField();
         painelCampoCPF = new javax.swing.JPanel();
@@ -56,14 +52,14 @@ public class PainelCadastrar extends javax.swing.JPanel {
         areaSenha = new javax.swing.JPasswordField();
         painelCampoConfirmaSenha = new javax.swing.JPanel();
         areaConfirmaSenha = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        logo = new javax.swing.JLabel();
+        etiquetaTitulo = new javax.swing.JLabel();
+        botaoCadastrar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        painelContainerEsq.setBackground(new java.awt.Color(255, 255, 255));
+        painelContainerEsq.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         painelNome.setBackground(new java.awt.Color(217, 217, 217));
 
@@ -197,13 +193,13 @@ public class PainelCadastrar extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout painelContainerEsqLayout = new javax.swing.GroupLayout(painelContainerEsq);
+        painelContainerEsq.setLayout(painelContainerEsqLayout);
+        painelContainerEsqLayout.setHorizontalGroup(
+            painelContainerEsqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelContainerEsqLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(painelContainerEsqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(painelConfirmaSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(painelSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(painelDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -212,9 +208,9 @@ public class PainelCadastrar extends javax.swing.JPanel {
                     .addComponent(painelNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        painelContainerEsqLayout.setVerticalGroup(
+            painelContainerEsqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelContainerEsqLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(painelNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
@@ -230,8 +226,8 @@ public class PainelCadastrar extends javax.swing.JPanel {
                 .addContainerGap(80, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(21, 63, 69));
-        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        painelContainerDir.setBackground(new java.awt.Color(21, 63, 69));
+        painelContainerDir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         painelCampoNome.setBackground(new java.awt.Color(255, 255, 255));
         painelCampoNome.setPreferredSize(new java.awt.Dimension(101, 40));
@@ -357,13 +353,13 @@ public class PainelCadastrar extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout painelContainerDirLayout = new javax.swing.GroupLayout(painelContainerDir);
+        painelContainerDir.setLayout(painelContainerDirLayout);
+        painelContainerDirLayout.setHorizontalGroup(
+            painelContainerDirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelContainerDirLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelContainerDirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(painelCampoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(painelCampoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(painelCampoTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -372,9 +368,9 @@ public class PainelCadastrar extends javax.swing.JPanel {
                     .addComponent(painelCampoConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        painelContainerDirLayout.setVerticalGroup(
+            painelContainerDirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelContainerDirLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(painelCampoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
@@ -390,19 +386,19 @@ public class PainelCadastrar extends javax.swing.JPanel {
                 .addContainerGap(80, Short.MAX_VALUE))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\Pictures\\logoPi01 2.png")); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon("E:\\Pictures\\logoPi01 2.png")); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(21, 63, 69));
-        jLabel2.setText("Cadastrar");
+        etiquetaTitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        etiquetaTitulo.setForeground(new java.awt.Color(21, 63, 69));
+        etiquetaTitulo.setText("Cadastrar");
 
-        jButton1.setBackground(new java.awt.Color(21, 63, 69));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Cadastrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botaoCadastrar.setBackground(new java.awt.Color(21, 63, 69));
+        botaoCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botaoCadastrar.setForeground(new java.awt.Color(255, 255, 255));
+        botaoCadastrar.setText("Cadastrar");
+        botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botaoCadastrarActionPerformed(evt);
             }
         });
 
@@ -412,42 +408,42 @@ public class PainelCadastrar extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(319, 320, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(400, 400, 400))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1))
+                        .addComponent(logo))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(177, 177, 177)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(painelContainerEsq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(painelContainerDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(362, 362, 362)
-                        .addComponent(jLabel2)))
+                        .addComponent(etiquetaTitulo)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(etiquetaTitulo)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(painelContainerDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(painelContainerEsq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botaoCadastrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -457,17 +453,15 @@ public class PainelCadastrar extends javax.swing.JPanel {
     private javax.swing.JTextField areaNome;
     private javax.swing.JPasswordField areaSenha;
     private javax.swing.JFormattedTextField areaTelefone;
+    private javax.swing.JButton botaoCadastrar;
     private javax.swing.JLabel etiquetaCPF;
     private javax.swing.JLabel etiquetaConfirmaSenha;
     private javax.swing.JLabel etiquetaDataNascimento;
     private javax.swing.JLabel etiquetaNome;
     private javax.swing.JLabel etiquetaSenha;
     private javax.swing.JLabel etiquetaTelefone;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel logo;
     private javax.swing.JPanel painelCPF;
     private javax.swing.JPanel painelCampoCPF;
     private javax.swing.JPanel painelCampoConfirmaSenha;
@@ -476,6 +470,8 @@ public class PainelCadastrar extends javax.swing.JPanel {
     private javax.swing.JPanel painelCampoSenha;
     private javax.swing.JPanel painelCampoTelefone;
     private javax.swing.JPanel painelConfirmaSenha;
+    private javax.swing.JPanel painelContainerDir;
+    private javax.swing.JPanel painelContainerEsq;
     private javax.swing.JPanel painelDataNascimento;
     private javax.swing.JPanel painelNome;
     private javax.swing.JPanel painelSenha;

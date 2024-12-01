@@ -55,7 +55,7 @@ public class PainelEstatisticasDeVendas extends javax.swing.JPanel {
         etiquetaEspetaculo3 = new javax.swing.JLabel();
         campoLucroMedioEsp3 = new javax.swing.JFormattedTextField();
         VoltarMenu = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botaoGerarEstatisticas = new javax.swing.JButton();
 
         painelEstatisticas.setBackground(new java.awt.Color(255, 255, 255));
         painelEstatisticas.setPreferredSize(new java.awt.Dimension(950, 680));
@@ -297,11 +297,11 @@ public class PainelEstatisticasDeVendas extends javax.swing.JPanel {
         VoltarMenu.setText("Voltar ao Menu");
         VoltarMenu.setPreferredSize(new java.awt.Dimension(150, 40));
 
-        jButton2.setBackground(new java.awt.Color(39, 141, 98));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Gerar Estatísticas");
-        jButton2.setPreferredSize(new java.awt.Dimension(150, 40));
+        botaoGerarEstatisticas.setBackground(new java.awt.Color(39, 141, 98));
+        botaoGerarEstatisticas.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botaoGerarEstatisticas.setForeground(new java.awt.Color(255, 255, 255));
+        botaoGerarEstatisticas.setText("Gerar Estatísticas");
+        botaoGerarEstatisticas.setPreferredSize(new java.awt.Dimension(150, 40));
 
         javax.swing.GroupLayout painelEstatisticasLayout = new javax.swing.GroupLayout(painelEstatisticas);
         painelEstatisticas.setLayout(painelEstatisticasLayout);
@@ -324,7 +324,7 @@ public class PainelEstatisticasDeVendas extends javax.swing.JPanel {
                         .addGap(26, 26, 26)
                         .addComponent(VoltarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 483, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botaoGerarEstatisticas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(129, 129, 129))
         );
         painelEstatisticasLayout.setVerticalGroup(
@@ -345,7 +345,7 @@ public class PainelEstatisticasDeVendas extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painelEstatisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VoltarMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoGerarEstatisticas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
 
@@ -379,6 +379,7 @@ public class PainelEstatisticasDeVendas extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PainelLucroMedio;
     private javax.swing.JButton VoltarMenu;
+    private javax.swing.JButton botaoGerarEstatisticas;
     private javax.swing.JFormattedTextField campoLucro;
     private javax.swing.JFormattedTextField campoLucroMedioEsp1;
     private javax.swing.JFormattedTextField campoLucroMedioEsp2;
@@ -401,7 +402,6 @@ public class PainelEstatisticasDeVendas extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaMenosVendido;
     private javax.swing.JLabel etiquetaSubtitulo;
     private javax.swing.JLabel etiquetaTitulo;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel painelEstatisticas;
     private javax.swing.JPanel painelLucro;
     private javax.swing.JPanel painelRankIngressosVendidos;

@@ -26,461 +26,461 @@ public class PainelPlateiaA extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
-        jToggleButton10 = new javax.swing.JToggleButton();
-        jToggleButton11 = new javax.swing.JToggleButton();
-        jToggleButton12 = new javax.swing.JToggleButton();
-        jToggleButton13 = new javax.swing.JToggleButton();
-        jToggleButton14 = new javax.swing.JToggleButton();
-        jToggleButton15 = new javax.swing.JToggleButton();
-        jToggleButton16 = new javax.swing.JToggleButton();
-        jToggleButton17 = new javax.swing.JToggleButton();
-        jToggleButton18 = new javax.swing.JToggleButton();
-        jToggleButton19 = new javax.swing.JToggleButton();
-        jToggleButton20 = new javax.swing.JToggleButton();
-        jToggleButton21 = new javax.swing.JToggleButton();
-        jToggleButton22 = new javax.swing.JToggleButton();
-        jToggleButton23 = new javax.swing.JToggleButton();
-        jToggleButton24 = new javax.swing.JToggleButton();
-        jToggleButton25 = new javax.swing.JToggleButton();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        etiquetaTitulo = new javax.swing.JLabel();
+        etiquetaEspetaculo = new javax.swing.JLabel();
+        painelDisponivel = new javax.swing.JPanel();
+        etiquetaDisponivel = new javax.swing.JLabel();
+        painelPoltronas = new javax.swing.JPanel();
+        poltrona1 = new javax.swing.JToggleButton();
+        poltrona2 = new javax.swing.JToggleButton();
+        poltrona3 = new javax.swing.JToggleButton();
+        poltrona4 = new javax.swing.JToggleButton();
+        poltrona5 = new javax.swing.JToggleButton();
+        poltrona6 = new javax.swing.JToggleButton();
+        poltrona7 = new javax.swing.JToggleButton();
+        poltrona8 = new javax.swing.JToggleButton();
+        poltrona9 = new javax.swing.JToggleButton();
+        poltrona10 = new javax.swing.JToggleButton();
+        poltrona14 = new javax.swing.JToggleButton();
+        poltrona13 = new javax.swing.JToggleButton();
+        poltrona15 = new javax.swing.JToggleButton();
+        poltrona11 = new javax.swing.JToggleButton();
+        poltrona12 = new javax.swing.JToggleButton();
+        poltrona16 = new javax.swing.JToggleButton();
+        poltrona20 = new javax.swing.JToggleButton();
+        poltrona19 = new javax.swing.JToggleButton();
+        poltrona18 = new javax.swing.JToggleButton();
+        poltrona17 = new javax.swing.JToggleButton();
+        poltrona25 = new javax.swing.JToggleButton();
+        poltrona23 = new javax.swing.JToggleButton();
+        poltrona24 = new javax.swing.JToggleButton();
+        poltrona21 = new javax.swing.JToggleButton();
+        poltrona22 = new javax.swing.JToggleButton();
+        etiquetaOcupado = new javax.swing.JLabel();
+        painelOcupado = new javax.swing.JPanel();
         botaoVoltar = new javax.swing.JButton();
         botaoConfirmarPoltrona = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(21, 63, 69));
-        jLabel1.setText("Escolha a Poltrona");
+        etiquetaTitulo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        etiquetaTitulo.setForeground(new java.awt.Color(21, 63, 69));
+        etiquetaTitulo.setText("Escolha a Poltrona");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(21, 63, 69));
-        jLabel2.setText("Plateia A");
+        etiquetaEspetaculo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        etiquetaEspetaculo.setForeground(new java.awt.Color(21, 63, 69));
+        etiquetaEspetaculo.setText("Plateia A");
 
-        jPanel3.setBackground(new java.awt.Color(39, 141, 98));
-        jPanel3.setPreferredSize(new java.awt.Dimension(30, 30));
+        painelDisponivel.setBackground(new java.awt.Color(39, 141, 98));
+        painelDisponivel.setPreferredSize(new java.awt.Dimension(30, 30));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout painelDisponivelLayout = new javax.swing.GroupLayout(painelDisponivel);
+        painelDisponivel.setLayout(painelDisponivelLayout);
+        painelDisponivelLayout.setHorizontalGroup(
+            painelDisponivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        painelDisponivelLayout.setVerticalGroup(
+            painelDisponivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(21, 63, 69));
-        jLabel3.setText("Disponível");
+        etiquetaDisponivel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        etiquetaDisponivel.setForeground(new java.awt.Color(21, 63, 69));
+        etiquetaDisponivel.setText("Disponível");
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(730, 415));
+        painelPoltronas.setPreferredSize(new java.awt.Dimension(730, 415));
 
-        jToggleButton1.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("1");
-        jToggleButton1.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        poltrona1.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona1.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona1.setText("1");
+        poltrona1.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                poltrona1ActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton2.setText("2");
-        jToggleButton2.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        poltrona2.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona2.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona2.setText("2");
+        poltrona2.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                poltrona2ActionPerformed(evt);
             }
         });
 
-        jToggleButton3.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton3.setText("3");
-        jToggleButton3.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        poltrona3.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona3.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona3.setText("3");
+        poltrona3.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                poltrona3ActionPerformed(evt);
             }
         });
 
-        jToggleButton4.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton4.setText("4");
-        jToggleButton4.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+        poltrona4.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona4.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona4.setText("4");
+        poltrona4.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
+                poltrona4ActionPerformed(evt);
             }
         });
 
-        jToggleButton5.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton5.setText("5");
-        jToggleButton5.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
+        poltrona5.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona5.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona5.setText("5");
+        poltrona5.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton5ActionPerformed(evt);
+                poltrona5ActionPerformed(evt);
             }
         });
 
-        jToggleButton6.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton6.setText("6");
-        jToggleButton6.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
+        poltrona6.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona6.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona6.setText("6");
+        poltrona6.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton6ActionPerformed(evt);
+                poltrona6ActionPerformed(evt);
             }
         });
 
-        jToggleButton7.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton7.setText("7");
-        jToggleButton7.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+        poltrona7.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona7.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona7.setText("7");
+        poltrona7.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton7ActionPerformed(evt);
+                poltrona7ActionPerformed(evt);
             }
         });
 
-        jToggleButton8.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton8.setText("8");
-        jToggleButton8.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+        poltrona8.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona8.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona8.setText("8");
+        poltrona8.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
+                poltrona8ActionPerformed(evt);
             }
         });
 
-        jToggleButton9.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton9.setText("9");
-        jToggleButton9.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton9.addActionListener(new java.awt.event.ActionListener() {
+        poltrona9.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona9.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona9.setText("9");
+        poltrona9.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton9ActionPerformed(evt);
+                poltrona9ActionPerformed(evt);
             }
         });
 
-        jToggleButton10.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton10.setText("10");
-        jToggleButton10.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton10.addActionListener(new java.awt.event.ActionListener() {
+        poltrona10.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona10.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona10.setText("10");
+        poltrona10.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton10ActionPerformed(evt);
+                poltrona10ActionPerformed(evt);
             }
         });
 
-        jToggleButton11.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton11.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton11.setText("14");
-        jToggleButton11.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton11.addActionListener(new java.awt.event.ActionListener() {
+        poltrona14.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona14.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona14.setText("14");
+        poltrona14.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton11ActionPerformed(evt);
+                poltrona14ActionPerformed(evt);
             }
         });
 
-        jToggleButton12.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton12.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton12.setText("13");
-        jToggleButton12.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton12.addActionListener(new java.awt.event.ActionListener() {
+        poltrona13.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona13.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona13.setText("13");
+        poltrona13.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton12ActionPerformed(evt);
+                poltrona13ActionPerformed(evt);
             }
         });
 
-        jToggleButton13.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton13.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton13.setText("15");
-        jToggleButton13.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton13.addActionListener(new java.awt.event.ActionListener() {
+        poltrona15.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona15.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona15.setText("15");
+        poltrona15.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton13ActionPerformed(evt);
+                poltrona15ActionPerformed(evt);
             }
         });
 
-        jToggleButton14.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton14.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton14.setText("11");
-        jToggleButton14.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton14.addActionListener(new java.awt.event.ActionListener() {
+        poltrona11.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona11.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona11.setText("11");
+        poltrona11.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton14ActionPerformed(evt);
+                poltrona11ActionPerformed(evt);
             }
         });
 
-        jToggleButton15.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton15.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton15.setText("12");
-        jToggleButton15.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton15.addActionListener(new java.awt.event.ActionListener() {
+        poltrona12.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona12.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona12.setText("12");
+        poltrona12.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton15ActionPerformed(evt);
+                poltrona12ActionPerformed(evt);
             }
         });
 
-        jToggleButton16.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton16.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton16.setText("16");
-        jToggleButton16.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton16.addActionListener(new java.awt.event.ActionListener() {
+        poltrona16.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona16.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona16.setText("16");
+        poltrona16.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton16ActionPerformed(evt);
+                poltrona16ActionPerformed(evt);
             }
         });
 
-        jToggleButton17.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton17.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton17.setText("20");
-        jToggleButton17.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton17.addActionListener(new java.awt.event.ActionListener() {
+        poltrona20.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona20.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona20.setText("20");
+        poltrona20.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton17ActionPerformed(evt);
+                poltrona20ActionPerformed(evt);
             }
         });
 
-        jToggleButton18.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton18.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton18.setText("19");
-        jToggleButton18.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton18.addActionListener(new java.awt.event.ActionListener() {
+        poltrona19.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona19.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona19.setText("19");
+        poltrona19.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton18ActionPerformed(evt);
+                poltrona19ActionPerformed(evt);
             }
         });
 
-        jToggleButton19.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton19.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton19.setText("18");
-        jToggleButton19.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton19.addActionListener(new java.awt.event.ActionListener() {
+        poltrona18.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona18.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona18.setText("18");
+        poltrona18.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton19ActionPerformed(evt);
+                poltrona18ActionPerformed(evt);
             }
         });
 
-        jToggleButton20.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton20.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton20.setText("17");
-        jToggleButton20.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton20.addActionListener(new java.awt.event.ActionListener() {
+        poltrona17.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona17.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona17.setText("17");
+        poltrona17.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton20ActionPerformed(evt);
+                poltrona17ActionPerformed(evt);
             }
         });
 
-        jToggleButton21.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton21.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton21.setText("25");
-        jToggleButton21.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton21.addActionListener(new java.awt.event.ActionListener() {
+        poltrona25.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona25.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona25.setText("25");
+        poltrona25.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton21ActionPerformed(evt);
+                poltrona25ActionPerformed(evt);
             }
         });
 
-        jToggleButton22.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton22.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton22.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton22.setText("23");
-        jToggleButton22.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton22.addActionListener(new java.awt.event.ActionListener() {
+        poltrona23.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona23.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona23.setText("23");
+        poltrona23.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton22ActionPerformed(evt);
+                poltrona23ActionPerformed(evt);
             }
         });
 
-        jToggleButton23.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton23.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton23.setText("24");
-        jToggleButton23.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton23.addActionListener(new java.awt.event.ActionListener() {
+        poltrona24.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona24.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona24.setText("24");
+        poltrona24.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton23ActionPerformed(evt);
+                poltrona24ActionPerformed(evt);
             }
         });
 
-        jToggleButton24.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton24.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton24.setText("21");
-        jToggleButton24.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton24.addActionListener(new java.awt.event.ActionListener() {
+        poltrona21.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona21.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona21.setText("21");
+        poltrona21.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton24ActionPerformed(evt);
+                poltrona21ActionPerformed(evt);
             }
         });
 
-        jToggleButton25.setBackground(new java.awt.Color(39, 141, 98));
-        jToggleButton25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jToggleButton25.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton25.setText("22");
-        jToggleButton25.setPreferredSize(new java.awt.Dimension(119, 63));
-        jToggleButton25.addActionListener(new java.awt.event.ActionListener() {
+        poltrona22.setBackground(new java.awt.Color(39, 141, 98));
+        poltrona22.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        poltrona22.setForeground(new java.awt.Color(255, 255, 255));
+        poltrona22.setText("22");
+        poltrona22.setPreferredSize(new java.awt.Dimension(119, 63));
+        poltrona22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton25ActionPerformed(evt);
+                poltrona22ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout painelPoltronasLayout = new javax.swing.GroupLayout(painelPoltronas);
+        painelPoltronas.setLayout(painelPoltronasLayout);
+        painelPoltronasLayout.setHorizontalGroup(
+            painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelPoltronasLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelPoltronasLayout.createSequentialGroup()
+                        .addComponent(poltrona1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelPoltronasLayout.createSequentialGroup()
+                        .addComponent(poltrona6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelPoltronasLayout.createSequentialGroup()
+                        .addComponent(poltrona11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jToggleButton16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelPoltronasLayout.createSequentialGroup()
+                        .addComponent(poltrona16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jToggleButton24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelPoltronasLayout.createSequentialGroup()
+                        .addComponent(poltrona21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(poltrona24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(poltrona25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        painelPoltronasLayout.setVerticalGroup(
+            painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelPoltronasLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(poltrona1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(poltrona6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(poltrona11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(poltrona16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(painelPoltronasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(poltrona21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(poltrona25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(21, 63, 69));
-        jLabel5.setText("Ocupado");
+        etiquetaOcupado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        etiquetaOcupado.setForeground(new java.awt.Color(21, 63, 69));
+        etiquetaOcupado.setText("Ocupado");
 
-        jPanel5.setBackground(new java.awt.Color(255, 51, 51));
-        jPanel5.setPreferredSize(new java.awt.Dimension(30, 30));
+        painelOcupado.setBackground(new java.awt.Color(255, 51, 51));
+        painelOcupado.setPreferredSize(new java.awt.Dimension(30, 30));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout painelOcupadoLayout = new javax.swing.GroupLayout(painelOcupado);
+        painelOcupado.setLayout(painelOcupadoLayout);
+        painelOcupadoLayout.setHorizontalGroup(
+            painelOcupadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        painelOcupadoLayout.setVerticalGroup(
+            painelOcupadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
@@ -512,7 +512,7 @@ public class PainelPlateiaA extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(385, 385, 385)
-                        .addComponent(jLabel1))
+                        .addComponent(etiquetaTitulo))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(36, 36, 36)
@@ -523,35 +523,35 @@ public class PainelPlateiaA extends javax.swing.JPanel {
                             .addGap(112, 112, 112)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
+                                    .addComponent(etiquetaEspetaculo)
                                     .addGap(51, 51, 51)
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(painelDisponivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel3)
+                                    .addComponent(etiquetaDisponivel)
                                     .addGap(34, 34, 34)
-                                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(painelOcupado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel5))
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(etiquetaOcupado))
+                                .addComponent(painelPoltronas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(103, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel1)
+                .addComponent(etiquetaTitulo)
                 .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiquetaEspetaculo, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(painelOcupado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(painelDisponivel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(etiquetaOcupado, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(etiquetaDisponivel, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(5, 5, 5)))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painelPoltronas, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoVoltar)
@@ -560,105 +560,105 @@ public class PainelPlateiaA extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void poltrona1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_poltrona1ActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void poltrona2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    }//GEN-LAST:event_poltrona2ActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void poltrona3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_poltrona3ActionPerformed
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+    private void poltrona4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    }//GEN-LAST:event_poltrona4ActionPerformed
 
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
+    private void poltrona5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
+    }//GEN-LAST:event_poltrona5ActionPerformed
 
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
+    private void poltrona6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
+    }//GEN-LAST:event_poltrona6ActionPerformed
 
-    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
+    private void poltrona7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona7ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton7ActionPerformed
+    }//GEN-LAST:event_poltrona7ActionPerformed
 
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+    private void poltrona8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
+    }//GEN-LAST:event_poltrona8ActionPerformed
 
-    private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
+    private void poltrona9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona9ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton9ActionPerformed
+    }//GEN-LAST:event_poltrona9ActionPerformed
 
-    private void jToggleButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton10ActionPerformed
+    private void poltrona10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona10ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton10ActionPerformed
+    }//GEN-LAST:event_poltrona10ActionPerformed
 
-    private void jToggleButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton11ActionPerformed
+    private void poltrona14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona14ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton11ActionPerformed
+    }//GEN-LAST:event_poltrona14ActionPerformed
 
-    private void jToggleButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton12ActionPerformed
+    private void poltrona13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona13ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton12ActionPerformed
+    }//GEN-LAST:event_poltrona13ActionPerformed
 
-    private void jToggleButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton13ActionPerformed
+    private void poltrona15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona15ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton13ActionPerformed
+    }//GEN-LAST:event_poltrona15ActionPerformed
 
-    private void jToggleButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton14ActionPerformed
+    private void poltrona11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton14ActionPerformed
+    }//GEN-LAST:event_poltrona11ActionPerformed
 
-    private void jToggleButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton15ActionPerformed
+    private void poltrona12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona12ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton15ActionPerformed
+    }//GEN-LAST:event_poltrona12ActionPerformed
 
-    private void jToggleButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton16ActionPerformed
+    private void poltrona16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona16ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton16ActionPerformed
+    }//GEN-LAST:event_poltrona16ActionPerformed
 
-    private void jToggleButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton17ActionPerformed
+    private void poltrona20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona20ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton17ActionPerformed
+    }//GEN-LAST:event_poltrona20ActionPerformed
 
-    private void jToggleButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton18ActionPerformed
+    private void poltrona19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona19ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton18ActionPerformed
+    }//GEN-LAST:event_poltrona19ActionPerformed
 
-    private void jToggleButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton19ActionPerformed
+    private void poltrona18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona18ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton19ActionPerformed
+    }//GEN-LAST:event_poltrona18ActionPerformed
 
-    private void jToggleButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton20ActionPerformed
+    private void poltrona17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona17ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton20ActionPerformed
+    }//GEN-LAST:event_poltrona17ActionPerformed
 
-    private void jToggleButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton21ActionPerformed
+    private void poltrona25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona25ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton21ActionPerformed
+    }//GEN-LAST:event_poltrona25ActionPerformed
 
-    private void jToggleButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton22ActionPerformed
+    private void poltrona23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona23ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton22ActionPerformed
+    }//GEN-LAST:event_poltrona23ActionPerformed
 
-    private void jToggleButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton23ActionPerformed
+    private void poltrona24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona24ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton23ActionPerformed
+    }//GEN-LAST:event_poltrona24ActionPerformed
 
-    private void jToggleButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton24ActionPerformed
+    private void poltrona21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona21ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton24ActionPerformed
+    }//GEN-LAST:event_poltrona21ActionPerformed
 
-    private void jToggleButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton25ActionPerformed
+    private void poltrona22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_poltrona22ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton25ActionPerformed
+    }//GEN-LAST:event_poltrona22ActionPerformed
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         // TODO add your handling code here:
@@ -672,37 +672,37 @@ public class PainelPlateiaA extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoConfirmarPoltrona;
     private javax.swing.JButton botaoVoltar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton11;
-    private javax.swing.JToggleButton jToggleButton12;
-    private javax.swing.JToggleButton jToggleButton13;
-    private javax.swing.JToggleButton jToggleButton14;
-    private javax.swing.JToggleButton jToggleButton15;
-    private javax.swing.JToggleButton jToggleButton16;
-    private javax.swing.JToggleButton jToggleButton17;
-    private javax.swing.JToggleButton jToggleButton18;
-    private javax.swing.JToggleButton jToggleButton19;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton20;
-    private javax.swing.JToggleButton jToggleButton21;
-    private javax.swing.JToggleButton jToggleButton22;
-    private javax.swing.JToggleButton jToggleButton23;
-    private javax.swing.JToggleButton jToggleButton24;
-    private javax.swing.JToggleButton jToggleButton25;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
+    private javax.swing.JLabel etiquetaDisponivel;
+    private javax.swing.JLabel etiquetaEspetaculo;
+    private javax.swing.JLabel etiquetaOcupado;
+    private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JPanel painelDisponivel;
+    private javax.swing.JPanel painelOcupado;
+    private javax.swing.JPanel painelPoltronas;
+    private javax.swing.JToggleButton poltrona1;
+    private javax.swing.JToggleButton poltrona10;
+    private javax.swing.JToggleButton poltrona11;
+    private javax.swing.JToggleButton poltrona12;
+    private javax.swing.JToggleButton poltrona13;
+    private javax.swing.JToggleButton poltrona14;
+    private javax.swing.JToggleButton poltrona15;
+    private javax.swing.JToggleButton poltrona16;
+    private javax.swing.JToggleButton poltrona17;
+    private javax.swing.JToggleButton poltrona18;
+    private javax.swing.JToggleButton poltrona19;
+    private javax.swing.JToggleButton poltrona2;
+    private javax.swing.JToggleButton poltrona20;
+    private javax.swing.JToggleButton poltrona21;
+    private javax.swing.JToggleButton poltrona22;
+    private javax.swing.JToggleButton poltrona23;
+    private javax.swing.JToggleButton poltrona24;
+    private javax.swing.JToggleButton poltrona25;
+    private javax.swing.JToggleButton poltrona3;
+    private javax.swing.JToggleButton poltrona4;
+    private javax.swing.JToggleButton poltrona5;
+    private javax.swing.JToggleButton poltrona6;
+    private javax.swing.JToggleButton poltrona7;
+    private javax.swing.JToggleButton poltrona8;
+    private javax.swing.JToggleButton poltrona9;
     // End of variables declaration//GEN-END:variables
 }

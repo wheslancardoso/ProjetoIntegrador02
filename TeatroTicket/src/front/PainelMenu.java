@@ -26,7 +26,7 @@ public class PainelMenu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
         botaoComprarIngresso = new javax.swing.JButton();
         botaoMeusIngressos = new javax.swing.JButton();
         botaoEstatisticasVendas = new javax.swing.JButton();
@@ -35,7 +35,7 @@ public class PainelMenu extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(950, 680));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\Pictures\\logoPi01 2.png")); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon("E:\\Pictures\\logoPi01 2.png")); // NOI18N
 
         botaoComprarIngresso.setBackground(new java.awt.Color(39, 141, 98));
         botaoComprarIngresso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -87,14 +87,14 @@ public class PainelMenu extends javax.swing.JPanel {
                 .addGap(225, 225, 225))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(logo)
                 .addGap(373, 373, 373))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(jLabel1)
+                .addComponent(logo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botaoComprarIngresso, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
@@ -125,6 +125,6 @@ public class PainelMenu extends javax.swing.JPanel {
     private javax.swing.JButton botaoEstatisticasVendas;
     private javax.swing.JButton botaoMeusIngressos;
     private javax.swing.JButton botaoSair;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel logo;
     // End of variables declaration//GEN-END:variables
 }

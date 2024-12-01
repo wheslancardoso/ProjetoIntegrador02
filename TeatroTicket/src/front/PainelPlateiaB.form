@@ -25,30 +25,30 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="379" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="etiquetaTitulo" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="etiquetaEspetaculo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="painelDisponivel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="etiquetaDisponivel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="painelOcupado" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="etiquetaOcupado" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="jButton26" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoVoltar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButton27" min="-2" max="-2" attributes="0"/>
+                          <Component id="botaoConfirmaPoltrona" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
-                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="painelPoltronas" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -60,26 +60,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="etiquetaTitulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPanel5" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPanel3" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="etiquetaEspetaculo" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="painelOcupado" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="painelDisponivel" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="etiquetaOcupado" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="etiquetaDisponivel" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jPanel2" min="-2" pref="551" max="-2" attributes="0"/>
+              <Component id="painelPoltronas" min="-2" pref="551" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton26" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton27" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botaoVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botaoConfirmaPoltrona" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
@@ -87,7 +87,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="etiquetaTitulo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
@@ -98,7 +98,7 @@
         <Property name="text" type="java.lang.String" value="Escolha a Poltrona"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="etiquetaEspetaculo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -109,7 +109,7 @@
         <Property name="text" type="java.lang.String" value="Plateia B"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="jPanel3">
+    <Container class="javax.swing.JPanel" name="painelDisponivel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -132,7 +132,7 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="etiquetaDisponivel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -143,7 +143,18 @@
         <Property name="text" type="java.lang.String" value="Dispon&#xed;vel"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="jPanel2">
+    <Component class="javax.swing.JLabel" name="etiquetaOcupado">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="45" green="3f" red="15" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ocupado"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="painelPoltronas">
       <Properties>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[730, 415]"/>
@@ -157,214 +168,214 @@
                   <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton4" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton5" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton6" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton7" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton8" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton9" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton10" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona10" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jToggleButton11" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton12" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton13" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton14" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona14" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton15" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona15" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton16" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona16" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton17" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona17" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton18" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona18" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton19" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona19" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton20" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona20" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jToggleButton21" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona21" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton25" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona22" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton26" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona23" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton24" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona24" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton22" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona25" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton23" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona26" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton27" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona27" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton28" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona28" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton29" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona29" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton30" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona30" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jToggleButton34" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona31" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton31" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona32" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton39" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona33" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton32" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona34" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton38" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona35" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton37" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona36" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton36" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona37" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton35" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona38" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton40" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona39" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton33" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona40" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jToggleButton46" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona41" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton43" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona42" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton49" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona43" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton48" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona44" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton50" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona45" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton42" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona46" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton44" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona47" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton47" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona48" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton45" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona49" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton41" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona50" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jToggleButton54" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona51" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton57" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona52" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton52" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona53" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton60" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona54" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton53" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona55" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton56" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona56" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton51" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona57" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton59" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona58" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton58" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona59" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton55" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona60" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jToggleButton67" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona61" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton64" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona62" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton68" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona63" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton69" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona64" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton70" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona65" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton66" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona66" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton61" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona67" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton62" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona68" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton63" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona69" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton65" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona70" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jToggleButton76" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona71" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton78" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona72" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton80" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona73" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton75" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona74" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton74" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona75" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton79" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona76" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton71" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona77" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton72" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona78" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton77" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona79" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton73" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona80" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jToggleButton86" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona81" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton89" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona82" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton82" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona83" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton88" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona84" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton87" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona85" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton85" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona86" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton90" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona87" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton83" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona88" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton84" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona89" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton81" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona90" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jToggleButton97" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona91" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton100" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona92" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton91" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona93" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton95" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona94" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton94" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona95" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton96" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona96" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton99" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona97" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton92" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona98" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton98" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona99" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton93" min="-2" max="-2" attributes="0"/>
+                          <Component id="poltrona100" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="27" max="32767" attributes="0"/>
@@ -376,133 +387,133 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton13" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton14" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton15" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton16" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton17" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton18" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton19" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton20" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona14" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona15" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona16" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona17" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona18" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona19" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona20" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton21" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton25" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton26" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton24" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton22" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton23" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton27" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton28" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton29" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton30" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona21" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona22" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona23" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona24" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona25" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona26" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona27" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona28" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona29" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona30" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton34" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton31" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton39" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton32" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton38" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton37" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton36" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton35" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton40" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton33" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona31" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona32" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona33" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona34" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona35" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona36" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona37" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona38" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona39" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona40" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton46" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton43" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton49" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton48" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton50" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton42" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton44" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton47" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton45" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton41" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona41" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona42" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona43" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona44" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona45" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona46" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona47" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona48" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona49" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona50" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton54" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton57" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton52" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton60" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton53" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton56" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton51" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton59" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton58" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton55" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona51" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona52" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona53" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona54" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona55" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona56" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona57" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona58" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona59" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona60" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton67" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton64" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton68" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton69" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton70" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton66" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton61" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton62" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton63" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton65" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona61" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona62" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona63" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona64" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona65" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona66" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona67" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona68" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona69" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona70" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton76" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton78" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton80" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton75" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton74" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton79" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton71" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton72" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton77" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton73" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona71" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona72" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona73" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona74" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona75" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona76" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona77" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona78" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona79" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona80" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton86" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton89" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton82" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton88" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton87" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton85" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton90" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton83" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton84" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton81" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona81" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona82" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona83" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona84" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona85" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona86" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona87" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona88" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona89" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona90" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jToggleButton97" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton100" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton91" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton95" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton94" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton96" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton99" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton92" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton98" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jToggleButton93" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona91" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona92" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona93" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona94" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona95" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona96" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona97" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona98" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona99" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="poltrona100" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="35" max="32767" attributes="0"/>
               </Group>
@@ -510,7 +521,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+        <Component class="javax.swing.JToggleButton" name="poltrona1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -526,8 +537,11 @@
               <Dimension value="[56, 30]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="poltrona1ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+        <Component class="javax.swing.JToggleButton" name="poltrona2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -544,7 +558,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton3">
+        <Component class="javax.swing.JToggleButton" name="poltrona3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -561,7 +575,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton4">
+        <Component class="javax.swing.JToggleButton" name="poltrona4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -578,7 +592,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton5">
+        <Component class="javax.swing.JToggleButton" name="poltrona5">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -595,7 +609,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton6">
+        <Component class="javax.swing.JToggleButton" name="poltrona6">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -612,7 +626,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton7">
+        <Component class="javax.swing.JToggleButton" name="poltrona7">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -629,7 +643,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton8">
+        <Component class="javax.swing.JToggleButton" name="poltrona8">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -646,7 +660,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton9">
+        <Component class="javax.swing.JToggleButton" name="poltrona9">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -663,7 +677,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton10">
+        <Component class="javax.swing.JToggleButton" name="poltrona10">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -680,7 +694,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton11">
+        <Component class="javax.swing.JToggleButton" name="poltrona11">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -697,7 +711,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton12">
+        <Component class="javax.swing.JToggleButton" name="poltrona12">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -714,7 +728,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton13">
+        <Component class="javax.swing.JToggleButton" name="poltrona13">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -731,7 +745,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton14">
+        <Component class="javax.swing.JToggleButton" name="poltrona14">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -748,7 +762,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton15">
+        <Component class="javax.swing.JToggleButton" name="poltrona15">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -765,7 +779,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton16">
+        <Component class="javax.swing.JToggleButton" name="poltrona16">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -782,7 +796,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton17">
+        <Component class="javax.swing.JToggleButton" name="poltrona17">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -799,7 +813,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton18">
+        <Component class="javax.swing.JToggleButton" name="poltrona18">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -816,7 +830,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton19">
+        <Component class="javax.swing.JToggleButton" name="poltrona19">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -833,7 +847,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton20">
+        <Component class="javax.swing.JToggleButton" name="poltrona20">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -850,7 +864,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton21">
+        <Component class="javax.swing.JToggleButton" name="poltrona21">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -867,7 +881,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton22">
+        <Component class="javax.swing.JToggleButton" name="poltrona25">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -884,7 +898,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton23">
+        <Component class="javax.swing.JToggleButton" name="poltrona26">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -901,7 +915,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton24">
+        <Component class="javax.swing.JToggleButton" name="poltrona24">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -918,7 +932,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton25">
+        <Component class="javax.swing.JToggleButton" name="poltrona22">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -935,7 +949,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton26">
+        <Component class="javax.swing.JToggleButton" name="poltrona23">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -952,7 +966,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton27">
+        <Component class="javax.swing.JToggleButton" name="poltrona27">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -969,7 +983,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton28">
+        <Component class="javax.swing.JToggleButton" name="poltrona28">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -986,7 +1000,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton29">
+        <Component class="javax.swing.JToggleButton" name="poltrona29">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1003,7 +1017,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton30">
+        <Component class="javax.swing.JToggleButton" name="poltrona30">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1020,7 +1034,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton31">
+        <Component class="javax.swing.JToggleButton" name="poltrona32">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1037,7 +1051,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton32">
+        <Component class="javax.swing.JToggleButton" name="poltrona34">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1054,7 +1068,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton33">
+        <Component class="javax.swing.JToggleButton" name="poltrona40">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1071,7 +1085,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton34">
+        <Component class="javax.swing.JToggleButton" name="poltrona31">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1088,7 +1102,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton35">
+        <Component class="javax.swing.JToggleButton" name="poltrona38">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1105,7 +1119,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton36">
+        <Component class="javax.swing.JToggleButton" name="poltrona37">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1122,7 +1136,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton37">
+        <Component class="javax.swing.JToggleButton" name="poltrona36">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1139,7 +1153,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton38">
+        <Component class="javax.swing.JToggleButton" name="poltrona35">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1156,7 +1170,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton39">
+        <Component class="javax.swing.JToggleButton" name="poltrona33">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1172,8 +1186,11 @@
               <Dimension value="[56, 30]"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="poltrona33ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton40">
+        <Component class="javax.swing.JToggleButton" name="poltrona39">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1190,7 +1207,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton41">
+        <Component class="javax.swing.JToggleButton" name="poltrona50">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1207,7 +1224,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton42">
+        <Component class="javax.swing.JToggleButton" name="poltrona46">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1224,7 +1241,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton43">
+        <Component class="javax.swing.JToggleButton" name="poltrona42">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1241,7 +1258,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton44">
+        <Component class="javax.swing.JToggleButton" name="poltrona47">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1258,7 +1275,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton45">
+        <Component class="javax.swing.JToggleButton" name="poltrona49">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1275,7 +1292,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton46">
+        <Component class="javax.swing.JToggleButton" name="poltrona41">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1292,7 +1309,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton47">
+        <Component class="javax.swing.JToggleButton" name="poltrona48">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1309,7 +1326,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton48">
+        <Component class="javax.swing.JToggleButton" name="poltrona44">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1326,7 +1343,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton49">
+        <Component class="javax.swing.JToggleButton" name="poltrona43">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1343,7 +1360,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton50">
+        <Component class="javax.swing.JToggleButton" name="poltrona45">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1360,7 +1377,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton51">
+        <Component class="javax.swing.JToggleButton" name="poltrona57">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1377,7 +1394,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton52">
+        <Component class="javax.swing.JToggleButton" name="poltrona53">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1394,7 +1411,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton53">
+        <Component class="javax.swing.JToggleButton" name="poltrona55">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1411,7 +1428,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton54">
+        <Component class="javax.swing.JToggleButton" name="poltrona51">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1428,7 +1445,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton55">
+        <Component class="javax.swing.JToggleButton" name="poltrona60">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1445,7 +1462,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton56">
+        <Component class="javax.swing.JToggleButton" name="poltrona56">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1462,7 +1479,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton57">
+        <Component class="javax.swing.JToggleButton" name="poltrona52">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1479,7 +1496,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton58">
+        <Component class="javax.swing.JToggleButton" name="poltrona59">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1496,7 +1513,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton59">
+        <Component class="javax.swing.JToggleButton" name="poltrona58">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1513,7 +1530,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton60">
+        <Component class="javax.swing.JToggleButton" name="poltrona54">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1530,7 +1547,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton61">
+        <Component class="javax.swing.JToggleButton" name="poltrona67">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1547,7 +1564,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton62">
+        <Component class="javax.swing.JToggleButton" name="poltrona68">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1564,7 +1581,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton63">
+        <Component class="javax.swing.JToggleButton" name="poltrona69">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1581,7 +1598,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton64">
+        <Component class="javax.swing.JToggleButton" name="poltrona62">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1598,7 +1615,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton65">
+        <Component class="javax.swing.JToggleButton" name="poltrona70">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1615,7 +1632,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton66">
+        <Component class="javax.swing.JToggleButton" name="poltrona66">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1632,7 +1649,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton67">
+        <Component class="javax.swing.JToggleButton" name="poltrona61">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1649,7 +1666,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton68">
+        <Component class="javax.swing.JToggleButton" name="poltrona63">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1666,7 +1683,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton69">
+        <Component class="javax.swing.JToggleButton" name="poltrona64">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1683,7 +1700,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton70">
+        <Component class="javax.swing.JToggleButton" name="poltrona65">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1700,7 +1717,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton71">
+        <Component class="javax.swing.JToggleButton" name="poltrona77">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1717,7 +1734,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton72">
+        <Component class="javax.swing.JToggleButton" name="poltrona78">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1734,7 +1751,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton73">
+        <Component class="javax.swing.JToggleButton" name="poltrona80">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1751,7 +1768,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton74">
+        <Component class="javax.swing.JToggleButton" name="poltrona75">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1768,7 +1785,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton75">
+        <Component class="javax.swing.JToggleButton" name="poltrona74">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1785,7 +1802,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton76">
+        <Component class="javax.swing.JToggleButton" name="poltrona71">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1802,7 +1819,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton77">
+        <Component class="javax.swing.JToggleButton" name="poltrona79">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1819,7 +1836,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton78">
+        <Component class="javax.swing.JToggleButton" name="poltrona72">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1836,7 +1853,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton79">
+        <Component class="javax.swing.JToggleButton" name="poltrona76">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1853,7 +1870,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton80">
+        <Component class="javax.swing.JToggleButton" name="poltrona73">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1870,7 +1887,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton81">
+        <Component class="javax.swing.JToggleButton" name="poltrona90">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1887,7 +1904,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton82">
+        <Component class="javax.swing.JToggleButton" name="poltrona83">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1904,7 +1921,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton83">
+        <Component class="javax.swing.JToggleButton" name="poltrona88">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1921,7 +1938,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton84">
+        <Component class="javax.swing.JToggleButton" name="poltrona89">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1938,7 +1955,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton85">
+        <Component class="javax.swing.JToggleButton" name="poltrona86">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1955,7 +1972,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton86">
+        <Component class="javax.swing.JToggleButton" name="poltrona81">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1972,7 +1989,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton87">
+        <Component class="javax.swing.JToggleButton" name="poltrona85">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -1989,7 +2006,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton88">
+        <Component class="javax.swing.JToggleButton" name="poltrona84">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2006,7 +2023,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton89">
+        <Component class="javax.swing.JToggleButton" name="poltrona82">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2023,7 +2040,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton90">
+        <Component class="javax.swing.JToggleButton" name="poltrona87">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2040,7 +2057,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton91">
+        <Component class="javax.swing.JToggleButton" name="poltrona93">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2057,7 +2074,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton92">
+        <Component class="javax.swing.JToggleButton" name="poltrona98">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2074,7 +2091,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton93">
+        <Component class="javax.swing.JToggleButton" name="poltrona100">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2091,7 +2108,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton94">
+        <Component class="javax.swing.JToggleButton" name="poltrona95">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2108,7 +2125,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton95">
+        <Component class="javax.swing.JToggleButton" name="poltrona94">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2125,7 +2142,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton96">
+        <Component class="javax.swing.JToggleButton" name="poltrona96">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2142,7 +2159,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton97">
+        <Component class="javax.swing.JToggleButton" name="poltrona91">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2159,7 +2176,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton98">
+        <Component class="javax.swing.JToggleButton" name="poltrona99">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2176,7 +2193,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton99">
+        <Component class="javax.swing.JToggleButton" name="poltrona97">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2193,7 +2210,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton100">
+        <Component class="javax.swing.JToggleButton" name="poltrona92">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2212,18 +2229,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="45" green="3f" red="15" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Ocupado"/>
-      </Properties>
-    </Component>
-    <Container class="javax.swing.JPanel" name="jPanel5">
+    <Container class="javax.swing.JPanel" name="painelOcupado">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -2246,7 +2252,7 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton26">
+    <Component class="javax.swing.JButton" name="botaoVoltar">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="45" green="3f" red="15" type="rgb"/>
@@ -2260,10 +2266,10 @@
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton26ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoVoltarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton27">
+    <Component class="javax.swing.JButton" name="botaoConfirmaPoltrona">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="62" green="8d" red="27" type="rgb"/>
@@ -2274,10 +2280,10 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Escolher Poltrona"/>
+        <Property name="text" type="java.lang.String" value="Confirmar Poltrona"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton27ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoConfirmaPoltronaActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
