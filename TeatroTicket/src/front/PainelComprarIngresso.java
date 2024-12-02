@@ -17,9 +17,16 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
     /**
      * Creates new form PainelComprarIngresso
      */
-    public PainelComprarIngresso() {
-        initComponents();
+    // Variáveis para armazenar as seleções
+    private String espetaculoSelecionado = "";
+    private String sessaoSelecionada = "";
+    private String areaSelecionada = "";
+
+    public PainelComprarIngresso(JPanel painelPrincipal) {
+        this.painelPrincipal = painelPrincipal;  // Armazene a referência do painel principal
+        initComponents(); // Chame apenas uma vez
         // Inicialize os componentes do painel aqui, como o botão "Voltar"
+
     }
 
     /**
@@ -77,6 +84,12 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
         botaoVoltar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         botaoVoltar.setForeground(new java.awt.Color(255, 255, 255));
         botaoVoltar.setText("Voltar");
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
+
 
         botaoEscolherPoltrona.setBackground(new java.awt.Color(39, 141, 98));
         botaoEscolherPoltrona.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -91,59 +104,129 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
         botaoEspetaculo1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoEspetaculo1.setForeground(new java.awt.Color(21, 63, 69));
         botaoEspetaculo1.setText("The Batman");
+        botaoEspetaculo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                espetaculoSelecionado = "The Batman";
+            }
+        });
 
         botaoEspetaculo2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoEspetaculo2.setForeground(new java.awt.Color(21, 63, 69));
         botaoEspetaculo2.setText("Kill Bill: Volume 1");
+        botaoEspetaculo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                espetaculoSelecionado = "Kill Bill: Volume 1";
+            }
+        });
 
         botaoEspetaculo3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoEspetaculo3.setForeground(new java.awt.Color(21, 63, 69));
         botaoEspetaculo3.setText("Django Livre");
         botaoEspetaculo3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoEspetaculo3ActionPerformed(evt);
+                espetaculoSelecionado = "Django Livre";
             }
         });
 
         botaoManha.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoManha.setForeground(new java.awt.Color(21, 63, 69));
         botaoManha.setText("Manhã");
+        botaoManha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sessaoSelecionada = "Manhã";
+            }
+        });
 
         botaoTarde.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoTarde.setForeground(new java.awt.Color(21, 63, 69));
         botaoTarde.setText("Tarde");
+        botaoTarde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sessaoSelecionada = "Tarde";
+            }
+        });
+
 
         botaoNoite.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoNoite.setForeground(new java.awt.Color(21, 63, 69));
         botaoNoite.setText("Noite");
+        botaoNoite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sessaoSelecionada = "Noite";
+            }
+        });
 
         botaoPlateiaA.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoPlateiaA.setForeground(new java.awt.Color(21, 63, 69));
         botaoPlateiaA.setText("Plateia A - R$40");
+        botaoPlateiaA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                areaSelecionada = "Plateia A - R$40";
+            }
+        });
 
         botaoPlateiaB.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoPlateiaB.setForeground(new java.awt.Color(21, 63, 69));
         botaoPlateiaB.setText("Plateia B - R$80");
+        botaoPlateiaB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                areaSelecionada = "Plateia B - R$80";
+            }
+        });
 
         botaoCamarote4e5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoCamarote4e5.setForeground(new java.awt.Color(21, 63, 69));
         botaoCamarote4e5.setText("Camarote 4-5 R$80");
+        botaoCamarote4e5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                areaSelecionada = "Camarote 4-5 R$80";
+            }
+        });
 
         botaoCamarote1a3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoCamarote1a3.setForeground(new java.awt.Color(21, 63, 69));
         botaoCamarote1a3.setText("Camarote 1-3 R$80");
+        botaoCamarote1a3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                areaSelecionada = "Camarote 1-3 R$80";
+            }
+        });
+
 
         botaoFrisa1a3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoFrisa1a3.setForeground(new java.awt.Color(21, 63, 69));
         botaoFrisa1a3.setText("Frisa 1-3 R$120");
+        botaoFrisa1a3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                areaSelecionada = "Frisa 1-3 R$120";
+            }
+        });
+
 
         botaoFrisa1a6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoFrisa1a6.setForeground(new java.awt.Color(21, 63, 69));
         botaoFrisa1a6.setText("Frisa 4-6 R$120");
+        botaoFrisa1a6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                areaSelecionada = "Frisa 4-6 R$120";
+            }
+        });
 
         botaoBalcaoNobre.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         botaoBalcaoNobre.setForeground(new java.awt.Color(21, 63, 69));
         botaoBalcaoNobre.setText("Balcão Nobre");
+        botaoBalcaoNobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                areaSelecionada = "Balcão Nobre R$200";
+            }
+        });
+
+        // Adiciona o ActionListener para o botão de voltar
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -253,13 +336,22 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
 
     private void botaoEscolherPoltronaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEscolherPoltronaActionPerformed
         // TODO add your handling code here:
+        // Exemplo de ação ao escolher poltrona
+        System.out.println("Espetáculo Selecionado: " + espetaculoSelecionado);
+        System.out.println("Sessão Selecionada: " + sessaoSelecionada);
+        System.out.println("Área Selecionada: " + areaSelecionada);
     }//GEN-LAST:event_botaoEscolherPoltronaActionPerformed
 
     private void botaoEspetaculo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEspetaculo3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoEspetaculo3ActionPerformed
-
-
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {
+        navigateToPanel("Menu");  // Nome correto do painel para retornar
+    }
+    private void navigateToPanel(String panelName) {
+        CardLayout layout = (CardLayout) painelPrincipal.getLayout(); // Certifique-se de que o painel principal use CardLayout
+        layout.show(painelPrincipal, panelName); // Navega para o painel especificado
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton botaoBalcaoNobre;
     private javax.swing.JToggleButton botaoCamarote1a3;

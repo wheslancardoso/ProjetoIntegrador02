@@ -21,7 +21,7 @@ public class GerenciadorIngressos {
     public int escolherPoltrona(Ingresso ingresso) {
         int areaIndice = Integer.parseInt(ingresso.getArea()) - 1;
         int espetaculoIndice = Integer.parseInt(ingresso.getEspetaculo()) - 1;
-        int sessaoIndice = Integer.parseInt(ingresso.getSessao()) - 1;
+        int sessaoIndice = Integer.parseInt(ingresso.getSessao()) - 2;
 
         Boolean[] poltronasDisponiveis = teatro.getPoltronasDisponiveis(areaIndice, espetaculoIndice, sessaoIndice);
         List<Integer> poltronasLivres = new ArrayList<>();

@@ -33,7 +33,7 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
             cardLayout = (CardLayout) painelPrincipal.getLayout();
 
         // Criação dos painéis (cada um representando uma tela)
-        PainelComprarIngresso painelComprar = new PainelComprarIngresso(); // Adapte o construtor conforme necessário
+        PainelComprarIngresso painelComprar = new PainelComprarIngresso(painelPrincipal); // Adapte o construtor conforme necessário
         PainelMeusIngressos painelMeusIngressos = new PainelMeusIngressos(); // Adapte o construtor conforme necessário
         PainelEstatisticasDeVendas painelEstatisticas = new PainelEstatisticasDeVendas(); // Adapte o construtor conforme necessário
 
