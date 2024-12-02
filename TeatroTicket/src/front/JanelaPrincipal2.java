@@ -29,6 +29,7 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         private void initComponentsExtra() {
             // Inicializando o painel principal primeiro
             painelPrincipal = new JPanel(new CardLayout());
+            JPanel menuPanel = jPanel1;  // O painel do menu é o jPanel1
             cardLayout = (CardLayout) painelPrincipal.getLayout();
 
         // Criação dos painéis (cada um representando uma tela)
@@ -37,11 +38,11 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         PainelEstatisticasDeVendas painelEstatisticas = new PainelEstatisticasDeVendas(); // Adapte o construtor conforme necessário
 
         // Painel de login ou outro painel inicial
-            GerenciadorUsuarios gerenciadorUsuarios = new GerenciadorUsuarios();
+        GerenciadorUsuarios gerenciadorUsuarios = new GerenciadorUsuarios();
         PainelLogin painelLogin = new PainelLogin(painelPrincipal, gerenciadorUsuarios); // Ajuste conforme necessário
-       // Criando o painel de cadastro e passando o painelPrincipal
-         // ou de acordo com a sua lógica de inicialização
-       PainelCadastrar painelCadastrar = new PainelCadastrar(painelPrincipal, cardLayout, gerenciadorUsuarios);
+        // Criando o painel de cadastro e passando o painelPrincipal
+        // ou de acordo com a sua lógica de inicialização
+        PainelCadastrar painelCadastrar = new PainelCadastrar(painelPrincipal, cardLayout, gerenciadorUsuarios);
 
             // Adicionando painéis ao painel principal com CardLayout
         painelPrincipal.add(painelCadastrar, "Cadastro"); // Certifique-se de que a chave seja "Cadastro"
@@ -49,6 +50,13 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         painelPrincipal.add(painelComprar, "Comprar");
         painelPrincipal.add(painelMeusIngressos, "Meus Ingressos");
         painelPrincipal.add(painelEstatisticas, "Estatísticas");
+        painelPrincipal.add(menuPanel, "Menu");  // Registra o painel do menu com o nome "Menu"
+
+        // Definir fundo branco para todos os painéis
+        painelComprar.setBackground(new java.awt.Color(255, 255, 255));
+        painelMeusIngressos.setBackground(new java.awt.Color(255, 255, 255));
+        painelEstatisticas.setBackground(new java.awt.Color(255, 255, 255));
+        painelLogin.setBackground(new java.awt.Color(255,255, 255));
 
 
         cardLayout.show(painelPrincipal, "Login");
@@ -69,6 +77,7 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         botaoMeusIngressos = new javax.swing.JButton();
         botaoEstatisticasVendas = new javax.swing.JButton();
         botaoSair = new javax.swing.JButton();
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -158,7 +167,11 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>//GEN-END:initComponentso
+
+    public void mostrarMenu() {
+        cardLayout.show(painelPrincipal, "Menu"); // Aqui "Menu" é o nome do painel que você quer exibir
+    }
 
     private void botaoComprarIngressoActionPerformed(java.awt.event.ActionEvent evt) {
         cardLayout.show(painelPrincipal, "Comprar");

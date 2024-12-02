@@ -21,7 +21,7 @@ public class PainelLogin extends JPanel {
 
     private void inicializarComponentes() {
         setLayout(new GridBagLayout());
-        setBackground(new Color(245, 245, 245)); // Light gray background
+        setBackground(new Color(255, 255, 255)); // Light gray background
 
         GridBagConstraints gbc = new GridBagConstraints();
         Font labelFont = new Font("SansSerif", Font.BOLD, 16); // Bold font for labels

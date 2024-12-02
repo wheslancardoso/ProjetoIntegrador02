@@ -46,7 +46,6 @@ public class PainelMeusIngressos extends javax.swing.JPanel {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
 
         botaoImpri.setBackground(new java.awt.Color(21, 63, 69));
         botaoImpri.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

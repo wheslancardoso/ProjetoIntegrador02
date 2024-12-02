@@ -166,14 +166,14 @@
     <Component class="javax.swing.JLabel" name="imagemEspetaculo1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="E:\Downloads\iloveimg-resized\filme1PI.jpg"/>
+          <Image iconType="3" name="/imagens/filme1PI.jpg"/>
         </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="imagemEspetaculo2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="E:\Downloads\iloveimg-resized\filme2PIsemfundo.png"/>
+          <Image iconType="3" name="/imagens/filme2PIsemfundo.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>
@@ -181,7 +181,7 @@
     <Component class="javax.swing.JLabel" name="imagemEspetaculo3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="E:\Downloads\iloveimg-resized\filme3PI.jpg"/>
+          <Image iconType="3" name="/imagens/filme3PI.jpg"/>
         </Property>
       </Properties>
     </Component>

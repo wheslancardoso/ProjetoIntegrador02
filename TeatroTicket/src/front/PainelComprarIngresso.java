@@ -4,17 +4,22 @@
  */
 package front;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  *
  * @author WC
  */
 public class PainelComprarIngresso extends javax.swing.JPanel {
-
+    private CardLayout cardLayout;
+    private JPanel painelPrincipal;
     /**
      * Creates new form PainelComprarIngresso
      */
     public PainelComprarIngresso() {
         initComponents();
+        // Inicialize os componentes do painel aqui, como o botão "Voltar"
     }
 
     /**
@@ -54,12 +59,12 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
         tituloPainel.setForeground(new java.awt.Color(21, 63, 69));
         tituloPainel.setText("Obras em Cartaz ");
 
-        imagemEspetaculo1.setIcon(new javax.swing.ImageIcon("E:\\Downloads\\iloveimg-resized\\filme1PI.jpg")); // NOI18N
+        imagemEspetaculo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filme1PI.jpg"))); // NOI18N
 
-        imagemEspetaculo2.setIcon(new javax.swing.ImageIcon("E:\\Downloads\\iloveimg-resized\\filme2PIsemfundo.png")); // NOI18N
+        imagemEspetaculo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filme2PIsemfundo.png"))); // NOI18N
         imagemEspetaculo2.setText("jLabel4");
 
-        imagemEspetaculo3.setIcon(new javax.swing.ImageIcon("E:\\Downloads\\iloveimg-resized\\filme3PI.jpg")); // NOI18N
+        imagemEspetaculo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/filme3PI.jpg"))); // NOI18N
 
         tituloSessao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         tituloSessao.setForeground(new java.awt.Color(21, 63, 69));

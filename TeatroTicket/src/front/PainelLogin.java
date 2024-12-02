@@ -174,7 +174,8 @@ public class PainelLogin extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Login bem-sucedido!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             // Aqui você pode chamar o método de navegação para o menu
             // Por exemplo:
-            cardLayout.show(painelPrincipal, "Menu"); // Altere "Menu" para o nome da tela desejada
+            JanelaPrincipal2 janelaPrincipal2 = (JanelaPrincipal2) SwingUtilities.getWindowAncestor(this);
+            janelaPrincipal2.mostrarMenu();  // Aqui você chama o método para mostrar o menu
         } else {
             // Exibir mensagem de erro caso CPF ou senha estejam incorretos
             JOptionPane.showMessageDialog(this, "CPF ou senha inválidos.", "Erro", JOptionPane.ERROR_MESSAGE);
