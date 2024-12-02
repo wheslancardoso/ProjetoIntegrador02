@@ -4,6 +4,9 @@
  */
 package front;
 // Se você está utilizando uma classe para validar o CPF
+
+import javax.swing.*;
+
 /**
  *
  * @author WC
@@ -443,6 +446,29 @@ public class PainelCadastrar extends javax.swing.JPanel {
 
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
         // TODO add your handling code here:
+        // Lógica de validação de campos
+        String nome = areaNome.getText();
+        String cpf = areaCPF.getText();
+        String telefone = areaTelefone.getText();
+        String dataNascimento = areaDataNascimento.getText();
+        String senha = new String(areaSenha.getPassword());
+        String confirmaSenha = new String(areaConfirmaSenha.getPassword());
+
+        if (nome.isEmpty() || cpf.isEmpty() || telefone.isEmpty() || dataNascimento.isEmpty() || senha.isEmpty() || confirmaSenha.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Todos os campos devem ser preenchidos!");
+            return;
+        }
+
+        if (!senha.equals(confirmaSenha)) {
+            JOptionPane.showMessageDialog(this, "As senhas não coincidem!");
+            return;
+        }
+
+        // Verifique outros requisitos de validação (CPF, telefone, etc.)
+
+        // Se passar pela validação, então realizar o cadastro (simulação)
+        JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
+        // Aqui você pode adicionar a lógica para registrar o usuário, salvar no banco de dados, etc.
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 
 

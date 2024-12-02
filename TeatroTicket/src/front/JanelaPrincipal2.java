@@ -2,28 +2,50 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+package front;
 
-import easyticket.GerenciadorIngressos;
-import easyticket.GerenciadorUsuarios;
-import front.PainelEstatisticasDeVendas;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /**
  *
  * @author WC
  */
 public class JanelaPrincipal2 extends javax.swing.JFrame {
-    private GerenciadorIngressos gerenciadorIngressos;
-    private GerenciadorUsuarios gerenciadorUsuarios;
+    private CardLayout cardLayout;
+    private JPanel painelPrincipal;
+
 
     /**
      * Creates new form JanelaPrincipal
      */
     public JanelaPrincipal2() {
         initComponents();
-        gerenciadorIngressos = new GerenciadorIngressos();
-        gerenciadorUsuarios = new GerenciadorUsuarios();
+        initComponentsExtra();
     }
 
+        private void initComponentsExtra() {
+        // Configuração do layout de painéis
+        cardLayout = new CardLayout();
+        painelPrincipal = new JPanel(cardLayout);
+
+        // Criação dos painéis (cada um representando uma tela)
+        PainelComprarIngresso painelComprar = new PainelComprarIngresso(); // Adapte o construtor conforme necessário
+        PainelMeusIngressos painelMeusIngressos = new PainelMeusIngressos(); // Adapte o construtor conforme necessário
+        PainelEstatisticasDeVendas painelEstatisticas = new PainelEstatisticasDeVendas(); // Adapte o construtor conforme necessário
+
+        // Painel de login ou outro painel inicial
+        PainelLogin painelLogin = new PainelLogin(); // Ajuste conforme necessário
+
+        // Adicionando painéis ao painel principal com CardLayout
+        painelPrincipal.add(painelLogin, "Login");
+        painelPrincipal.add(painelComprar, "Comprar");
+        painelPrincipal.add(painelMeusIngressos, "Meus Ingressos");
+        painelPrincipal.add(painelEstatisticas, "Estatísticas");
+
+        cardLayout.show(painelPrincipal, "Login");
+        setContentPane(painelPrincipal);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,13 +65,14 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        logo.setIcon(new javax.swing.ImageIcon("E:\\Pictures\\logoPi01 2.png")); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo.png"))); // NOI18N
 
         botaoComprarIngresso.setBackground(new java.awt.Color(39, 141, 98));
         botaoComprarIngresso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         botaoComprarIngresso.setForeground(new java.awt.Color(255, 255, 255));
         botaoComprarIngresso.setText("Comprar Ingressos");
         botaoComprarIngresso.setPreferredSize(new java.awt.Dimension(500, 32));
+        botaoComprarIngresso.addActionListener(evt -> botaoComprarIngressoActionPerformed(evt));
 
         botaoMeusIngressos.setBackground(new java.awt.Color(39, 141, 98));
         botaoMeusIngressos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -81,6 +104,7 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
             }
         });
 
+        // Layout do painel
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -128,22 +152,26 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoComprarIngressoActionPerformed(java.awt.event.ActionEvent evt) {
+        cardLayout.show(painelPrincipal, "Comprar");
+    }
+
     private void botaoMeusIngressosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMeusIngressosActionPerformed
         // TODO add your handling code here:
+        cardLayout.show(painelPrincipal, "Meus Ingressos");
     }//GEN-LAST:event_botaoMeusIngressosActionPerformed
 
     private void botaoEstatisticasVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEstatisticasVendasActionPerformed
         // TODO add your handling code here:
+        cardLayout.show(painelPrincipal, "Meus Ingressos");
     }//GEN-LAST:event_botaoEstatisticasVendasActionPerformed
 
     private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_botaoSairActionPerformed
 
-    private void mostrarEstatisticas() {
-        // Example: Show panel for sales statistics
-        new PainelEstatisticasDeVendas(GerenciadorIngressos, this).setVisible(true);
-    }
+
     /**
      * @param args the command line arguments
      */
@@ -171,13 +199,12 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        java.awt.EventQueue.invokeLater(() -> {
+            new JanelaPrincipal2().setVisible(true); // Aqui a janela deve ser visível
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JanelaPrincipal2().setVisible(true);
-            }
         });
+        /* Create and display the form */
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

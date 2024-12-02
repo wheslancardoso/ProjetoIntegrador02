@@ -39,7 +39,6 @@ public class PainelLogin extends javax.swing.JPanel {
         etiquetaCPF.setText("CPF");
 
         campoCPF.setBackground(new java.awt.Color(217, 217, 217));
-        campoCPF.setText("000.000.000-00");
         campoCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoCPFActionPerformed(evt);
@@ -51,7 +50,6 @@ public class PainelLogin extends javax.swing.JPanel {
         etiquetaSenha.setText("Senha");
 
         campoSenha.setBackground(new java.awt.Color(217, 217, 217));
-        campoSenha.setText("jPasswordField1");
         campoSenha.setPreferredSize(new java.awt.Dimension(500, 50));
         campoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
