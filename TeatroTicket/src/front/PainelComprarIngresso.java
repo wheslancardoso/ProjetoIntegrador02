@@ -21,14 +21,43 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
     private String espetaculoSelecionado = "";
     private String sessaoSelecionada = "";
     private String areaSelecionada = "";
-
+    // Declaração dos ButtonGroups
+    private ButtonGroup grupoEspetaculos;
+    private ButtonGroup grupoSessoes;
+    private ButtonGroup grupoAreas;
     public PainelComprarIngresso(JPanel painelPrincipal) {
         this.painelPrincipal = painelPrincipal;  // Armazene a referência do painel principal
         initComponents(); // Chame apenas uma vez
         // Inicialize os componentes do painel aqui, como o botão "Voltar"
+        inicializarButtonGroups(); // Inicialize os grupos de botões
 
     }
+    // Método para inicializar os ButtonGroups
+    private void inicializarButtonGroups() {
+        // Inicializa os grupos de botões
+        grupoEspetaculos = new ButtonGroup();
+        grupoSessoes = new ButtonGroup();
+        grupoAreas = new ButtonGroup();
 
+        // Adiciona os botões de espetáculo ao grupo
+        grupoEspetaculos.add(botaoEspetaculo1);
+        grupoEspetaculos.add(botaoEspetaculo2);
+        grupoEspetaculos.add(botaoEspetaculo3);
+
+        // Adiciona os botões de sessão ao grupo
+        grupoSessoes.add(botaoManha);
+        grupoSessoes.add(botaoTarde);
+        grupoSessoes.add(botaoNoite);
+
+        // Adiciona os botões de área ao grupo
+        grupoAreas.add(botaoPlateiaA);
+        grupoAreas.add(botaoPlateiaB);
+        grupoAreas.add(botaoCamarote1a3);
+        grupoAreas.add(botaoCamarote4e5);
+        grupoAreas.add(botaoFrisa1a3);
+        grupoAreas.add(botaoFrisa4a6);
+        grupoAreas.add(botaoBalcaoNobre);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,7 +86,7 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
         botaoCamarote4e5 = new javax.swing.JToggleButton();
         botaoCamarote1a3 = new javax.swing.JToggleButton();
         botaoFrisa1a3 = new javax.swing.JToggleButton();
-        botaoFrisa1a6 = new javax.swing.JToggleButton();
+        botaoFrisa4a6 = new javax.swing.JToggleButton();
         botaoBalcaoNobre = new javax.swing.JToggleButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -203,10 +232,10 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
         });
 
 
-        botaoFrisa1a6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        botaoFrisa1a6.setForeground(new java.awt.Color(21, 63, 69));
-        botaoFrisa1a6.setText("Frisa 4-6 R$120");
-        botaoFrisa1a6.addActionListener(new java.awt.event.ActionListener() {
+        botaoFrisa4a6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        botaoFrisa4a6.setForeground(new java.awt.Color(21, 63, 69));
+        botaoFrisa4a6.setText("Frisa 4-6 R$120");
+        botaoFrisa4a6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 areaSelecionada = "Frisa 4-6 R$120";
             }
@@ -262,7 +291,7 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
                         .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(botaoCamarote1a3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoFrisa1a6, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(botaoFrisa4a6, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(189, 189, 189)
@@ -323,7 +352,7 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoCamarote4e5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoFrisa1a3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoFrisa1a6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoFrisa4a6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(botaoBalcaoNobre, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -352,6 +381,8 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) painelPrincipal.getLayout(); // Certifique-se de que o painel principal use CardLayout
         layout.show(painelPrincipal, panelName); // Navega para o painel especificado
     }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton botaoBalcaoNobre;
     private javax.swing.JToggleButton botaoCamarote1a3;
@@ -361,7 +392,7 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
     private javax.swing.JToggleButton botaoEspetaculo2;
     private javax.swing.JToggleButton botaoEspetaculo3;
     private javax.swing.JToggleButton botaoFrisa1a3;
-    private javax.swing.JToggleButton botaoFrisa1a6;
+    private javax.swing.JToggleButton botaoFrisa4a6;
     private javax.swing.JToggleButton botaoManha;
     private javax.swing.JToggleButton botaoNoite;
     private javax.swing.JToggleButton botaoPlateiaA;

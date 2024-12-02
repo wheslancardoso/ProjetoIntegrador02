@@ -8,12 +8,12 @@ package front;
  *
  * @author WC
  */
-public class PainelFrisa1to6 extends javax.swing.JPanel {
+public class PainelFrisa4to6 extends javax.swing.JPanel {
 
     /**
      * Creates new form PainelFrisa1to6
      */
-    public PainelFrisa1to6() {
+    public PainelFrisa4to6() {
         initComponents();
     }
 
