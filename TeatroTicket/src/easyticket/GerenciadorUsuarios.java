@@ -23,8 +23,7 @@ public class GerenciadorUsuarios {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(USERS_FILE))) {
             for (Usuario usuario : usuarios) {
                 String dataNascimento = new SimpleDateFormat("dd/MM/yyyy").format(usuario.getDataNascimento());
-                writer.write(usuario.getNome() + "," + usuario.getCpf() + "," + usuario.getTelefone() + ","
-                        + usuario.getEndereco() + "," + dataNascimento + "," + usuario.getSenha());
+                writer.write(usuario.getNome() + "," + usuario.getCpf() + "," + usuario.getTelefone() + "," + dataNascimento + "," + usuario.getSenha());
                 writer.newLine();
             }
             System.out.println("Dados dos usuários salvos com sucesso.");
@@ -49,13 +48,12 @@ public class GerenciadorUsuarios {
                     String nome = parts[0];
                     String cpf = parts[1];
                     String telefone = parts[2];
-                    String endereco = parts[3];
 
                     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                     Date dataNascimento = sdf.parse(parts[4]);
                     String senha = parts[5];
 
-                    usuarios.add(new Usuario(nome, cpf, telefone, endereco, dataNascimento, senha));
+                    usuarios.add(new Usuario(nome, cpf, telefone, dataNascimento, senha));
                 }
             }
             System.out.println("Dados dos usuários carregados com sucesso.");

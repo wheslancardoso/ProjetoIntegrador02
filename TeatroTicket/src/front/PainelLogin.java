@@ -4,17 +4,31 @@
  */
 package front;
 
+import easyticket.GerenciadorUsuarios;
+import easyticket.Usuario;
+import easyticket.ValidadorCPF;
+
+import javax.swing.*;
+import java.awt.*;
+
 /**
  *
  * @author WC
  */
 public class PainelLogin extends javax.swing.JPanel {
+    // Declaração do JFrame ou painel principal onde a navegação ocorrerá
 
+    private GerenciadorUsuarios gerenciadorUsuarios;
+    private JPanel painelPrincipal; // O painel principal
+    private CardLayout cardLayout;  // O layout de navegaç
     /**
      * Creates new form PainelLogin
      */
-    public PainelLogin() {
+    public PainelLogin(JPanel painelPrincipal, GerenciadorUsuarios gerenciadorUsuarios) {
         initComponents();
+        this.painelPrincipal = painelPrincipal;
+        this.cardLayout = (CardLayout) painelPrincipal.getLayout(); // Obter o CardLayout
+        this.gerenciadorUsuarios = gerenciadorUsuarios;
     }
 
     /**
@@ -137,10 +151,42 @@ public class PainelLogin extends javax.swing.JPanel {
 
     private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
         // TODO add your handling code here:
+        // Obter os valores inseridos nos campos de CPF e Senha
+        String cpf = campoCPF.getText();
+        String senha = new String(campoSenha.getPassword());
+
+        // Verificar se os campos estão vazios ou com valores padrão
+        if (cpf.isEmpty() || senha.isEmpty() || cpf.equals("Digite seu CPF") || senha.equals("Digite sua senha")) {
+            JOptionPane.showMessageDialog(this, "Por favor, preencha o CPF e a senha.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Validar o CPF usando a classe ValidadorCPF
+        if (!ValidadorCPF.validaCPF(cpf)) {
+            JOptionPane.showMessageDialog(this, "CPF inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Chamar o método de login do GerenciadorUsuarios
+        Usuario usuario = gerenciadorUsuarios.login(cpf, senha);
+        if (usuario != null) {
+            // Exibir mensagem de sucesso e redirecionar para o menu principal
+            JOptionPane.showMessageDialog(this, "Login bem-sucedido!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            // Aqui você pode chamar o método de navegação para o menu
+            // Por exemplo:
+            cardLayout.show(painelPrincipal, "Menu"); // Altere "Menu" para o nome da tela desejada
+        } else {
+            // Exibir mensagem de erro caso CPF ou senha estejam incorretos
+            JOptionPane.showMessageDialog(this, "CPF ou senha inválidos.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_botaoLoginActionPerformed
 
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
         // TODO add your handling code here:
+        // Trocar para o painel de cadastro
+        cardLayout.show(painelPrincipal, "Cadastro");
+        // Alterar o painel atual para o PainelCadastrar
+
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 
 

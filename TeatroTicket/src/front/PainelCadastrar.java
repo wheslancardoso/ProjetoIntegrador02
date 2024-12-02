@@ -5,19 +5,31 @@
 package front;
 // Se você está utilizando uma classe para validar o CPF
 
+import easyticket.GerenciadorUsuarios;
+import easyticket.JanelaPrincipal;
+import easyticket.Usuario;
+
 import javax.swing.*;
+import java.awt.*;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 /**
  *
  * @author WC
  */
 public class PainelCadastrar extends javax.swing.JPanel {
-
+    private GerenciadorUsuarios gerenciadorUsuarios;
+    private CardLayout cardLayout;
+    private JPanel painelPrincipal;
     /**
      * Creates new form PainelCadastrar
      */
-    public PainelCadastrar() {
+    public PainelCadastrar(JPanel painelPrincipal, CardLayout cardLayout, GerenciadorUsuarios gerenciadorUsuarios) {
         initComponents();
+        this.painelPrincipal = painelPrincipal;
+        this.cardLayout = cardLayout;
+        this.gerenciadorUsuarios = gerenciadorUsuarios;
     }
 
     /**
@@ -447,12 +459,12 @@ public class PainelCadastrar extends javax.swing.JPanel {
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
         // TODO add your handling code here:
         // Lógica de validação de campos
-        String nome = areaNome.getText();
-        String cpf = areaCPF.getText();
-        String telefone = areaTelefone.getText();
-        String dataNascimento = areaDataNascimento.getText();
-        String senha = new String(areaSenha.getPassword());
-        String confirmaSenha = new String(areaConfirmaSenha.getPassword());
+        String nome = areaNome.getText(); // Verifica se o nome foi preenchido
+        String cpf = areaCPF.getText().replaceAll("[^0-9]", ""); // Remover caracteres especiais do CPF
+        String telefone = areaTelefone.getText().replaceAll("[^0-9]", ""); // Remover caracteres especiais do telefone
+        String dataNascimento = areaDataNascimento.getText(); // Obtém a data de nascimento do campo formatado
+        String senha = new String(areaSenha.getPassword()); // Obtém a senha
+        String confirmaSenha = new String(areaConfirmaSenha.getPassword()); // Obtém a confirmação da senha
 
         if (nome.isEmpty() || cpf.isEmpty() || telefone.isEmpty() || dataNascimento.isEmpty() || senha.isEmpty() || confirmaSenha.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Todos os campos devem ser preenchidos!");
@@ -464,10 +476,34 @@ public class PainelCadastrar extends javax.swing.JPanel {
             return;
         }
 
+        // Verificar se a data de nascimento está no formato correto
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        java.sql.Date data = null;
+        try {
+            // Converter para java.sql.Date
+            data = new java.sql.Date(sdf.parse(dataNascimento).getTime());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Data de nascimento inválida. Use o formato dd/MM/yyyy.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Criar o objeto Usuario
+        Usuario usuario = new Usuario(nome, cpf, telefone, data, senha);
+
+        // Tentar cadastrar o usuário
+        if (gerenciadorUsuarios.cadastrarUsuario(usuario, senha)) {
+            JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            cardLayout.show(painelPrincipal, "Login"); // Navega para o PainelLogin
+        } else {
+            JOptionPane.showMessageDialog(this, "CPF já cadastrado.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+
         // Verifique outros requisitos de validação (CPF, telefone, etc.)
 
         // Se passar pela validação, então realizar o cadastro (simulação)
         JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
+        // Navega para o PainelLogin após o cadastro
+        cardLayout.show(painelPrincipal, "Login");
         // Aqui você pode adicionar a lógica para registrar o usuário, salvar no banco de dados, etc.
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 

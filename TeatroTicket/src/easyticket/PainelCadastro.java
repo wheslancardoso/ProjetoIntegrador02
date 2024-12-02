@@ -202,7 +202,7 @@ public class PainelCadastro extends JPanel {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date data = sdf.parse(dataNascimento);
 
-            Usuario usuario = new Usuario(nome, cpf, telefone, endereco, data, senha);
+            Usuario usuario = new Usuario(nome, cpf, telefone, data, senha);
             if (gerenciadorUsuarios.cadastrarUsuario(usuario, senha)) {
                 JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                 janelaPrincipal.mostrarLogin();

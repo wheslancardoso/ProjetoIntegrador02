@@ -4,6 +4,8 @@
  */
 package front;
 
+import easyticket.GerenciadorUsuarios;
+
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -25,9 +27,9 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
     }
 
         private void initComponentsExtra() {
-        // Configuração do layout de painéis
-        cardLayout = new CardLayout();
-        painelPrincipal = new JPanel(cardLayout);
+            // Inicializando o painel principal primeiro
+            painelPrincipal = new JPanel(new CardLayout());
+            cardLayout = (CardLayout) painelPrincipal.getLayout();
 
         // Criação dos painéis (cada um representando uma tela)
         PainelComprarIngresso painelComprar = new PainelComprarIngresso(); // Adapte o construtor conforme necessário
@@ -35,13 +37,19 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         PainelEstatisticasDeVendas painelEstatisticas = new PainelEstatisticasDeVendas(); // Adapte o construtor conforme necessário
 
         // Painel de login ou outro painel inicial
-        PainelLogin painelLogin = new PainelLogin(); // Ajuste conforme necessário
+            GerenciadorUsuarios gerenciadorUsuarios = new GerenciadorUsuarios();
+        PainelLogin painelLogin = new PainelLogin(painelPrincipal, gerenciadorUsuarios); // Ajuste conforme necessário
+       // Criando o painel de cadastro e passando o painelPrincipal
+         // ou de acordo com a sua lógica de inicialização
+       PainelCadastrar painelCadastrar = new PainelCadastrar(painelPrincipal, cardLayout, gerenciadorUsuarios);
 
-        // Adicionando painéis ao painel principal com CardLayout
+            // Adicionando painéis ao painel principal com CardLayout
+        painelPrincipal.add(painelCadastrar, "Cadastro"); // Certifique-se de que a chave seja "Cadastro"
         painelPrincipal.add(painelLogin, "Login");
         painelPrincipal.add(painelComprar, "Comprar");
         painelPrincipal.add(painelMeusIngressos, "Meus Ingressos");
         painelPrincipal.add(painelEstatisticas, "Estatísticas");
+
 
         cardLayout.show(painelPrincipal, "Login");
         setContentPane(painelPrincipal);
@@ -163,7 +171,7 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
 
     private void botaoEstatisticasVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEstatisticasVendasActionPerformed
         // TODO add your handling code here:
-        cardLayout.show(painelPrincipal, "Meus Ingressos");
+        cardLayout.show(painelPrincipal, "Estatísticas");
     }//GEN-LAST:event_botaoEstatisticasVendasActionPerformed
 
     private void botaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSairActionPerformed
