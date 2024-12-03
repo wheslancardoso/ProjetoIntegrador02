@@ -4,6 +4,8 @@
  */
 package front;
 
+import easyticket.GerenciadorIngressos;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,6 +16,7 @@ import java.awt.*;
 public class PainelComprarIngresso extends javax.swing.JPanel {
     private CardLayout cardLayout;
     private JPanel painelPrincipal;
+    private GerenciadorIngressos gerenciadorIngressos;
     /**
      * Creates new form PainelComprarIngresso
      */
@@ -25,8 +28,9 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
     private ButtonGroup grupoEspetaculos;
     private ButtonGroup grupoSessoes;
     private ButtonGroup grupoAreas;
-    public PainelComprarIngresso(JPanel painelPrincipal) {
+    public PainelComprarIngresso(JPanel painelPrincipal, GerenciadorIngressos gerenciadorIngressos) {
         this.painelPrincipal = painelPrincipal;  // Armazene a referência do painel principal
+        this.gerenciadorIngressos = gerenciadorIngressos; // Armazena a referência do GerenciadorIngressos
         initComponents(); // Chame apenas uma vez
         // Inicialize os componentes do painel aqui, como o botão "Voltar"
         inicializarButtonGroups(); // Inicialize os grupos de botões
@@ -365,10 +369,24 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
 
     private void botaoEscolherPoltronaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEscolherPoltronaActionPerformed
         // TODO add your handling code here:
-        // Exemplo de ação ao escolher poltrona
-        System.out.println("Espetáculo Selecionado: " + espetaculoSelecionado);
-        System.out.println("Sessão Selecionada: " + sessaoSelecionada);
-        System.out.println("Área Selecionada: " + areaSelecionada);
+        if (espetaculoSelecionado.isEmpty() || sessaoSelecionada.isEmpty() || areaSelecionada.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um espetáculo, uma sessão e uma área.", "Seleção Incompleta", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        // Registrar as informações selecionadas no GerenciadorIngressos
+        gerenciadorIngressos.setEspetaculoSelecionado(espetaculoSelecionado);
+        gerenciadorIngressos.setSessaoSelecionada(sessaoSelecionada);
+        gerenciadorIngressos.setAreaSelecionada(areaSelecionada);
+
+        // Verificar se a área selecionada é "Plateia A - R$40"
+        if (areaSelecionada.equals("Plateia A - R$40")) {
+            // Redirecionar para PainelPlateiaA
+            System.out.println("Redirecionando para PainelPlateiaA");
+            navigateToPanel("PainelPlateiaA");
+        } else {
+            // Para outras áreas, mostrar uma mensagem temporária ou implementar futuramente
+            JOptionPane.showMessageDialog(this, "Redirecionamento para a área selecionada ainda não implementado.", "Atenção", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_botaoEscolherPoltronaActionPerformed
 
     private void botaoEspetaculo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEspetaculo3ActionPerformed
@@ -380,6 +398,8 @@ public class PainelComprarIngresso extends javax.swing.JPanel {
     private void navigateToPanel(String panelName) {
         CardLayout layout = (CardLayout) painelPrincipal.getLayout(); // Certifique-se de que o painel principal use CardLayout
         layout.show(painelPrincipal, panelName); // Navega para o painel especificado
+        painelPrincipal.revalidate();
+        painelPrincipal.repaint();
     }
 
 

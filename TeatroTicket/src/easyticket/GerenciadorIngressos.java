@@ -6,12 +6,47 @@ import java.util.List;
 public class GerenciadorIngressos {
     private Teatro teatro;
     private Estatisticas estatisticas;
-
+    // Campos para armazenar as seleções atuais
+    private String espetaculoSelecionado;
+    private String sessaoSelecionada;
+    private String areaSelecionada;
+    private List<Ingresso> ingressosReservados;
     public GerenciadorIngressos() {
+
         this.teatro = Teatro.getInstance();
         this.estatisticas = Estatisticas.getInstance(); // Usando a instância singleton
+        this.ingressosReservados = new ArrayList<>();
         // Carregar dados
         estatisticas.carregarDados();
+
+    }
+    // Getters e Setters para as seleções
+    public String getEspetaculoSelecionado() {
+        return espetaculoSelecionado;
+    }
+
+    public void setEspetaculoSelecionado(String espetaculoSelecionado) {
+        this.espetaculoSelecionado = espetaculoSelecionado;
+    }
+
+    public String getSessaoSelecionada() {
+        return sessaoSelecionada;
+    }
+
+    public void setSessaoSelecionada(String sessaoSelecionada) {
+        this.sessaoSelecionada = sessaoSelecionada;
+    }
+
+    public String getAreaSelecionada() {
+        return areaSelecionada;
+    }
+
+    public void setAreaSelecionada(String areaSelecionada) {
+        this.areaSelecionada = areaSelecionada;
+    }
+
+    public Ingresso[] getIngressosReservados() {
+        return ingressosReservados.toArray(new Ingresso[0]);
     }
 
     public boolean isCpfValido(String cpf) {
@@ -92,6 +127,7 @@ public class GerenciadorIngressos {
     public void finalizarCompra(Ingresso ingresso) {
         teatro.reservarPoltrona(ingresso);
         estatisticas.addSale(ingresso); // Usando o método addSale correto
+        ingressosReservados.add(ingresso);
         // Salvar dados após a compra
         teatro.salvarDados();
         estatisticas.salvarDados();

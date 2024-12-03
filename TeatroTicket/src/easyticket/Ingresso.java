@@ -47,7 +47,7 @@ public class Ingresso {
             case "4": return 10 * 4;    // Camarote (4 camarotes, 10 poltronas por camarote)
             case "5": return 50;        // Balcao Nobre
             default: return 0;
-        }
+           }
     }
 
     public String getCpf() { return cpf; }

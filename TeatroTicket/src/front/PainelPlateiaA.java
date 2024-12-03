@@ -4,19 +4,72 @@
  */
 package front;
 
+import javax.swing.*;
+import java.awt.*;
+import easyticket.GerenciadorIngressos;
+import easyticket.Ingresso;
+import easyticket.ValidadorCPF;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import easyticket.GerenciadorIngressos;
+import easyticket.Ingresso;
+import easyticket.ValidadorCPF;
+
 /**
  *
  * @author WC
  */
 public class PainelPlateiaA extends javax.swing.JPanel {
+    private JPanel painelPrincipal;
+    private GerenciadorIngressos gerenciadorIngressos;
+    // Componentes do painel
+    private JLabel lblTitulo;
 
+    // Array de JToggleButtons para as poltronas
+    private JToggleButton[] poltronas;
+    private ButtonGroup grupoPoltronas;
+    private int poltronaSelecionada = -1; // Índice da poltrona selecionada
     /**
      * Creates new form PainelPlateia
      */
-    public PainelPlateiaA() {
+    public PainelPlateiaA(JPanel painelPrincipal, GerenciadorIngressos gerenciadorIngressos) {
+        this.painelPrincipal = painelPrincipal;
+        this.gerenciadorIngressos = gerenciadorIngressos;
         initComponents();
+        configurarPoltronas(); // Método para configurar o estado inicial das poltronas
     }
 
+    private void initComponentsExtra() {
+        // Inicializar as poltronas
+        poltronas = new JToggleButton[25];
+        grupoPoltronas = new ButtonGroup();
+
+        for (int i = 0; i < 25; i++) {
+            poltronas[i] = new JToggleButton(String.valueOf(i + 1));
+            poltronas[i].setBackground(new Color(39, 141, 98)); // Verde escuro para disponível
+            poltronas[i].setFont(new Font("Segoe UI", Font.BOLD, 14));
+            poltronas[i].setForeground(Color.WHITE);
+            poltronas[i].setPreferredSize(new Dimension(100, 60));
+            poltronas[i].setFocusPainted(false);
+            poltronas[i].addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JToggleButton botao = (JToggleButton) e.getSource();
+                    if (botao.isSelected()) {
+                        botao.setBackground(Color.RED); // Vermelho para selecionado
+                        poltronaSelecionada = Integer.parseInt(botao.getText()) - 1;
+                    } else {
+                        botao.setBackground(new Color(39, 141, 98)); // Verde escuro para disponível
+                        poltronaSelecionada = -1;
+                    }
+                }
+            });
+            grupoPoltronas.add(poltronas[i]);
+            painelPoltronas.add(poltronas[i]);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -90,6 +143,7 @@ public class PainelPlateiaA extends javax.swing.JPanel {
         etiquetaDisponivel.setText("Disponível");
 
         painelPoltronas.setPreferredSize(new java.awt.Dimension(730, 415));
+
 
         poltrona1.setBackground(new java.awt.Color(39, 141, 98));
         poltrona1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -488,9 +542,10 @@ public class PainelPlateiaA extends javax.swing.JPanel {
         botaoVoltar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         botaoVoltar.setForeground(new java.awt.Color(255, 255, 255));
         botaoVoltar.setText("Voltar");
-        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoVoltarActionPerformed(evt);
+        botaoVoltar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                navigateToPanel("Comprar");
             }
         });
 
@@ -498,11 +553,13 @@ public class PainelPlateiaA extends javax.swing.JPanel {
         botaoConfirmarPoltrona.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         botaoConfirmarPoltrona.setForeground(new java.awt.Color(255, 255, 255));
         botaoConfirmarPoltrona.setText("Escolher Poltrona");
-        botaoConfirmarPoltrona.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoConfirmarPoltronaActionPerformed(evt);
+        botaoConfirmarPoltrona.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                confirmarPoltrona();
             }
         });
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -660,14 +717,79 @@ public class PainelPlateiaA extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_poltrona22ActionPerformed
 
-    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void botaoConfirmarPoltronaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarPoltronaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoConfirmarPoltronaActionPerformed
 
+    /**
+     * Método para configurar o estado inicial das poltronas com base nas reservas existentes.
+     */
+    private void configurarPoltronas() {
+        Ingresso[] ingressos = gerenciadorIngressos.getIngressosReservados();
+        for (Ingresso ingresso : ingressos) {
+            if (ingresso.getArea().equals("Plateia A")) {
+                int poltrona = ingresso.getPoltrona();
+                if (poltrona >= 0 && poltrona < poltronas.length) {
+                    poltronas[poltrona].setBackground(Color.RED);
+                    poltronas[poltrona].setEnabled(false); // Desabilita a poltrona se já estiver reservada
+                }
+            }
+        }
+    }
+
+    private void confirmarPoltrona() {
+        if (poltronaSelecionada == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione uma poltrona.", "Nenhuma Poltrona Selecionada", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        String cpf = JOptionPane.showInputDialog(this, "Digite o CPF para confirmação:");
+
+        if (cpf == null || cpf.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "CPF é obrigatório para confirmar a poltrona.", "CPF Obrigatório", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        cpf = cpf.trim();
+
+        // Validar CPF
+        if (!ValidadorCPF.validaCPF(cpf)) {
+            JOptionPane.showMessageDialog(this, "CPF inválido. Por favor, insira um CPF válido.", "CPF Inválido", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Criar o ingresso
+        String espetaculo = gerenciadorIngressos.getEspetaculoSelecionado();
+        String sessao = gerenciadorIngressos.getSessaoSelecionada();
+        String area = gerenciadorIngressos.getAreaSelecionada();
+        double preco = 40.00; // Preço para Plateia A - R$40
+
+        Ingresso ingresso = new Ingresso(cpf, espetaculo, sessao, area, poltronaSelecionada, preco);
+
+        // Finalizar a compra
+        gerenciadorIngressos.finalizarCompra(ingresso);
+
+        // Atualizar a UI para refletir a poltrona reservada
+        poltronas[poltronaSelecionada].setBackground(Color.RED);
+        poltronas[poltronaSelecionada].setEnabled(false);
+        grupoPoltronas.clearSelection();
+        poltronaSelecionada = -1;
+
+        // Redirecionar para IngressoComprado
+        navigateToPanel("IngressoComprado");
+    }
+
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {
+        navigateToPanel("Comprar");  // Nome correto do painel para retornar
+    }
+
+    private void navigateToPanel(String panelName) {
+        CardLayout layout = (CardLayout) painelPrincipal.getLayout();
+        layout.show(painelPrincipal, panelName);
+        painelPrincipal.revalidate();
+        painelPrincipal.repaint();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoConfirmarPoltrona;

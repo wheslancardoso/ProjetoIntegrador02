@@ -4,6 +4,7 @@
  */
 package front;
 
+import easyticket.GerenciadorIngressos;
 import easyticket.GerenciadorUsuarios;
 
 import java.awt.CardLayout;
@@ -16,6 +17,7 @@ import javax.swing.JPanel;
 public class JanelaPrincipal2 extends javax.swing.JFrame {
     private CardLayout cardLayout;
     private JPanel painelPrincipal;
+    private GerenciadorIngressos gerenciadorIngressos; // Instância do GerenciadorIngressos
 
 
     /**
@@ -32,13 +34,17 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
             JPanel menuPanel = jPanel1;  // O painel do menu é o jPanel1
             cardLayout = (CardLayout) painelPrincipal.getLayout();
 
+            // Instanciando os gerenciadores
+            GerenciadorUsuarios gerenciadorUsuarios = new GerenciadorUsuarios();
+            gerenciadorIngressos = new GerenciadorIngressos(); // Instância única
+
         // Criação dos painéis (cada um representando uma tela)
-        PainelComprarIngresso painelComprar = new PainelComprarIngresso(painelPrincipal); // Adapte o construtor conforme necessário
+        PainelComprarIngresso painelComprar = new PainelComprarIngresso(painelPrincipal, gerenciadorIngressos); // Adapte o construtor conforme necessário
+        PainelPlateiaA painelPlateiaA = new PainelPlateiaA(painelPrincipal, gerenciadorIngressos);
         PainelMeusIngressos painelMeusIngressos = new PainelMeusIngressos(); // Adapte o construtor conforme necessário
         PainelEstatisticasDeVendas painelEstatisticas = new PainelEstatisticasDeVendas(); // Adapte o construtor conforme necessário
-
+           // PainelIngressoComprado painelIngressoComprado = new PainelIngressoComprado(painelPrincipal, gerenciadorIngressos); // Adicionado
         // Painel de login ou outro painel inicial
-        GerenciadorUsuarios gerenciadorUsuarios = new GerenciadorUsuarios();
         PainelLogin painelLogin = new PainelLogin(painelPrincipal, gerenciadorUsuarios); // Ajuste conforme necessário
         // Criando o painel de cadastro e passando o painelPrincipal
         // ou de acordo com a sua lógica de inicialização
@@ -51,7 +57,7 @@ public class JanelaPrincipal2 extends javax.swing.JFrame {
         painelPrincipal.add(painelMeusIngressos, "Meus Ingressos");
         painelPrincipal.add(painelEstatisticas, "Estatísticas");
         painelPrincipal.add(menuPanel, "Menu");  // Registra o painel do menu com o nome "Menu"
-
+        painelPrincipal.add(painelPlateiaA, "PainelPlateiaA");
         // Definir fundo branco para todos os painéis
         painelComprar.setBackground(new java.awt.Color(255, 255, 255));
         painelMeusIngressos.setBackground(new java.awt.Color(255, 255, 255));
