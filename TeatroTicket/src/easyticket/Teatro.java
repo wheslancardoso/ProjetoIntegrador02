@@ -5,14 +5,14 @@ import java.util.Arrays;
 
 public class Teatro {
     private static Teatro instanciaUnica = null;
-    private Boolean[][][][] poltronasDisponiveis; // Variável de instância
+    private Boolean[][][][] poltronasDisponiveis;
 
-    // Definir as quantidades de poltronas por área
-    private int[] poltronasPorArea = {25, 100, 5 * 6, 4 * 10, 50}; // Atualizado para frisa (6 frisas com 5 poltronas cada) e camarote (4 camarotes com 10 poltronas cada)
+    // Definindo o número de poltronas por área (ajuste conforme sua lógica de negócio)
+    private int[] poltronasPorArea = {25, 100, 5 * 6, 4 * 10, 50}; // Atualizado para frisa e camarote
 
     // Construtor privado
     private Teatro() {
-        inicializarPoltronas();  // Garante que as poltronas sejam inicializadas sempre
+        inicializarPoltronas();  // Inicializa as poltronas
         carregarDados();  // Carrega os dados ao instanciar
     }
 
@@ -26,26 +26,25 @@ public class Teatro {
 
     // Método para inicializar as poltronas
     private void inicializarPoltronas() {
-        poltronasDisponiveis = new Boolean[5][3][3][]; // Inicializa o array de poltronas (ajuste conforme seu modelo)
+        poltronasDisponiveis = new Boolean[5][3][3][]; // 5 áreas, 3 espetáculos, 3 sessões
         for (int area = 0; area < poltronasDisponiveis.length; area++) {
             for (int espetaculo = 0; espetaculo < poltronasDisponiveis[area].length; espetaculo++) {
                 for (int sessao = 0; sessao < poltronasDisponiveis[area][espetaculo].length; sessao++) {
-                    poltronasDisponiveis[area][espetaculo][sessao] = new Boolean[poltronasPorArea[area]]; // Usando a quantidade de poltronas por área
+                    poltronasDisponiveis[area][espetaculo][sessao] = new Boolean[poltronasPorArea[area]]; // Ajusta a quantidade de poltronas
                     Arrays.fill(poltronasDisponiveis[area][espetaculo][sessao], Boolean.FALSE);  // Inicializa todas as poltronas como disponíveis
                 }
             }
         }
     }
 
-    // Método para carregar os dados das poltronas a partir do arquivo "poltronas.txt"
+    // Método para carregar os dados das poltronas a partir de arquivo
     public void carregarDados() {
         File file = new File("poltronas.txt");
 
-        // Verifica se o arquivo existe, caso contrário, cria um novo
         if (!file.exists()) {
             System.out.println("Arquivo poltronas.txt não encontrado. Criando um novo arquivo.");
-            inicializarPoltronas();  // Inicializa as poltronas se o arquivo não existir
-            salvarDados();  // Cria o arquivo com dados iniciais
+            inicializarPoltronas();  // Inicializa as poltronas
+            salvarDados();  // Cria o arquivo
             return;
         }
 
@@ -76,22 +75,30 @@ public class Teatro {
         }
     }
 
-    // Método para obter as poltronas disponíveis
+    // Método para reservar uma poltrona
+    public void reservarPoltrona(Ingresso ingresso) {
+        try {
+            // Certifique-se de passar a área corretamente, usando apenas números
+            String area = ingresso.getArea().split(" -")[0]; // Pegue apenas a parte numérica (se houver texto)
+            int areaIndex = Integer.parseInt(area) - 1; // Convertendo a área corretamente
+            int espetaculoIndex = Integer.parseInt(ingresso.getEspetaculo()) - 1;
+            int sessaoIndex = Integer.parseInt(ingresso.getSessao()) - 1;
+            int poltrona = ingresso.getPoltrona();
+
+            poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex][poltrona] = true;
+        } catch (NumberFormatException e) {
+            System.out.println("Erro ao tentar converter a área, espetáculo ou sessão para número.");
+            e.printStackTrace();
+        }
+    }
+
+    // Método para obter as poltronas disponíveis (método que você precisa adicionar)
     public Boolean[] getPoltronasDisponiveis(int area, int espetaculo, int sessao) {
+        // Retorna o array de poltronas disponíveis para a área, espetáculo e sessão especificados
         return poltronasDisponiveis[area][espetaculo][sessao];
     }
 
-    // Método para reservar uma poltrona
-    public void reservarPoltrona(Ingresso ingresso) {
-        int areaIndex = Integer.parseInt(ingresso.getArea()) - 1;
-        int espetaculoIndex = Integer.parseInt(ingresso.getEspetaculo()) - 1;
-        int sessaoIndex = Integer.parseInt(ingresso.getSessao()) - 1;
-        int poltrona = ingresso.getPoltrona();
-
-        poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex][poltrona] = true;
-    }
-
-    // Método para salvar os dados das poltronas em um arquivo
+    // Método para salvar os dados das poltronas
     public void salvarDados() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("poltronas.txt"))) {
             for (int areaIndex = 0; areaIndex < poltronasDisponiveis.length; areaIndex++) {
@@ -99,7 +106,7 @@ public class Teatro {
                     for (int sessaoIndex = 0; sessaoIndex < poltronasDisponiveis[areaIndex][espetaculoIndex].length; sessaoIndex++) {
                         StringBuilder line = new StringBuilder();
                         for (boolean poltrona : poltronasDisponiveis[areaIndex][espetaculoIndex][sessaoIndex]) {
-                            line.append(poltrona ? "1" : "0");  // Salva '1' para poltrona ocupada, '0' para disponível
+                            line.append(poltrona ? "1" : "0");  // Salva 1 para poltrona ocupada, 0 para disponível
                         }
                         writer.write(line.toString());
                         writer.newLine();

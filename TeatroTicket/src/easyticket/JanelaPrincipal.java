@@ -23,12 +23,6 @@ public class JanelaPrincipal extends JFrame {
         initComponents();
 
         // Save data on window close
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                gerenciadorIngressos.salvarDados();
-            }
-        });
     }
 
     private void initComponents() {

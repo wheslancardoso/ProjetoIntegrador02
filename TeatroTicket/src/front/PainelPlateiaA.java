@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 import easyticket.GerenciadorIngressos;
 import easyticket.Ingresso;
 import easyticket.ValidadorCPF;
-
+import java.util.List;
 /**
  *
  * @author WC
@@ -38,7 +38,9 @@ public class PainelPlateiaA extends javax.swing.JPanel {
         this.painelPrincipal = painelPrincipal;
         this.gerenciadorIngressos = gerenciadorIngressos;
         initComponents();
+        initComponentsExtra();
         configurarPoltronas(); // Método para configurar o estado inicial das poltronas
+        configurarListenersPoltronas();
     }
 
     private void initComponentsExtra() {
@@ -725,59 +727,94 @@ public class PainelPlateiaA extends javax.swing.JPanel {
     /**
      * Método para configurar o estado inicial das poltronas com base nas reservas existentes.
      */
+
+    private void configurarListenersPoltronas() {
+        poltrona1.addActionListener(e -> selecionarPoltrona(0));
+        poltrona2.addActionListener(e -> selecionarPoltrona(1));
+        poltrona3.addActionListener(e -> selecionarPoltrona(2));
+        poltrona4.addActionListener(e -> selecionarPoltrona(3));
+        poltrona5.addActionListener(e -> selecionarPoltrona(4));
+        poltrona6.addActionListener(e -> selecionarPoltrona(5));
+        poltrona7.addActionListener(e -> selecionarPoltrona(6));
+        poltrona8.addActionListener(e -> selecionarPoltrona(7));
+        poltrona9.addActionListener(e -> selecionarPoltrona(8));
+        poltrona10.addActionListener(e -> selecionarPoltrona(9));
+        poltrona11.addActionListener(e -> selecionarPoltrona(10));
+        poltrona12.addActionListener(e -> selecionarPoltrona(11));
+        poltrona13.addActionListener(e -> selecionarPoltrona(12));
+        poltrona14.addActionListener(e -> selecionarPoltrona(13));
+        poltrona15.addActionListener(e -> selecionarPoltrona(14));
+        poltrona16.addActionListener(e -> selecionarPoltrona(15));
+        poltrona17.addActionListener(e -> selecionarPoltrona(16));
+        poltrona18.addActionListener(e -> selecionarPoltrona(17));
+        poltrona19.addActionListener(e -> selecionarPoltrona(18));
+        poltrona20.addActionListener(e -> selecionarPoltrona(19));
+        poltrona21.addActionListener(e -> selecionarPoltrona(20));
+        poltrona22.addActionListener(e -> selecionarPoltrona(21));
+        poltrona23.addActionListener(e -> selecionarPoltrona(22));
+        poltrona24.addActionListener(e -> selecionarPoltrona(23));
+        poltrona25.addActionListener(e -> selecionarPoltrona(24));
+    }
+
     private void configurarPoltronas() {
-        Ingresso[] ingressos = gerenciadorIngressos.getIngressosReservados();
+        List<Ingresso> ingressos = gerenciadorIngressos.getIngressosReservados();
+
         for (Ingresso ingresso : ingressos) {
-            if (ingresso.getArea().equals("Plateia A")) {
-                int poltrona = ingresso.getPoltrona();
+            if (ingresso.getArea().equals("Plateia A")) {  // Verifica se o ingresso é da Plateia A
+                int poltrona = ingresso.getPoltrona();  // Obtém o número da poltrona
                 if (poltrona >= 0 && poltrona < poltronas.length) {
-                    poltronas[poltrona].setBackground(Color.RED);
-                    poltronas[poltrona].setEnabled(false); // Desabilita a poltrona se já estiver reservada
+                    poltronas[poltrona].setBackground(Color.RED);  // Marca a poltrona como ocupada
+                    poltronas[poltrona].setEnabled(false);  // Desabilita a poltrona
                 }
             }
         }
     }
 
     private void confirmarPoltrona() {
+        // Verifica se uma poltrona foi selecionada
         if (poltronaSelecionada == -1) {
             JOptionPane.showMessageDialog(this, "Por favor, selecione uma poltrona.", "Nenhuma Poltrona Selecionada", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        String cpf = JOptionPane.showInputDialog(this, "Digite o CPF para confirmação:");
-
-        if (cpf == null || cpf.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "CPF é obrigatório para confirmar a poltrona.", "CPF Obrigatório", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        cpf = cpf.trim();
-
-        // Validar CPF
-        if (!ValidadorCPF.validaCPF(cpf)) {
-            JOptionPane.showMessageDialog(this, "CPF inválido. Por favor, insira um CPF válido.", "CPF Inválido", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Criar o ingresso
+        // Cria o ingresso com as informações retiradas da UI
         String espetaculo = gerenciadorIngressos.getEspetaculoSelecionado();
         String sessao = gerenciadorIngressos.getSessaoSelecionada();
         String area = gerenciadorIngressos.getAreaSelecionada();
-        double preco = 40.00; // Preço para Plateia A - R$40
+        double preco = 40.00;  // Preço para Plateia A - R$40, ajustável conforme a área
 
-        Ingresso ingresso = new Ingresso(cpf, espetaculo, sessao, area, poltronaSelecionada, preco);
+        // Cria o ingresso com os dados da reserva
+        Ingresso ingresso = new Ingresso("", espetaculo, sessao, area, poltronaSelecionada, preco);
 
-        // Finalizar a compra
+        // Finaliza a compra
         gerenciadorIngressos.finalizarCompra(ingresso);
 
-        // Atualizar a UI para refletir a poltrona reservada
-        poltronas[poltronaSelecionada].setBackground(Color.RED);
-        poltronas[poltronaSelecionada].setEnabled(false);
-        grupoPoltronas.clearSelection();
-        poltronaSelecionada = -1;
+        // Atualiza a UI para refletir a poltrona reservada
+        poltronas[poltronaSelecionada].setBackground(Color.RED);  // Marca a poltrona como ocupada
+        poltronas[poltronaSelecionada].setEnabled(false);  // Desabilita a poltrona para impedir nova seleção
+        grupoPoltronas.clearSelection();  // Limpa a seleção do grupo de poltronas
+        poltronaSelecionada = -1;  // Reseta a variável de poltrona selecionada
 
-        // Redirecionar para IngressoComprado
+        // Redireciona para o painel de "IngressoComprado"
         navigateToPanel("IngressoComprado");
+    }
+
+    private void selecionarPoltrona(int indice) {
+        // Verifica se a poltrona pode ser selecionada (não está ocupada)
+        if (poltronas[indice].isEnabled()) {
+            if (poltronas[indice].getBackground() == Color.RED) {
+                // Caso o botão já tenha sido clicado, desmarcar
+                poltronas[indice].setBackground(null);  // Resetando a cor de fundo
+                poltronaSelecionada = -1;  // Reseta a seleção
+            } else {
+                // Caso a poltrona ainda não tenha sido selecionada, marca a seleção
+                for (int i = 0; i < poltronas.length; i++) {
+                    poltronas[i].setBackground(null);  // Desmarcar todas as outras poltronas
+                }
+                poltronas[indice].setBackground(Color.YELLOW);  // Marca a cor da poltrona selecionada
+                poltronaSelecionada = indice;  // Atualiza a variável com o índice da poltrona selecionada
+            }
+        }
     }
 
     private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {
@@ -790,6 +827,8 @@ public class PainelPlateiaA extends javax.swing.JPanel {
         painelPrincipal.revalidate();
         painelPrincipal.repaint();
     }
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoConfirmarPoltrona;
